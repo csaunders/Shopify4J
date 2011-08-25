@@ -44,7 +44,7 @@ public abstract class API {
 	public URI constructURI(int id, String additionalPath, HashMap<String, String> queryParameters) {
 		StringBuilder builder = new StringBuilder();
 		builder.append(URI_SCHEME);
-		builder.append(auth.getShopName());
+		builder.append(auth.getCredential().getShopName());
 		builder.append(MY_SHOPIFY_COM_ADMIN);
 		builder.append(getAPIEndpoint());
 		if(id > 0) {

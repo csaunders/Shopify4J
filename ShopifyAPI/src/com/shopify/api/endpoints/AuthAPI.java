@@ -45,7 +45,7 @@ public class AuthAPI extends API {
 	
 	public URI getAuthRequestURI() {
 		HashMap<String, String> params = new HashMap<String, String>(){{
-			put("api_key", getApiAuth().getApiKey());
+			put("api_key", getApiAuth().getCredential().getApiKey());
 		}};
 		return constructURI(params);
 	}

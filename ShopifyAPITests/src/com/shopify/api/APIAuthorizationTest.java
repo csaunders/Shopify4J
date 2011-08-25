@@ -3,6 +3,7 @@ package com.shopify.api;
 import java.util.HashMap;
 
 import com.shopify.api.APIAuthorization;
+import com.shopify.api.credentials.Credential;
 
 import android.test.AndroidTestCase;
 import android.util.Log;
@@ -10,14 +11,16 @@ import android.util.Log;
 public class APIAuthorizationTest extends AndroidTestCase {
 	private HashMap<String, String> responseParams;
 	private APIAuthorization auth;
+	private Credential credential;
 
 	protected void setUp() throws Exception {
 		super.setUp();
 		
-		auth = new APIAuthorization(
+		this.credential = new Credential(
 				"invoice-api-key",
 				"hush",
 				"some-shop");
+		auth = new APIAuthorization(credential);
 				
 		responseParams = new HashMap<String, String>(){{
 			put("shop", "some-shop.myshopify.com");
@@ -46,9 +49,13 @@ public class APIAuthorizationTest extends AndroidTestCase {
 	}
 	
 	public void testGetAPIPassword() {
-		assertTrue(auth.getAPIPassword(responseParams));
+		try {
+			assertTrue(auth.getAPIPassword(responseParams));
+		} catch (Exception exc) {
+			fail();
+		}
 		
 		String expectedPassword = "36b29a08b3113077f14777570c0577ed"; 
-		assertEquals(expectedPassword, auth.getPassword());
+		assertEquals(expectedPassword, credential.getPassword());
 	}
 }

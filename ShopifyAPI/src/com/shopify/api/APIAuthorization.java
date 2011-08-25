@@ -14,23 +14,23 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.apache.commons.codec.binary.Hex;
 import com.shopify.api.endpoints.AuthAPI;
+import com.shopify.api.credentials.ShopifyCredentialsStore;
+import com.shopify.api.credentials.Credential;
 
 public class APIAuthorization {
 	private static final String SIGNATURE = "signature";
 	private static final String TOKEN = "t";
 	
+	private Credential credential;
+	private ShopifyCredentialsStore credentialsStore = null;
 	
-	private String apiKey, sharedSecret, shopName, password;
-	
-	public APIAuthorization(String apiKey, String sharedSecret, String shopName) {
-		this(apiKey, sharedSecret, shopName, null);
+	public APIAuthorization(Credential credential) {
+		this.credential = credential;
 	}
 	
-	public APIAuthorization(String apiKey, String sharedSecret, String shopName, String password) {
-		this.apiKey = apiKey;
-		this.sharedSecret = sharedSecret;
-		this.shopName = shopName;
-		this.password = password;
+	public APIAuthorization(ShopifyCredentialsStore store, String shop) throws Exception {
+		this(store.loadCredential(shop));
+		this.credentialsStore = store;
 	}
 	
 	public boolean isValidShopifyResponse(HashMap<String, String> responseParameters) {
@@ -44,7 +44,7 @@ public class APIAuthorization {
 		ArrayList<String> sortedKeys = new ArrayList<String>(responseParameters.keySet());
 		Collections.sort(sortedKeys);
 		
-		StringBuilder preDigest = new StringBuilder(this.sharedSecret);
+		StringBuilder preDigest = new StringBuilder(credential.getSharedSecret());
 		for(String key : sortedKeys) {
 			preDigest.append(key);
 			preDigest.append("=");
@@ -53,12 +53,15 @@ public class APIAuthorization {
 		return preDigest.toString();
 	}
 	
-	public boolean getAPIPassword(HashMap<String, String> responseParameters) {
+	public boolean getAPIPassword(HashMap<String, String> responseParameters) throws Exception {
 		if(isValidShopifyResponse(responseParameters)) {
 			StringBuilder builder = new StringBuilder();
-			builder.append(sharedSecret);
+			builder.append(credential.getSharedSecret());
 			builder.append(responseParameters.get(TOKEN));
-			this.password = toMD5Hexdigest(builder.toString());
+			credential.setPassword(toMD5Hexdigest(builder.toString()));
+			if (credentialsStore != null) {
+				credentialsStore.saveCredential(credential);
+			}
 			return true;
 		}
 		return false;
@@ -81,7 +84,7 @@ public class APIAuthorization {
 	public URI generateAuthRequest() {
 		AuthAPI apiAuthRequest = new AuthAPI(this);
 		HashMap<String, String> params = new HashMap<String, String>(){{
-			put("api_key", getApiKey());
+			put("api_key", credential.getApiKey());
 		}};
 		URI authEndpoint = apiAuthRequest.constructURI(params);
 		return authEndpoint;
@@ -91,25 +94,27 @@ public class APIAuthorization {
 		DefaultHttpClient client = new DefaultHttpClient();
 		
 		AuthScope scope = new AuthScope(hostName, port);
-		UsernamePasswordCredentials creds = new UsernamePasswordCredentials(this.apiKey, this.password);
+		UsernamePasswordCredentials creds = new UsernamePasswordCredentials(credential.getApiKey(), credential.getPassword());
 		client.getCredentialsProvider().setCredentials(scope, creds);
 		
 		return client;
 	}
 	
-	public boolean isAuthorized() { return this.password != null; }
+	public boolean isAuthorized() { return credential.getPassword() != null; }
 
-	public String getShopName() {
-		return shopName;
-	}
-
-	public String getPassword() {
-		return password;
+	public Credential getCredential() {
+		return credential;
 	}
 	
-	public String getApiKey() {
-		return apiKey;
+	public void setCredential(Credential credential) {
+		this.credential = credential;
 	}
 	
-
+	public ShopifyCredentialsStore getCredentailsStore() {
+		return credentialsStore;
+	}
+	
+	public void setCredentialStore(ShopifyCredentialsStore credentialsStore) {
+		this.credentialsStore = credentialsStore;
+	}
 }
