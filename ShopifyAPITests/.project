@@ -34,7 +34,7 @@
 		<link>
 			<name>ShopifyAPI_src</name>
 			<type>2</type>
-			<locationURI>_android_ShopifyAPI_57fb5c14/src</locationURI>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/ShopifyAPI/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
