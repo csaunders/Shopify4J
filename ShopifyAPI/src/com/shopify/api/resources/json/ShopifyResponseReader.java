@@ -39,7 +39,8 @@ public class ShopifyResponseReader {
 			JsonParser parser = factory.createJsonParser(response);
 			JsonToken token = parser.nextToken();
 			assert(token == JsonToken.START_OBJECT);
-			while( (token = parser.nextToken()) != JsonToken.END_OBJECT) {
+			while((token = parser.nextToken()) != null) {
+				if(token == JsonToken.END_OBJECT) break;
 				token = parser.nextToken();
 				if(token == JsonToken.START_ARRAY) {
 					while((token = parser.nextToken()) != JsonToken.END_ARRAY) {

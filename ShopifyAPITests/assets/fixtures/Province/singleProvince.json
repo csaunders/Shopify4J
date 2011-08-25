@@ -1,0 +1,10 @@
+{
+  "province": {
+    "tax": 0.09,
+    "name": "Quebec",
+    "tax_name": null,
+    "code": "QC",
+    "id": 224293623,
+    "tax_type": null
+  }
+}

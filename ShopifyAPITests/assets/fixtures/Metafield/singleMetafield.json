@@ -1,0 +1,12 @@
+{
+  "metafield": {
+    "created_at": "2011-08-15T13:51:05-04:00",
+    "updated_at": "2011-08-15T13:51:05-04:00",
+    "namespace": "translations",
+    "id": 845366454,
+    "value": "produit",
+    "description": "French product title",
+    "key": "title_fr",
+    "value_type": "string"
+  }
+}

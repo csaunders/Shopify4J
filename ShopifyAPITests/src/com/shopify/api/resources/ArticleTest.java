@@ -21,7 +21,7 @@ public class ArticleTest extends InstrumentationTestCase {
 	}
 	
 	public void testLoadingSingleAsset() throws Exception {
-		String articleJson = AssetLoader.loadAsset("fixtures/articles/article.json");
+		String articleJson = AssetLoader.loadAsset("fixtures/Article/article.json");
 		
 		Article result = reader.read(articleJson, Article.class).get(0);
 		{
@@ -40,7 +40,7 @@ public class ArticleTest extends InstrumentationTestCase {
 	}
 	
 	public void testLoadingSeveralAssets() throws Exception {
-		String articlesJson = AssetLoader.loadAsset("fixtures/articles/articles.json");
+		String articlesJson = AssetLoader.loadAsset("fixtures/Article/articles.json");
 		
 		List<Article> articles = reader.read(articlesJson, Article.class);
 		

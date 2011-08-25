@@ -53,4 +53,10 @@ public class ShopifyResponseReaderTest extends InstrumentationTestCase {
 		}
 	}
 	
+	public void testReturnsEmptyArrayOnEmptyInput() {
+		List<MyShopifyResource> myResources = reader.read("", MyShopifyResource.class);
+		
+		assertEquals(0, myResources.size());
+	}
+	
 }
