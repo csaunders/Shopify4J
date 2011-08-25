@@ -3,3 +3,6 @@
 default.properties
 bin/
 gen/
+/*/build.xml
+/*/local.properties
+*.swp
