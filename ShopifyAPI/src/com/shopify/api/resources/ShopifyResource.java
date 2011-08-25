@@ -1,10 +1,11 @@
 package com.shopify.api.resources;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 public abstract class ShopifyResource {
 	@JsonProperty("id")
-	private int id;
+	private int id = -1;
 	
 	@JsonProperty("created_at")
 	private String created_at;
@@ -34,6 +35,11 @@ public abstract class ShopifyResource {
 
 	public void setUpdated_at(String updatedAt) {
 		updated_at = updatedAt;
+	}
+	
+	@JsonIgnore
+	public String getFieldName() {
+		return this.getClass().getSimpleName().toLowerCase();
 	}
 	
 }

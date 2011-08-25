@@ -8,6 +8,10 @@ import android.app.Instrumentation;
 public class AssetLoader {
 	public static Instrumentation instrumentation;
 	
+	public static String loadAsset(String dir, String filename) {
+		return loadAsset(dir + filename);
+	}
+	
 	public static String loadAsset(String filename) {
 		StringBuilder builder = new StringBuilder();
 		char[] buffer = new char[1024];

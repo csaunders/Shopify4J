@@ -1,0 +1,8 @@
+{
+	"myshopifyresource" : {
+		"id" : 1,
+		"created_at": "not important, yet",
+		"updated_at": "not important, yet",
+		"a": "foo"
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"myshopifyresources" : [ 
+		{
+		    "id" : 1,
+			"created_at": "not important, yet",
+			"updated_at": "not important, yet",
+			"a": "foo"
+	    },
+	    {
+	    	"id" : 2,
+			"created_at": "not important, yet",
+			"updated_at": "not important, yet",
+			"a": "bar"
+	    },
+	    {
+	    	"id" : 3,
+			"created_at": "not important, yet",
+			"updated_at": "not important, yet",
+			"a": "baz"
+	    }
+	    
+    ]
+}
