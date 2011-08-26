@@ -77,7 +77,7 @@ END
   file.write("}")
 end
 
-resources.map{|fixture_name|
+resources.each do |fixture_name|
   next unless File.directory? "#{resources_location}/#{fixture_name}"
   next if Dir.entries("#{resources_location}/#{fixture_name}").include? "skip"
   begin
@@ -101,4 +101,4 @@ resources.map{|fixture_name|
     puts "REASON: #{err}"
     next
   end
-}
+end
