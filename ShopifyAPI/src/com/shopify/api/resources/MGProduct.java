@@ -6,9 +6,10 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-26T09:50:06-04:00
+// Last Generated: 2011-08-26T10:00:59-04:00
 package com.shopify.api.resources;
 
+import java.util.List;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
@@ -49,14 +50,14 @@ public class MGProduct extends ShopifyResource {
 	public void setTags(String _tags){this._tags = _tags;}
 
 	@JsonProperty("images")
-	private Image[] _images;
-	public Image[] getImages(){ return _images;}
-	public void setImages(Image[] _images){this._images = _images;}
+	private List<Image> _images;
+	public List<Image> getImages(){ return _images;}
+	public void setImages(List<Image> _images){this._images = _images;}
 
 	@JsonProperty("variants")
-	private Variant[] _variants;
-	public Variant[] getVariants(){ return _variants;}
-	public void setVariants(Variant[] _variants){this._variants = _variants;}
+	private List<Variant> _variants;
+	public List<Variant> getVariants(){ return _variants;}
+	public void setVariants(List<Variant> _variants){this._variants = _variants;}
 
 	@JsonProperty("published_at")
 	private String _published_at;
@@ -69,8 +70,8 @@ public class MGProduct extends ShopifyResource {
 	public void setVendor(String _vendor){this._vendor = _vendor;}
 
 	@JsonProperty("options")
-	private Option[] _options;
-	public Option[] getOptions(){ return _options;}
-	public void setOptions(Option[] _options){this._options = _options;}
+	private List<Option> _options;
+	public List<Option> getOptions(){ return _options;}
+	public void setOptions(List<Option> _options){this._options = _options;}
 
 }

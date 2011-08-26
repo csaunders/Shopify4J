@@ -6,9 +6,10 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-26T09:50:06-04:00
+// Last Generated: 2011-08-26T10:00:59-04:00
 package com.shopify.api.resources;
 
+import java.util.List;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
@@ -19,9 +20,9 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGOrder extends ShopifyResource {
 
 	@JsonProperty("tax_lines")
-	private TaxLine[] _tax_lines;
-	public TaxLine[] getTaxLines(){ return _tax_lines;}
-	public void setTaxLines(TaxLine[] _tax_lines){this._tax_lines = _tax_lines;}
+	private List<TaxLine> _tax_lines;
+	public List<TaxLine> getTaxLines(){ return _tax_lines;}
+	public void setTaxLines(List<TaxLine> _tax_lines){this._tax_lines = _tax_lines;}
 
 	@JsonProperty("name")
 	private String _name;
@@ -34,9 +35,9 @@ public class MGOrder extends ShopifyResource {
 	public void setNumber(int _number){this._number = _number;}
 
 	@JsonProperty("line_items")
-	private LineItem[] _line_items;
-	public LineItem[] getLineItems(){ return _line_items;}
-	public void setLineItems(LineItem[] _line_items){this._line_items = _line_items;}
+	private List<LineItem> _line_items;
+	public List<LineItem> getLineItems(){ return _line_items;}
+	public void setLineItems(List<LineItem> _line_items){this._line_items = _line_items;}
 
 	@JsonProperty("total_discounts")
 	private String _total_discounts;
@@ -84,9 +85,9 @@ public class MGOrder extends ShopifyResource {
 	public void setTaxesIncluded(boolean _taxes_included){this._taxes_included = _taxes_included;}
 
 	@JsonProperty("shipping_lines")
-	private ShippingLine[] _shipping_lines;
-	public ShippingLine[] getShippingLines(){ return _shipping_lines;}
-	public void setShippingLines(ShippingLine[] _shipping_lines){this._shipping_lines = _shipping_lines;}
+	private List<ShippingLine> _shipping_lines;
+	public List<ShippingLine> getShippingLines(){ return _shipping_lines;}
+	public void setShippingLines(List<ShippingLine> _shipping_lines){this._shipping_lines = _shipping_lines;}
 
 	@JsonProperty("cancelled_at")
 	private String _cancelled_at;
@@ -129,9 +130,9 @@ public class MGOrder extends ShopifyResource {
 	public void setBillingAddress(BillingAddress _billing_address){this._billing_address = _billing_address;}
 
 	@JsonProperty("note_attributes")
-	private NoteAttribute[] _note_attributes;
-	public NoteAttribute[] getNoteAttributes(){ return _note_attributes;}
-	public void setNoteAttributes(NoteAttribute[] _note_attributes){this._note_attributes = _note_attributes;}
+	private List<NoteAttribute> _note_attributes;
+	public List<NoteAttribute> getNoteAttributes(){ return _note_attributes;}
+	public void setNoteAttributes(List<NoteAttribute> _note_attributes){this._note_attributes = _note_attributes;}
 
 	@JsonProperty("buyer_accepts_marketing")
 	private boolean _buyer_accepts_marketing;

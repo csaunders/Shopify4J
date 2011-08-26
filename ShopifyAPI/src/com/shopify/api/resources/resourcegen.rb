@@ -35,7 +35,7 @@ def determine_type(name, value)
     end
     return name
   elsif value.class == Array
-    return "#{determine_type(name.singularize, value.first)}[]"
+    return "List<#{determine_type(name.singularize, value.first)}>"
   elsif value.class == Fixnum
     return "int"
   elsif value.class == Float
@@ -62,6 +62,7 @@ END
 // Last Generated: #{DateTime.now.to_s}
 package com.shopify.api.resources;
 
+import java.util.List;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**

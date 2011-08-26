@@ -6,9 +6,10 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-26T09:50:06-04:00
+// Last Generated: 2011-08-26T10:00:59-04:00
 package com.shopify.api.resources;
 
+import java.util.List;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
@@ -29,9 +30,9 @@ public class MGCustomer extends ShopifyResource {
 	public void setOrdersCount(int _orders_count){this._orders_count = _orders_count;}
 
 	@JsonProperty("addresses")
-	private Address[] _addresses;
-	public Address[] getAddresses(){ return _addresses;}
-	public void setAddresses(Address[] _addresses){this._addresses = _addresses;}
+	private List<Address> _addresses;
+	public List<Address> getAddresses(){ return _addresses;}
+	public void setAddresses(List<Address> _addresses){this._addresses = _addresses;}
 
 	@JsonProperty("tags")
 	private String _tags;

@@ -6,9 +6,10 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-26T09:50:06-04:00
+// Last Generated: 2011-08-26T10:00:59-04:00
 package com.shopify.api.resources;
 
+import java.util.List;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
@@ -39,9 +40,9 @@ public class MGSmartCollection extends ShopifyResource {
 	public void setTitle(String _title){this._title = _title;}
 
 	@JsonProperty("rules")
-	private Rule[] _rules;
-	public Rule[] getRules(){ return _rules;}
-	public void setRules(Rule[] _rules){this._rules = _rules;}
+	private List<Rule> _rules;
+	public List<Rule> getRules(){ return _rules;}
+	public void setRules(List<Rule> _rules){this._rules = _rules;}
 
 	@JsonProperty("sort_order")
 	private String _sort_order;
