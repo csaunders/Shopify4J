@@ -2,6 +2,7 @@ package com.shopify.api.endpoints;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -62,9 +63,9 @@ public abstract class API {
 				--keyLength;
 				String value = queryParameters.get(key);
 				if(value != null) {
-					builder.append(key);
+					builder.append(URLEncoder.encode(key));
 					builder.append("=");
-					builder.append(value);
+					builder.append(URLEncoder.encode(value));
 					if(keyLength > 0) {
 						builder.append("&");
 					}

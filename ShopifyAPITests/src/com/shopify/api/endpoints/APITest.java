@@ -68,7 +68,7 @@ public class APITest extends AndroidTestCase {
 		assertEquals(".json", api.getContentTypeExtension());
 	}
 	
-	public void testConstructAPIURI() {
+	public void testConstructApiUri() {
 		String expected = "http://some-shop.myshopify.com/admin/mock";
 		assertEquals(expected+".json", api.constructURI(null).toString());
 		
@@ -78,8 +78,18 @@ public class APITest extends AndroidTestCase {
 			put("foo", "123");
 			put("bar", "456");
 		}};
-		String expectedUri = api.constructURI(params).toString();
-		assertEquals(expected+".json?bar=456&foo=123", expectedUri);
+		String result = api.constructURI(params).toString();
+		assertEquals(expected+".json?bar=456&foo=123", result);
+	}
+	
+	public void testConstructApiUri_argsNeedUrlEncoding() {
+		String expected = "http://some-shop.myshopify.com/admin/mock.json?email=email%40isdandy.com&this=is+a+space";
+		HashMap<String, String> params = new HashMap<String, String>(){{
+			put("this", "is a space");
+			put("email", "email@isdandy.com");
+		}};
+		String result = api.constructURI(params).toString();
+		assertEquals(expected, result);
 	}
 
 }
