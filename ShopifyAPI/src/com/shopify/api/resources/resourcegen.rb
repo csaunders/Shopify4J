@@ -18,6 +18,8 @@ require 'date'
 
 resources_location = "../../../../../../ShopifyAPITests/assets/fixtures"
 
+@package = "com.shopify.api"
+
 @resources = Dir.entries(resources_location).reject do |name|
   ["..", "."].include? name or
     not File.directory? "#{resources_location}/#{name}" or
@@ -45,6 +47,76 @@ def determine_type(name, value)
   else
     return "String"
   end
+end
+
+def generate_service(className, mainPackage, file)
+  pluralized = className.pluralize;
+  content =<<END
+/**
+*
+*
+**/
+// Generated On: #{DateTime.now.to_s}
+package #{mainPackage}.endpoints;
+
+import org.codegist.crest.annotate.ContextPath;
+import org.codegist.crest.annotate.Destination;
+import org.codegist.crest.annotate.EndPoint;
+import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Path;
+
+import static org.codegist.crest.HttpMethod.POST;
+import static org.codegist.crest.HttpMethod.PUT;
+import static org.codegist.crest.HttpMethod.DELETE;
+import static org.codegist.crest.config.Destination.BODY;
+import static org.codegist.crest.config.Destination.HEADER;
+
+import #{mainPackage}.resources.#{className};
+
+@EndPoint("")
+@ContextPath("/admin/#{pluralized}")
+//@ResponseHandler(ShopifyResponseHandler.class)
+//@Param(name = "Content-type", value = "application/json", dest = HEADER)
+public interface #{pluralized}Service extends BaseShopifyService {
+
+    // GET
+    @Path(".json")
+    #{className}[] get#{pluralized}();
+
+    @Path(".json?{0}")
+    #{className}[] get#{pluralized}(String queryParams);
+
+    @Path("/{0}.json")
+    #{className} get#{className}(int id);
+
+    @Path("/{0}.json?{1}")
+    #{className} get#{className}(int id, String queryParams);
+
+    @Path("/count.json")
+    int getCount();
+
+    @Path("/count.json?{0}")
+    int getCount(String queryParams);
+
+    // POST
+    @Path(".json")
+    @HttpMethod(POST)
+    @Destination(BODY)
+    #{className} create#{className}(#{className} #{className.downcase});
+
+    // PUT
+    @Path("/{0}.json")
+    @HttpMethod(PUT)
+    @Destination(BODY)
+    #{className} update#{className}(int id, #{className} #{className.downcase});
+
+    // DELETE
+    @Path("/{0}.json")
+    @HttpMethod(DELETE)
+    void delete#{className}(int id);
+}
+END
+  file.write(content)
 end
 
 def generate_java(className, superClass, hash, file)
@@ -101,6 +173,11 @@ def generate_resource(name, data)
   unless File.exists? "#{name}.java"
     File.open("#{name}.java", "wb") do |f|
       generate_java(name, gen_file, {}, f)
+    end
+  end
+  unless File.exists? "../endpoints/#{name.pluralize}Service.java"
+    File.open("../endpoints/#{name.pluralize}Service.java", 'wb') do |f|
+      generate_service name, @package, f
     end
   end
 end

@@ -16,6 +16,7 @@ import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
+import static org.codegist.crest.config.Destination.HEADER;
 
 @EndPoint("")
 @ContextPath("/admin/orders")
