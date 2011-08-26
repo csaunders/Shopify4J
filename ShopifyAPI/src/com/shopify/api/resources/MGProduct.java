@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:19:06-04:00
+// Last Generated: 2011-08-25T23:29:48-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -48,11 +48,15 @@ public class MGProduct extends ShopifyResource {
 	public String getTags(){ return _tags;}
 	public void setTags(String _tags){_tags = this._tags;}
 
-	// TODO: images is a hash or array
-	/* [{"position":1,"created_at":"2011-08-15T13:51:05-04:00","product_id":632910392,"updated_at":"2011-08-15T13:51:05-04:00","src":"http://static.shopify.com/s/files/1/6909/3384/products/ipod-nano.png?0","id":850703190}] */
+	@JsonProperty("images")
+	private Image[] _images;
+	public Image[] getImages(){ return _images;}
+	public void setImages(Image[] _images){_images = this._images;}
 
-	// TODO: variants is a hash or array
-	/* [{"position":1,"price":"199.00","created_at":"2011-08-15T13:51:05-04:00","requires_shipping":true,"title":"Pink","compare_at_price":null,"inventory_policy":"continue","updated_at":"2011-08-15T13:51:05-04:00","inventory_quantity":10,"inventory_management":"shopify","id":808950810,"taxable":true,"grams":200,"sku":"IPOD2008PINK","option1":"Pink","fulfillment_service":"manual","option2":null,"option3":null},{"position":2,"price":"199.00","created_at":"2011-08-15T13:51:05-04:00","requires_shipping":true,"title":"Red","compare_at_price":null,"inventory_policy":"continue","updated_at":"2011-08-15T13:51:05-04:00","inventory_quantity":20,"inventory_management":"shopify","id":49148385,"taxable":true,"grams":200,"sku":"IPOD2008RED","option1":"Red","fulfillment_service":"manual","option2":null,"option3":null},{"position":3,"price":"199.00","created_at":"2011-08-15T13:51:05-04:00","requires_shipping":true,"title":"Green","compare_at_price":null,"inventory_policy":"continue","updated_at":"2011-08-15T13:51:05-04:00","inventory_quantity":30,"inventory_management":"shopify","id":39072856,"taxable":true,"grams":200,"sku":"IPOD2008GREEN","option1":"Green","fulfillment_service":"manual","option2":null,"option3":null},{"position":4,"price":"199.00","created_at":"2011-08-15T13:51:05-04:00","requires_shipping":true,"title":"Black","compare_at_price":null,"inventory_policy":"continue","updated_at":"2011-08-15T13:51:05-04:00","inventory_quantity":40,"inventory_management":"shopify","id":457924702,"taxable":true,"grams":200,"sku":"IPOD2008BLACK","option1":"Black","fulfillment_service":"manual","option2":null,"option3":null}] */
+	@JsonProperty("variants")
+	private Variant[] _variants;
+	public Variant[] getVariants(){ return _variants;}
+	public void setVariants(Variant[] _variants){_variants = this._variants;}
 
 	@JsonProperty("published_at")
 	private String _published_at;
@@ -64,7 +68,9 @@ public class MGProduct extends ShopifyResource {
 	public String getVendor(){ return _vendor;}
 	public void setVendor(String _vendor){_vendor = this._vendor;}
 
-	// TODO: options is a hash or array
-	/* [{"name":"Title"}] */
+	@JsonProperty("options")
+	private Option[] _options;
+	public Option[] getOptions(){ return _options;}
+	public void setOptions(Option[] _options){_options = this._options;}
 
 }

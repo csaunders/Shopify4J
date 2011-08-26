@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:19:06-04:00
+// Last Generated: 2011-08-25T23:29:48-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -38,8 +38,10 @@ public class MGTransactions extends ShopifyResource {
 	public String getAuthorization(){ return _authorization;}
 	public void setAuthorization(String _authorization){_authorization = this._authorization;}
 
-	// TODO: receipt is a hash or array
-	/* {"testcase":true,"authorization":"123456"} */
+	@JsonProperty("receipt")
+	private Receipt _receipt;
+	public Receipt getReceipt(){ return _receipt;}
+	public void setReceipt(Receipt _receipt){_receipt = this._receipt;}
 
 	@JsonProperty("status")
 	private String _status;

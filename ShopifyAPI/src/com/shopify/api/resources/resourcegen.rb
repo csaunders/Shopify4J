@@ -18,10 +18,25 @@ require 'date'
 
 resources_location = "../../../../../../ShopifyAPITests/assets/fixtures"
 
-resources = Dir.entries(resources_location).reject{|x| ["..", "."].include? x}
+@resources = Dir.entries(resources_location).reject do |name|
+  ["..", "."].include? name or
+    not File.directory? "#{resources_location}/#{name}" or
+    File.exists? "#{resources_location}/#{name}/skip"
+end
 
-def determine_type(value)
-  if value.class == Fixnum
+@subresources = []
+
+def determine_type(name, value)
+  if value.class == Hash
+    name = name.camelize
+    if not @resources.include?(name) || @subresources.include?(name)
+      @subresources <<= name
+      generate_resource name, value
+    end
+    return name
+  elsif value.class == Array
+    return "#{determine_type(name.singularize, value.first)}[]"
+  elsif value.class == Fixnum
     return "int"
   elsif value.class == Float
     return "float"
@@ -62,41 +77,38 @@ END
   hash.each{|resource_name, value|
     next if ["id", "created_at", "updated_at"].include? resource_name
     function_name = resource_name.camelize
-    if !value.is_a?(Hash) && !value.is_a?(Array)
-      type = determine_type(value)
-      # Prefix all names in case they use reserved keywords in the language
-      file.write "\t@JsonProperty(\"#{resource_name}\")\n"
-      file.write "\tprivate #{type} _#{resource_name};\n"
-      file.write "\tpublic #{type} get#{function_name}(){ return _#{resource_name};}\n"
-      file.write "\tpublic void set#{function_name}(#{type} _#{resource_name}){_#{resource_name} = this._#{resource_name};}\n"
-    else
-      file.write "\t// TODO: #{resource_name} is a hash or array\n"
-      file.write "\t/* #{value.to_json} */\n"
-    end
+    type = determine_type(resource_name, value)
+    # Prefix all names in case they use reserved keywords in the language
+    file.write "\t@JsonProperty(\"#{resource_name}\")\n"
+    file.write "\tprivate #{type} _#{resource_name};\n"
+    file.write "\tpublic #{type} get#{function_name}(){ return _#{resource_name};}\n"
+    file.write "\tpublic void set#{function_name}(#{type} _#{resource_name}){_#{resource_name} = this._#{resource_name};}\n"
     file.write "\n"
   }
   file.write("}")
 end
 
-resources.each do |fixture_name|
-  next unless File.directory? "#{resources_location}/#{fixture_name}"
-  next if File.exists? "#{resources_location}/#{fixture_name}/skip"
+def generate_resource(name, data)
+  gen_file = "MG#{name}"
+  output = File.open("#{gen_file}.java", 'wb')
+  puts "Writing #{name}.java to disk"
+  generate_java(gen_file, "ShopifyResource", data, output)
+  output.flush()
+  output.close()
+  unless File.exists? "#{name}.java"
+    File.open("#{name}.java", "wb") do |f|
+      generate_java(name, gen_file, {}, f)
+    end
+  end
+end
+
+@resources.each do |fixture_name|
   begin
     input = File.open("#{resources_location}/#{fixture_name}/single#{fixture_name}.json", 'rb')
     data = JSON.parse(input.read())
     input.close()
-    gen_file = "MG#{fixture_name}"
-    output = File.open("#{gen_file}.java", 'wb')
-    name = data.keys.first
-    puts "Writing #{fixture_name}.java to disk"
-    generate_java(gen_file, "ShopifyResource", data[name], output)
-    output.flush()
-    output.close()
-    unless File.exists? "#{fixture_name}.java"
-      File.open("#{fixture_name}.java", "wb"){|f|
-        generate_java(fixture_name, gen_file, {}, f)
-      }
-    end
+    data = data[data.keys.first]
+    generate_resource fixture_name, data
   rescue JSON::ParserError => err
     puts "ERROR: Could not write #{fixture_name}.java to disk.  Could the JSON be missing?"
     puts "REASON: #{err}"

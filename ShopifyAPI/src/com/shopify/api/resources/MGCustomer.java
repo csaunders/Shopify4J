@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:19:06-04:00
+// Last Generated: 2011-08-25T23:29:48-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -28,8 +28,10 @@ public class MGCustomer extends ShopifyResource {
 	public int getOrdersCount(){ return _orders_count;}
 	public void setOrdersCount(int _orders_count){_orders_count = this._orders_count;}
 
-	// TODO: addresses is a hash or array
-	/* [{"name":null,"address1":"Chestnut Street 92","city":"Louisville","company":null,"address2":"","zip":"40202","country_code":null,"country":"US","province_code":null,"last_name":null,"phone":"555-625-1199","province":"KY","first_name":null}] */
+	@JsonProperty("addresses")
+	private Address[] _addresses;
+	public Address[] getAddresses(){ return _addresses;}
+	public void setAddresses(Address[] _addresses){_addresses = this._addresses;}
 
 	@JsonProperty("tags")
 	private String _tags;

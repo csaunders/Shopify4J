@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:19:06-04:00
+// Last Generated: 2011-08-25T23:29:48-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -18,8 +18,10 @@ import org.codehaus.jackson.annotate.JsonProperty;
   
 public class MGOrder extends ShopifyResource {
 
-	// TODO: tax_lines is a hash or array
-	/* [{"price":"11.94","title":"State Tax","rate":0.06}] */
+	@JsonProperty("tax_lines")
+	private TaxLine[] _tax_lines;
+	public TaxLine[] getTaxLines(){ return _tax_lines;}
+	public void setTaxLines(TaxLine[] _tax_lines){_tax_lines = this._tax_lines;}
 
 	@JsonProperty("name")
 	private String _name;
@@ -31,8 +33,10 @@ public class MGOrder extends ShopifyResource {
 	public int getNumber(){ return _number;}
 	public void setNumber(int _number){_number = this._number;}
 
-	// TODO: line_items is a hash or array
-	/* [{"name":"IPod Nano - 8gb - green","price":"199.00","product_id":632910392,"quantity":1,"requires_shipping":true,"title":"IPod Nano - 8gb","id":466157049,"grams":200,"sku":"IPOD2008GREEN","fulfillment_status":null,"variant_title":"green","vendor":null,"fulfillment_service":"manual","variant_id":39072856},{"name":"IPod Nano - 8gb - black","price":"199.00","product_id":632910392,"quantity":1,"requires_shipping":true,"title":"IPod Nano - 8gb","id":703073504,"grams":200,"sku":"IPOD2008BLACK","fulfillment_status":null,"variant_title":"black","vendor":null,"fulfillment_service":"manual","variant_id":457924702}] */
+	@JsonProperty("line_items")
+	private LineItem[] _line_items;
+	public LineItem[] getLineItems(){ return _line_items;}
+	public void setLineItems(LineItem[] _line_items){_line_items = this._line_items;}
 
 	@JsonProperty("total_discounts")
 	private String _total_discounts;
@@ -44,8 +48,10 @@ public class MGOrder extends ShopifyResource {
 	public String getBrowserIp(){ return _browser_ip;}
 	public void setBrowserIp(String _browser_ip){_browser_ip = this._browser_ip;}
 
-	// TODO: payment_details is a hash or array
-	/* {"credit_card_number":"XXXX-XXXX-XXXX-4242","credit_card_company":"Visa"} */
+	@JsonProperty("payment_details")
+	private PaymentDetails _payment_details;
+	public PaymentDetails getPaymentDetails(){ return _payment_details;}
+	public void setPaymentDetails(PaymentDetails _payment_details){_payment_details = this._payment_details;}
 
 	@JsonProperty("cancel_reason")
 	private String _cancel_reason;
@@ -77,16 +83,20 @@ public class MGOrder extends ShopifyResource {
 	public boolean getTaxesIncluded(){ return _taxes_included;}
 	public void setTaxesIncluded(boolean _taxes_included){_taxes_included = this._taxes_included;}
 
-	// TODO: shipping_lines is a hash or array
-	/* [{"price":"0.00","code":"Free Shipping","title":"Free Shipping"}] */
+	@JsonProperty("shipping_lines")
+	private ShippingLine[] _shipping_lines;
+	public ShippingLine[] getShippingLines(){ return _shipping_lines;}
+	public void setShippingLines(ShippingLine[] _shipping_lines){_shipping_lines = this._shipping_lines;}
 
 	@JsonProperty("cancelled_at")
 	private String _cancelled_at;
 	public String getCancelledAt(){ return _cancelled_at;}
 	public void setCancelledAt(String _cancelled_at){_cancelled_at = this._cancelled_at;}
 
-	// TODO: shipping_address is a hash or array
-	/* {"name":"Bob Norman","address1":"Chestnut Street 92","city":"Louisville","company":null,"address2":"","latitude":"45.41634","zip":"40202","country_code":"US","country":"United States","province_code":"KY","last_name":"Norman","phone":"555-625-1199","longitude":"-75.6868","province":"Kentucky","first_name":"Bob"} */
+	@JsonProperty("shipping_address")
+	private ShippingAddress _shipping_address;
+	public ShippingAddress getShippingAddress(){ return _shipping_address;}
+	public void setShippingAddress(ShippingAddress _shipping_address){_shipping_address = this._shipping_address;}
 
 	@JsonProperty("referring_site")
 	private String _referring_site;
@@ -113,11 +123,15 @@ public class MGOrder extends ShopifyResource {
 	public String getSubtotalPrice(){ return _subtotal_price;}
 	public void setSubtotalPrice(String _subtotal_price){_subtotal_price = this._subtotal_price;}
 
-	// TODO: billing_address is a hash or array
-	/* {"name":"Bob Norman","address1":"Chestnut Street 92","city":"Louisville","company":null,"address2":"","latitude":"45.41634","zip":"40202","country_code":"US","country":"United States","province_code":"KY","last_name":"Norman","phone":"555-625-1199","longitude":"-75.6868","province":"Kentucky","first_name":"Bob"} */
+	@JsonProperty("billing_address")
+	private BillingAddress _billing_address;
+	public BillingAddress getBillingAddress(){ return _billing_address;}
+	public void setBillingAddress(BillingAddress _billing_address){_billing_address = this._billing_address;}
 
-	// TODO: note_attributes is a hash or array
-	/* [{"name":"colour","value":"green"},{"name":"custom engraving","value":"Happy Birthday"}] */
+	@JsonProperty("note_attributes")
+	private NoteAttribute[] _note_attributes;
+	public NoteAttribute[] getNoteAttributes(){ return _note_attributes;}
+	public void setNoteAttributes(NoteAttribute[] _note_attributes){_note_attributes = this._note_attributes;}
 
 	@JsonProperty("buyer_accepts_marketing")
 	private boolean _buyer_accepts_marketing;
@@ -149,8 +163,10 @@ public class MGOrder extends ShopifyResource {
 	public String getGateway(){ return _gateway;}
 	public void setGateway(String _gateway){_gateway = this._gateway;}
 
-	// TODO: customer is a hash or array
-	/* {"accepts_marketing":false,"orders_count":0,"id":207119551,"tags":"","last_name":"Norman","note":null,"email":"bob.norman@hostmail.com","first_name":"Bob","total_spent":"0.00"} */
+	@JsonProperty("customer")
+	private Customer _customer;
+	public Customer getCustomer(){ return _customer;}
+	public void setCustomer(Customer _customer){_customer = this._customer;}
 
 	@JsonProperty("total_tax")
 	private String _total_tax;

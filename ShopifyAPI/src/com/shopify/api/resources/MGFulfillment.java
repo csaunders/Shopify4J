@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:19:06-04:00
+// Last Generated: 2011-08-25T23:29:48-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -18,8 +18,10 @@ import org.codehaus.jackson.annotate.JsonProperty;
   
 public class MGFulfillment extends ShopifyResource {
 
-	// TODO: line_items is a hash or array
-	/* [{"name":"IPod Nano - 8gb - green","price":"199.00","product_id":632910392,"quantity":1,"requires_shipping":true,"title":"IPod Nano - 8gb","id":466157049,"grams":200,"sku":"IPOD2008GREEN","fulfillment_status":null,"variant_title":"green","vendor":null,"fulfillment_service":"manual","variant_id":39072856}] */
+	@JsonProperty("line_items")
+	private LineItem[] _line_items;
+	public LineItem[] getLineItems(){ return _line_items;}
+	public void setLineItems(LineItem[] _line_items){_line_items = this._line_items;}
 
 	@JsonProperty("tracking_company")
 	private String _tracking_company;
@@ -36,8 +38,10 @@ public class MGFulfillment extends ShopifyResource {
 	public String getTrackingNumber(){ return _tracking_number;}
 	public void setTrackingNumber(String _tracking_number){_tracking_number = this._tracking_number;}
 
-	// TODO: receipt is a hash or array
-	/* {"testcase":true,"authorization":"123456"} */
+	@JsonProperty("receipt")
+	private Receipt _receipt;
+	public Receipt getReceipt(){ return _receipt;}
+	public void setReceipt(Receipt _receipt){_receipt = this._receipt;}
 
 	@JsonProperty("status")
 	private String _status;
