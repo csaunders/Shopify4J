@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,101 +21,101 @@ public class MGShop extends ShopifyResource {
 	@JsonProperty("address1")
 	private String _address1;
 	public String getAddress1(){ return _address1;}
-	public void setAddress1(String _address1){_address1 = this._address1;}
+	public void setAddress1(String _address1){this._address1 = _address1;}
 
 	@JsonProperty("city")
 	private String _city;
 	public String getCity(){ return _city;}
-	public void setCity(String _city){_city = this._city;}
+	public void setCity(String _city){this._city = _city;}
 
 	@JsonProperty("name")
 	private String _name;
 	public String getName(){ return _name;}
-	public void setName(String _name){_name = this._name;}
+	public void setName(String _name){this._name = _name;}
 
 	@JsonProperty("shop_owner")
 	private String _shop_owner;
 	public String getShopOwner(){ return _shop_owner;}
-	public void setShopOwner(String _shop_owner){_shop_owner = this._shop_owner;}
+	public void setShopOwner(String _shop_owner){this._shop_owner = _shop_owner;}
 
 	@JsonProperty("zip")
 	private String _zip;
 	public String getZip(){ return _zip;}
-	public void setZip(String _zip){_zip = this._zip;}
+	public void setZip(String _zip){this._zip = _zip;}
 
 	@JsonProperty("plan_name")
 	private String _plan_name;
 	public String getPlanName(){ return _plan_name;}
-	public void setPlanName(String _plan_name){_plan_name = this._plan_name;}
+	public void setPlanName(String _plan_name){this._plan_name = _plan_name;}
 
 	@JsonProperty("money_format")
 	private String _money_format;
 	public String getMoneyFormat(){ return _money_format;}
-	public void setMoneyFormat(String _money_format){_money_format = this._money_format;}
+	public void setMoneyFormat(String _money_format){this._money_format = _money_format;}
 
 	@JsonProperty("money_with_currency_format")
 	private String _money_with_currency_format;
 	public String getMoneyWithCurrencyFormat(){ return _money_with_currency_format;}
-	public void setMoneyWithCurrencyFormat(String _money_with_currency_format){_money_with_currency_format = this._money_with_currency_format;}
+	public void setMoneyWithCurrencyFormat(String _money_with_currency_format){this._money_with_currency_format = _money_with_currency_format;}
 
 	@JsonProperty("country")
 	private String _country;
 	public String getCountry(){ return _country;}
-	public void setCountry(String _country){_country = this._country;}
+	public void setCountry(String _country){this._country = _country;}
 
 	@JsonProperty("public")
 	private boolean _public;
 	public boolean getPublic(){ return _public;}
-	public void setPublic(boolean _public){_public = this._public;}
+	public void setPublic(boolean _public){this._public = _public;}
 
 	@JsonProperty("taxes_included")
 	private String _taxes_included;
 	public String getTaxesIncluded(){ return _taxes_included;}
-	public void setTaxesIncluded(String _taxes_included){_taxes_included = this._taxes_included;}
+	public void setTaxesIncluded(String _taxes_included){this._taxes_included = _taxes_included;}
 
 	@JsonProperty("domain")
 	private String _domain;
 	public String getDomain(){ return _domain;}
-	public void setDomain(String _domain){_domain = this._domain;}
+	public void setDomain(String _domain){this._domain = _domain;}
 
 	@JsonProperty("timezone")
 	private String _timezone;
 	public String getTimezone(){ return _timezone;}
-	public void setTimezone(String _timezone){_timezone = this._timezone;}
+	public void setTimezone(String _timezone){this._timezone = _timezone;}
 
 	@JsonProperty("tax_shipping")
 	private String _tax_shipping;
 	public String getTaxShipping(){ return _tax_shipping;}
-	public void setTaxShipping(String _tax_shipping){_tax_shipping = this._tax_shipping;}
+	public void setTaxShipping(String _tax_shipping){this._tax_shipping = _tax_shipping;}
 
 	@JsonProperty("phone")
 	private String _phone;
 	public String getPhone(){ return _phone;}
-	public void setPhone(String _phone){_phone = this._phone;}
+	public void setPhone(String _phone){this._phone = _phone;}
 
 	@JsonProperty("currency")
 	private String _currency;
 	public String getCurrency(){ return _currency;}
-	public void setCurrency(String _currency){_currency = this._currency;}
+	public void setCurrency(String _currency){this._currency = _currency;}
 
 	@JsonProperty("province")
 	private String _province;
 	public String getProvince(){ return _province;}
-	public void setProvince(String _province){_province = this._province;}
+	public void setProvince(String _province){this._province = _province;}
 
 	@JsonProperty("source")
 	private String _source;
 	public String getSource(){ return _source;}
-	public void setSource(String _source){_source = this._source;}
+	public void setSource(String _source){this._source = _source;}
 
 	@JsonProperty("myshopify_domain")
 	private String _myshopify_domain;
 	public String getMyshopifyDomain(){ return _myshopify_domain;}
-	public void setMyshopifyDomain(String _myshopify_domain){_myshopify_domain = this._myshopify_domain;}
+	public void setMyshopifyDomain(String _myshopify_domain){this._myshopify_domain = _myshopify_domain;}
 
 	@JsonProperty("email")
 	private String _email;
 	public String getEmail(){ return _email;}
-	public void setEmail(String _email){_email = this._email;}
+	public void setEmail(String _email){this._email = _email;}
 
 }

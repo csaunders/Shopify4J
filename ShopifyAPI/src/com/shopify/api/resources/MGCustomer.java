@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,46 +21,46 @@ public class MGCustomer extends ShopifyResource {
 	@JsonProperty("accepts_marketing")
 	private boolean _accepts_marketing;
 	public boolean getAcceptsMarketing(){ return _accepts_marketing;}
-	public void setAcceptsMarketing(boolean _accepts_marketing){_accepts_marketing = this._accepts_marketing;}
+	public void setAcceptsMarketing(boolean _accepts_marketing){this._accepts_marketing = _accepts_marketing;}
 
 	@JsonProperty("orders_count")
 	private int _orders_count;
 	public int getOrdersCount(){ return _orders_count;}
-	public void setOrdersCount(int _orders_count){_orders_count = this._orders_count;}
+	public void setOrdersCount(int _orders_count){this._orders_count = _orders_count;}
 
 	@JsonProperty("addresses")
 	private Address[] _addresses;
 	public Address[] getAddresses(){ return _addresses;}
-	public void setAddresses(Address[] _addresses){_addresses = this._addresses;}
+	public void setAddresses(Address[] _addresses){this._addresses = _addresses;}
 
 	@JsonProperty("tags")
 	private String _tags;
 	public String getTags(){ return _tags;}
-	public void setTags(String _tags){_tags = this._tags;}
+	public void setTags(String _tags){this._tags = _tags;}
 
 	@JsonProperty("last_name")
 	private String _last_name;
 	public String getLastName(){ return _last_name;}
-	public void setLastName(String _last_name){_last_name = this._last_name;}
+	public void setLastName(String _last_name){this._last_name = _last_name;}
 
 	@JsonProperty("note")
 	private String _note;
 	public String getNote(){ return _note;}
-	public void setNote(String _note){_note = this._note;}
+	public void setNote(String _note){this._note = _note;}
 
 	@JsonProperty("email")
 	private String _email;
 	public String getEmail(){ return _email;}
-	public void setEmail(String _email){_email = this._email;}
+	public void setEmail(String _email){this._email = _email;}
 
 	@JsonProperty("first_name")
 	private String _first_name;
 	public String getFirstName(){ return _first_name;}
-	public void setFirstName(String _first_name){_first_name = this._first_name;}
+	public void setFirstName(String _first_name){this._first_name = _first_name;}
 
 	@JsonProperty("total_spent")
 	private String _total_spent;
 	public String getTotalSpent(){ return _total_spent;}
-	public void setTotalSpent(String _total_spent){_total_spent = this._total_spent;}
+	public void setTotalSpent(String _total_spent){this._total_spent = _total_spent;}
 
 }

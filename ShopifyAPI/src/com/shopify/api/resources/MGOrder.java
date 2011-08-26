@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,166 +21,166 @@ public class MGOrder extends ShopifyResource {
 	@JsonProperty("tax_lines")
 	private TaxLine[] _tax_lines;
 	public TaxLine[] getTaxLines(){ return _tax_lines;}
-	public void setTaxLines(TaxLine[] _tax_lines){_tax_lines = this._tax_lines;}
+	public void setTaxLines(TaxLine[] _tax_lines){this._tax_lines = _tax_lines;}
 
 	@JsonProperty("name")
 	private String _name;
 	public String getName(){ return _name;}
-	public void setName(String _name){_name = this._name;}
+	public void setName(String _name){this._name = _name;}
 
 	@JsonProperty("number")
 	private int _number;
 	public int getNumber(){ return _number;}
-	public void setNumber(int _number){_number = this._number;}
+	public void setNumber(int _number){this._number = _number;}
 
 	@JsonProperty("line_items")
 	private LineItem[] _line_items;
 	public LineItem[] getLineItems(){ return _line_items;}
-	public void setLineItems(LineItem[] _line_items){_line_items = this._line_items;}
+	public void setLineItems(LineItem[] _line_items){this._line_items = _line_items;}
 
 	@JsonProperty("total_discounts")
 	private String _total_discounts;
 	public String getTotalDiscounts(){ return _total_discounts;}
-	public void setTotalDiscounts(String _total_discounts){_total_discounts = this._total_discounts;}
+	public void setTotalDiscounts(String _total_discounts){this._total_discounts = _total_discounts;}
 
 	@JsonProperty("browser_ip")
 	private String _browser_ip;
 	public String getBrowserIp(){ return _browser_ip;}
-	public void setBrowserIp(String _browser_ip){_browser_ip = this._browser_ip;}
+	public void setBrowserIp(String _browser_ip){this._browser_ip = _browser_ip;}
 
 	@JsonProperty("payment_details")
 	private PaymentDetails _payment_details;
 	public PaymentDetails getPaymentDetails(){ return _payment_details;}
-	public void setPaymentDetails(PaymentDetails _payment_details){_payment_details = this._payment_details;}
+	public void setPaymentDetails(PaymentDetails _payment_details){this._payment_details = _payment_details;}
 
 	@JsonProperty("cancel_reason")
 	private String _cancel_reason;
 	public String getCancelReason(){ return _cancel_reason;}
-	public void setCancelReason(String _cancel_reason){_cancel_reason = this._cancel_reason;}
+	public void setCancelReason(String _cancel_reason){this._cancel_reason = _cancel_reason;}
 
 	@JsonProperty("landing_site_ref")
 	private String _landing_site_ref;
 	public String getLandingSiteRef(){ return _landing_site_ref;}
-	public void setLandingSiteRef(String _landing_site_ref){_landing_site_ref = this._landing_site_ref;}
+	public void setLandingSiteRef(String _landing_site_ref){this._landing_site_ref = _landing_site_ref;}
 
 	@JsonProperty("token")
 	private String _token;
 	public String getToken(){ return _token;}
-	public void setToken(String _token){_token = this._token;}
+	public void setToken(String _token){this._token = _token;}
 
 	@JsonProperty("total_price")
 	private String _total_price;
 	public String getTotalPrice(){ return _total_price;}
-	public void setTotalPrice(String _total_price){_total_price = this._total_price;}
+	public void setTotalPrice(String _total_price){this._total_price = _total_price;}
 
 	@JsonProperty("landing_site")
 	private String _landing_site;
 	public String getLandingSite(){ return _landing_site;}
-	public void setLandingSite(String _landing_site){_landing_site = this._landing_site;}
+	public void setLandingSite(String _landing_site){this._landing_site = _landing_site;}
 
 	@JsonProperty("taxes_included")
 	private boolean _taxes_included;
 	public boolean getTaxesIncluded(){ return _taxes_included;}
-	public void setTaxesIncluded(boolean _taxes_included){_taxes_included = this._taxes_included;}
+	public void setTaxesIncluded(boolean _taxes_included){this._taxes_included = _taxes_included;}
 
 	@JsonProperty("shipping_lines")
 	private ShippingLine[] _shipping_lines;
 	public ShippingLine[] getShippingLines(){ return _shipping_lines;}
-	public void setShippingLines(ShippingLine[] _shipping_lines){_shipping_lines = this._shipping_lines;}
+	public void setShippingLines(ShippingLine[] _shipping_lines){this._shipping_lines = _shipping_lines;}
 
 	@JsonProperty("cancelled_at")
 	private String _cancelled_at;
 	public String getCancelledAt(){ return _cancelled_at;}
-	public void setCancelledAt(String _cancelled_at){_cancelled_at = this._cancelled_at;}
+	public void setCancelledAt(String _cancelled_at){this._cancelled_at = _cancelled_at;}
 
 	@JsonProperty("shipping_address")
 	private ShippingAddress _shipping_address;
 	public ShippingAddress getShippingAddress(){ return _shipping_address;}
-	public void setShippingAddress(ShippingAddress _shipping_address){_shipping_address = this._shipping_address;}
+	public void setShippingAddress(ShippingAddress _shipping_address){this._shipping_address = _shipping_address;}
 
 	@JsonProperty("referring_site")
 	private String _referring_site;
 	public String getReferringSite(){ return _referring_site;}
-	public void setReferringSite(String _referring_site){_referring_site = this._referring_site;}
+	public void setReferringSite(String _referring_site){this._referring_site = _referring_site;}
 
 	@JsonProperty("total_line_items_price")
 	private String _total_line_items_price;
 	public String getTotalLineItemsPrice(){ return _total_line_items_price;}
-	public void setTotalLineItemsPrice(String _total_line_items_price){_total_line_items_price = this._total_line_items_price;}
+	public void setTotalLineItemsPrice(String _total_line_items_price){this._total_line_items_price = _total_line_items_price;}
 
 	@JsonProperty("order_number")
 	private int _order_number;
 	public int getOrderNumber(){ return _order_number;}
-	public void setOrderNumber(int _order_number){_order_number = this._order_number;}
+	public void setOrderNumber(int _order_number){this._order_number = _order_number;}
 
 	@JsonProperty("note")
 	private String _note;
 	public String getNote(){ return _note;}
-	public void setNote(String _note){_note = this._note;}
+	public void setNote(String _note){this._note = _note;}
 
 	@JsonProperty("subtotal_price")
 	private String _subtotal_price;
 	public String getSubtotalPrice(){ return _subtotal_price;}
-	public void setSubtotalPrice(String _subtotal_price){_subtotal_price = this._subtotal_price;}
+	public void setSubtotalPrice(String _subtotal_price){this._subtotal_price = _subtotal_price;}
 
 	@JsonProperty("billing_address")
 	private BillingAddress _billing_address;
 	public BillingAddress getBillingAddress(){ return _billing_address;}
-	public void setBillingAddress(BillingAddress _billing_address){_billing_address = this._billing_address;}
+	public void setBillingAddress(BillingAddress _billing_address){this._billing_address = _billing_address;}
 
 	@JsonProperty("note_attributes")
 	private NoteAttribute[] _note_attributes;
 	public NoteAttribute[] getNoteAttributes(){ return _note_attributes;}
-	public void setNoteAttributes(NoteAttribute[] _note_attributes){_note_attributes = this._note_attributes;}
+	public void setNoteAttributes(NoteAttribute[] _note_attributes){this._note_attributes = _note_attributes;}
 
 	@JsonProperty("buyer_accepts_marketing")
 	private boolean _buyer_accepts_marketing;
 	public boolean getBuyerAcceptsMarketing(){ return _buyer_accepts_marketing;}
-	public void setBuyerAcceptsMarketing(boolean _buyer_accepts_marketing){_buyer_accepts_marketing = this._buyer_accepts_marketing;}
+	public void setBuyerAcceptsMarketing(boolean _buyer_accepts_marketing){this._buyer_accepts_marketing = _buyer_accepts_marketing;}
 
 	@JsonProperty("closed_at")
 	private String _closed_at;
 	public String getClosedAt(){ return _closed_at;}
-	public void setClosedAt(String _closed_at){_closed_at = this._closed_at;}
+	public void setClosedAt(String _closed_at){this._closed_at = _closed_at;}
 
 	@JsonProperty("currency")
 	private String _currency;
 	public String getCurrency(){ return _currency;}
-	public void setCurrency(String _currency){_currency = this._currency;}
+	public void setCurrency(String _currency){this._currency = _currency;}
 
 	@JsonProperty("financial_status")
 	private String _financial_status;
 	public String getFinancialStatus(){ return _financial_status;}
-	public void setFinancialStatus(String _financial_status){_financial_status = this._financial_status;}
+	public void setFinancialStatus(String _financial_status){this._financial_status = _financial_status;}
 
 	@JsonProperty("fulfillment_status")
 	private String _fulfillment_status;
 	public String getFulfillmentStatus(){ return _fulfillment_status;}
-	public void setFulfillmentStatus(String _fulfillment_status){_fulfillment_status = this._fulfillment_status;}
+	public void setFulfillmentStatus(String _fulfillment_status){this._fulfillment_status = _fulfillment_status;}
 
 	@JsonProperty("gateway")
 	private String _gateway;
 	public String getGateway(){ return _gateway;}
-	public void setGateway(String _gateway){_gateway = this._gateway;}
+	public void setGateway(String _gateway){this._gateway = _gateway;}
 
 	@JsonProperty("customer")
 	private Customer _customer;
 	public Customer getCustomer(){ return _customer;}
-	public void setCustomer(Customer _customer){_customer = this._customer;}
+	public void setCustomer(Customer _customer){this._customer = _customer;}
 
 	@JsonProperty("total_tax")
 	private String _total_tax;
 	public String getTotalTax(){ return _total_tax;}
-	public void setTotalTax(String _total_tax){_total_tax = this._total_tax;}
+	public void setTotalTax(String _total_tax){this._total_tax = _total_tax;}
 
 	@JsonProperty("email")
 	private String _email;
 	public String getEmail(){ return _email;}
-	public void setEmail(String _email){_email = this._email;}
+	public void setEmail(String _email){this._email = _email;}
 
 	@JsonProperty("total_weight")
 	private int _total_weight;
 	public int getTotalWeight(){ return _total_weight;}
-	public void setTotalWeight(int _total_weight){_total_weight = this._total_weight;}
+	public void setTotalWeight(int _total_weight){this._total_weight = _total_weight;}
 
 }

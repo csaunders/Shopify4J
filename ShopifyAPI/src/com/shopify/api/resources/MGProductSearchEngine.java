@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-26T01:13:43-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,6 +21,6 @@ public class MGProductSearchEngine extends ShopifyResource {
 	@JsonProperty("name")
 	private String _name;
 	public String getName(){ return _name;}
-	public void setName(String _name){_name = this._name;}
+	public void setName(String _name){this._name = _name;}
 
 }

@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,11 +21,11 @@ public class MGRedirect extends ShopifyResource {
 	@JsonProperty("path")
 	private String _path;
 	public String getPath(){ return _path;}
-	public void setPath(String _path){_path = this._path;}
+	public void setPath(String _path){this._path = _path;}
 
 	@JsonProperty("target")
 	private String _target;
 	public String getTarget(){ return _target;}
-	public void setTarget(String _target){_target = this._target;}
+	public void setTarget(String _target){this._target = _target;}
 
 }

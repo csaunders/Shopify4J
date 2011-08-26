@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,26 +21,26 @@ public class MGProvince extends ShopifyResource {
 	@JsonProperty("name")
 	private String _name;
 	public String getName(){ return _name;}
-	public void setName(String _name){_name = this._name;}
+	public void setName(String _name){this._name = _name;}
 
 	@JsonProperty("tax")
 	private float _tax;
 	public float getTax(){ return _tax;}
-	public void setTax(float _tax){_tax = this._tax;}
+	public void setTax(float _tax){this._tax = _tax;}
 
 	@JsonProperty("code")
 	private String _code;
 	public String getCode(){ return _code;}
-	public void setCode(String _code){_code = this._code;}
+	public void setCode(String _code){this._code = _code;}
 
 	@JsonProperty("tax_name")
 	private String _tax_name;
 	public String getTaxName(){ return _tax_name;}
-	public void setTaxName(String _tax_name){_tax_name = this._tax_name;}
+	public void setTaxName(String _tax_name){this._tax_name = _tax_name;}
 
 	@JsonProperty("tax_type")
 	private String _tax_type;
 	public String getTaxType(){ return _tax_type;}
-	public void setTaxType(String _tax_type){_tax_type = this._tax_type;}
+	public void setTaxType(String _tax_type){this._tax_type = _tax_type;}
 
 }

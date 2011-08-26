@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,56 +21,56 @@ public class MGProduct extends ShopifyResource {
 	@JsonProperty("body_html")
 	private String _body_html;
 	public String getBodyHtml(){ return _body_html;}
-	public void setBodyHtml(String _body_html){_body_html = this._body_html;}
+	public void setBodyHtml(String _body_html){this._body_html = _body_html;}
 
 	@JsonProperty("handle")
 	private String _handle;
 	public String getHandle(){ return _handle;}
-	public void setHandle(String _handle){_handle = this._handle;}
+	public void setHandle(String _handle){this._handle = _handle;}
 
 	@JsonProperty("product_type")
 	private String _product_type;
 	public String getProductType(){ return _product_type;}
-	public void setProductType(String _product_type){_product_type = this._product_type;}
+	public void setProductType(String _product_type){this._product_type = _product_type;}
 
 	@JsonProperty("template_suffix")
 	private String _template_suffix;
 	public String getTemplateSuffix(){ return _template_suffix;}
-	public void setTemplateSuffix(String _template_suffix){_template_suffix = this._template_suffix;}
+	public void setTemplateSuffix(String _template_suffix){this._template_suffix = _template_suffix;}
 
 	@JsonProperty("title")
 	private String _title;
 	public String getTitle(){ return _title;}
-	public void setTitle(String _title){_title = this._title;}
+	public void setTitle(String _title){this._title = _title;}
 
 	@JsonProperty("tags")
 	private String _tags;
 	public String getTags(){ return _tags;}
-	public void setTags(String _tags){_tags = this._tags;}
+	public void setTags(String _tags){this._tags = _tags;}
 
 	@JsonProperty("images")
 	private Image[] _images;
 	public Image[] getImages(){ return _images;}
-	public void setImages(Image[] _images){_images = this._images;}
+	public void setImages(Image[] _images){this._images = _images;}
 
 	@JsonProperty("variants")
 	private Variant[] _variants;
 	public Variant[] getVariants(){ return _variants;}
-	public void setVariants(Variant[] _variants){_variants = this._variants;}
+	public void setVariants(Variant[] _variants){this._variants = _variants;}
 
 	@JsonProperty("published_at")
 	private String _published_at;
 	public String getPublishedAt(){ return _published_at;}
-	public void setPublishedAt(String _published_at){_published_at = this._published_at;}
+	public void setPublishedAt(String _published_at){this._published_at = _published_at;}
 
 	@JsonProperty("vendor")
 	private String _vendor;
 	public String getVendor(){ return _vendor;}
-	public void setVendor(String _vendor){_vendor = this._vendor;}
+	public void setVendor(String _vendor){this._vendor = _vendor;}
 
 	@JsonProperty("options")
 	private Option[] _options;
 	public Option[] getOptions(){ return _options;}
-	public void setOptions(Option[] _options){_options = this._options;}
+	public void setOptions(Option[] _options){this._options = _options;}
 
 }

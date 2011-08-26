@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,26 +21,26 @@ public class MGMetafield extends ShopifyResource {
 	@JsonProperty("namespace")
 	private String _namespace;
 	public String getNamespace(){ return _namespace;}
-	public void setNamespace(String _namespace){_namespace = this._namespace;}
+	public void setNamespace(String _namespace){this._namespace = _namespace;}
 
 	@JsonProperty("value")
 	private String _value;
 	public String getValue(){ return _value;}
-	public void setValue(String _value){_value = this._value;}
+	public void setValue(String _value){this._value = _value;}
 
 	@JsonProperty("description")
 	private String _description;
 	public String getDescription(){ return _description;}
-	public void setDescription(String _description){_description = this._description;}
+	public void setDescription(String _description){this._description = _description;}
 
 	@JsonProperty("key")
 	private String _key;
 	public String getKey(){ return _key;}
-	public void setKey(String _key){_key = this._key;}
+	public void setKey(String _key){this._key = _key;}
 
 	@JsonProperty("value_type")
 	private String _value_type;
 	public String getValueType(){ return _value_type;}
-	public void setValueType(String _value_type){_value_type = this._value_type;}
+	public void setValueType(String _value_type){this._value_type = _value_type;}
 
 }

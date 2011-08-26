@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,26 +21,26 @@ public class MGEvent extends ShopifyResource {
 	@JsonProperty("verb")
 	private String _verb;
 	public String getVerb(){ return _verb;}
-	public void setVerb(String _verb){_verb = this._verb;}
+	public void setVerb(String _verb){this._verb = _verb;}
 
 	@JsonProperty("body")
 	private String _body;
 	public String getBody(){ return _body;}
-	public void setBody(String _body){_body = this._body;}
+	public void setBody(String _body){this._body = _body;}
 
 	@JsonProperty("subject_id")
 	private int _subject_id;
 	public int getSubjectId(){ return _subject_id;}
-	public void setSubjectId(int _subject_id){_subject_id = this._subject_id;}
+	public void setSubjectId(int _subject_id){this._subject_id = _subject_id;}
 
 	@JsonProperty("subject_type")
 	private String _subject_type;
 	public String getSubjectType(){ return _subject_type;}
-	public void setSubjectType(String _subject_type){_subject_type = this._subject_type;}
+	public void setSubjectType(String _subject_type){this._subject_type = _subject_type;}
 
 	@JsonProperty("message")
 	private String _message;
 	public String getMessage(){ return _message;}
-	public void setMessage(String _message){_message = this._message;}
+	public void setMessage(String _message){this._message = _message;}
 
 }

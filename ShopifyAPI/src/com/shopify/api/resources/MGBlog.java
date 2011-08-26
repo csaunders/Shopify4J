@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,31 +21,31 @@ public class MGBlog extends ShopifyResource {
 	@JsonProperty("handle")
 	private String _handle;
 	public String getHandle(){ return _handle;}
-	public void setHandle(String _handle){_handle = this._handle;}
+	public void setHandle(String _handle){this._handle = _handle;}
 
 	@JsonProperty("template_suffix")
 	private String _template_suffix;
 	public String getTemplateSuffix(){ return _template_suffix;}
-	public void setTemplateSuffix(String _template_suffix){_template_suffix = this._template_suffix;}
+	public void setTemplateSuffix(String _template_suffix){this._template_suffix = _template_suffix;}
 
 	@JsonProperty("title")
 	private String _title;
 	public String getTitle(){ return _title;}
-	public void setTitle(String _title){_title = this._title;}
+	public void setTitle(String _title){this._title = _title;}
 
 	@JsonProperty("feedburner_location")
 	private String _feedburner_location;
 	public String getFeedburnerLocation(){ return _feedburner_location;}
-	public void setFeedburnerLocation(String _feedburner_location){_feedburner_location = this._feedburner_location;}
+	public void setFeedburnerLocation(String _feedburner_location){this._feedburner_location = _feedburner_location;}
 
 	@JsonProperty("feedburner")
 	private String _feedburner;
 	public String getFeedburner(){ return _feedburner;}
-	public void setFeedburner(String _feedburner){_feedburner = this._feedburner;}
+	public void setFeedburner(String _feedburner){this._feedburner = _feedburner;}
 
 	@JsonProperty("commentable")
 	private String _commentable;
 	public String getCommentable(){ return _commentable;}
-	public void setCommentable(String _commentable){_commentable = this._commentable;}
+	public void setCommentable(String _commentable){this._commentable = _commentable;}
 
 }

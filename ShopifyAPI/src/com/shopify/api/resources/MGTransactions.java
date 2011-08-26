@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,31 +21,31 @@ public class MGTransactions extends ShopifyResource {
 	@JsonProperty("kind")
 	private String _kind;
 	public String getKind(){ return _kind;}
-	public void setKind(String _kind){_kind = this._kind;}
+	public void setKind(String _kind){this._kind = _kind;}
 
 	@JsonProperty("order_id")
 	private int _order_id;
 	public int getOrderId(){ return _order_id;}
-	public void setOrderId(int _order_id){_order_id = this._order_id;}
+	public void setOrderId(int _order_id){this._order_id = _order_id;}
 
 	@JsonProperty("amount")
 	private String _amount;
 	public String getAmount(){ return _amount;}
-	public void setAmount(String _amount){_amount = this._amount;}
+	public void setAmount(String _amount){this._amount = _amount;}
 
 	@JsonProperty("authorization")
 	private String _authorization;
 	public String getAuthorization(){ return _authorization;}
-	public void setAuthorization(String _authorization){_authorization = this._authorization;}
+	public void setAuthorization(String _authorization){this._authorization = _authorization;}
 
 	@JsonProperty("receipt")
 	private Receipt _receipt;
 	public Receipt getReceipt(){ return _receipt;}
-	public void setReceipt(Receipt _receipt){_receipt = this._receipt;}
+	public void setReceipt(Receipt _receipt){this._receipt = _receipt;}
 
 	@JsonProperty("status")
 	private String _status;
 	public String getStatus(){ return _status;}
-	public void setStatus(String _status){_status = this._status;}
+	public void setStatus(String _status){this._status = _status;}
 
 }

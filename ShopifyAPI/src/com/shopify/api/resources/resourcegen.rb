@@ -82,7 +82,7 @@ END
     file.write "\t@JsonProperty(\"#{resource_name}\")\n"
     file.write "\tprivate #{type} _#{resource_name};\n"
     file.write "\tpublic #{type} get#{function_name}(){ return _#{resource_name};}\n"
-    file.write "\tpublic void set#{function_name}(#{type} _#{resource_name}){_#{resource_name} = this._#{resource_name};}\n"
+    file.write "\tpublic void set#{function_name}(#{type} _#{resource_name}){this._#{resource_name} = _#{resource_name};}\n"
     file.write "\n"
   }
   file.write("}")

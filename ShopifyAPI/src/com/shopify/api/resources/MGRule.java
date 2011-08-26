@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T23:29:48-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,16 +21,16 @@ public class MGRule extends ShopifyResource {
 	@JsonProperty("column")
 	private String _column;
 	public String getColumn(){ return _column;}
-	public void setColumn(String _column){_column = this._column;}
+	public void setColumn(String _column){this._column = _column;}
 
 	@JsonProperty("relation")
 	private String _relation;
 	public String getRelation(){ return _relation;}
-	public void setRelation(String _relation){_relation = this._relation;}
+	public void setRelation(String _relation){this._relation = _relation;}
 
 	@JsonProperty("condition")
 	private String _condition;
 	public String getCondition(){ return _condition;}
-	public void setCondition(String _condition){_condition = this._condition;}
+	public void setCondition(String _condition){this._condition = _condition;}
 
 }

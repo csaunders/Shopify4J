@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-26T01:13:43-04:00
+// Last Generated: 2011-08-26T09:50:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,41 +21,41 @@ public class MGArticle extends ShopifyResource {
 	@JsonProperty("body_html")
 	private String _body_html;
 	public String getBodyHtml(){ return _body_html;}
-	public void setBodyHtml(String _body_html){_body_html = this._body_html;}
+	public void setBodyHtml(String _body_html){this._body_html = _body_html;}
 
 	@JsonProperty("author")
 	private String _author;
 	public String getAuthor(){ return _author;}
-	public void setAuthor(String _author){_author = this._author;}
+	public void setAuthor(String _author){this._author = _author;}
 
 	@JsonProperty("title")
 	private String _title;
 	public String getTitle(){ return _title;}
-	public void setTitle(String _title){_title = this._title;}
+	public void setTitle(String _title){this._title = _title;}
 
 	@JsonProperty("blog_id")
 	private int _blog_id;
 	public int getBlogId(){ return _blog_id;}
-	public void setBlogId(int _blog_id){_blog_id = this._blog_id;}
+	public void setBlogId(int _blog_id){this._blog_id = _blog_id;}
 
 	@JsonProperty("summary_html")
 	private String _summary_html;
 	public String getSummaryHtml(){ return _summary_html;}
-	public void setSummaryHtml(String _summary_html){_summary_html = this._summary_html;}
+	public void setSummaryHtml(String _summary_html){this._summary_html = _summary_html;}
 
 	@JsonProperty("tags")
 	private String _tags;
 	public String getTags(){ return _tags;}
-	public void setTags(String _tags){_tags = this._tags;}
+	public void setTags(String _tags){this._tags = _tags;}
 
 	@JsonProperty("user_id")
 	private int _user_id;
 	public int getUserId(){ return _user_id;}
-	public void setUserId(int _user_id){_user_id = this._user_id;}
+	public void setUserId(int _user_id){this._user_id = _user_id;}
 
 	@JsonProperty("published_at")
 	private String _published_at;
 	public String getPublishedAt(){ return _published_at;}
-	public void setPublishedAt(String _published_at){_published_at = this._published_at;}
+	public void setPublishedAt(String _published_at){this._published_at = _published_at;}
 
 }
