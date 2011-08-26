@@ -1,29 +1,26 @@
 package com.shopify.api.resources;
 
-import java.util.List;
+import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import android.test.InstrumentationTestCase;
 
-import com.shopify.api.resources.json.ShopifyRequestWriter;
-import com.shopify.api.resources.json.ShopifyResponseReader;
 import com.shopify.assets.AssetLoader;
 
 public class ArticleTest extends InstrumentationTestCase {
-	private ShopifyResponseReader reader;
-	private ShopifyRequestWriter writer;
+	private ObjectMapper mapper;
 	
 	public void setUp() throws Exception {
 		super.setUp();
 		AssetLoader.instrumentation = getInstrumentation();
-		reader = new ShopifyResponseReader();
-		writer = new ShopifyRequestWriter();
-		
+		mapper = new ObjectMapper();
 	}
 	
 	public void testLoadingSingleAsset() throws Exception {
 		String articleJson = AssetLoader.loadAsset("fixtures/Article/article.json");
-		
-		Article result = reader.read(articleJson, Article.class).get(0);
+
+		JsonNode node = mapper.readValue(articleJson, JsonNode.class);
+		Article result = mapper.readValue(node.iterator().next(), Article.class);
 		{
 			assertEquals("2008-07-31T20:00:00-04:00", result.getCreated_at());
 			assertEquals("<p>Do <em>you</em> have an <strong>IPod</strong> yet?</p>", result.getBody_html());
@@ -42,9 +39,10 @@ public class ArticleTest extends InstrumentationTestCase {
 	public void testLoadingSeveralAssets() throws Exception {
 		String articlesJson = AssetLoader.loadAsset("fixtures/Article/articles.json");
 		
-		List<Article> articles = reader.read(articlesJson, Article.class);
+		JsonNode node = mapper.readValue(articlesJson, JsonNode.class);
+		Article[] articles = mapper.readValue(node.iterator().next(), Article[].class);
 		
-		assertEquals(2, articles.size());
+		assertEquals(2, articles.length);
 		
 		for(Article a : articles) {
 			switch(a.getId()) {
