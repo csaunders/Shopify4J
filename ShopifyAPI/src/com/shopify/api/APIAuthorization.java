@@ -90,6 +90,10 @@ public class APIAuthorization {
 		return authEndpoint;
 	}
 	
+	public HttpClient getAuthorizedClient() {
+		return getAuthorizedClient(credential.getShopName()+".myshopify.com", 443);
+	}
+	
 	public HttpClient getAuthorizedClient(String hostName, int port) {
 		DefaultHttpClient client = new DefaultHttpClient();
 		
