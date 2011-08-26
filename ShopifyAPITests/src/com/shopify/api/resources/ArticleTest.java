@@ -23,16 +23,16 @@ public class ArticleTest extends InstrumentationTestCase {
 		Article result = mapper.readValue(node.iterator().next(), Article.class);
 		{
 			assertEquals("2008-07-31T20:00:00-04:00", result.getCreated_at());
-			assertEquals("<p>Do <em>you</em> have an <strong>IPod</strong> yet?</p>", result.getBody_html());
+			assertEquals("<p>Do <em>you</em> have an <strong>IPod</strong> yet?</p>", result.getBodyHtml());
 			assertEquals("get on the train now", result.getTitle());
 			assertEquals("Dennis", result.getAuthor());
 			assertEquals("2008-07-31T20:00:00-04:00", result.getUpdated_at());
-			assertEquals(null, result.getSummary_html());
-			assertEquals(241253187, result.getBlog_id());
+			assertEquals(null, result.getSummaryHtml());
+			assertEquals(241253187, result.getBlogId());
 			assertEquals("Announcing", result.getTags());
 			assertEquals(134645308, result.getId());
-			assertEquals(799407056, result.getUser_id());
-			assertEquals("2008-07-31T20:00:00-04:00", result.getPublished_at());
+			assertEquals(799407056, result.getUserId());
+			assertEquals("2008-07-31T20:00:00-04:00", result.getPublishedAt());
 		}
 	}
 	

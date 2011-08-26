@@ -1,4 +1,4 @@
-// Last Generated: 2011-08-26T01:13:43-04:00
+// Last Generated: 2011-08-26T01:08:43-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -8,6 +8,6 @@ import org.codehaus.jackson.annotate.JsonProperty;
 * fixtures found from the Shopify API Documentation
 */
   
-public class Article extends MGArticle {
+public class ProductSearchEngine extends MGProductSearchEngine {
 
 }
