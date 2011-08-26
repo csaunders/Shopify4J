@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T16:56:47-04:00
+// Last Generated: 2011-08-25T23:19:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,76 +21,76 @@ public class MGProductVariant extends ShopifyResource {
 	@JsonProperty("position")
 	private int _position;
 	public int getPosition(){ return _position;}
-	public void setPosition(int newposition){_position = newposition;}
+	public void setPosition(int _position){_position = this._position;}
 
 	@JsonProperty("price")
 	private String _price;
 	public String getPrice(){ return _price;}
-	public void setPrice(String newprice){_price = newprice;}
+	public void setPrice(String _price){_price = this._price;}
 
 	@JsonProperty("requires_shipping")
 	private boolean _requires_shipping;
-	public boolean getRequires_shipping(){ return _requires_shipping;}
-	public void setRequires_shipping(boolean newrequires_shipping){_requires_shipping = newrequires_shipping;}
+	public boolean getRequiresShipping(){ return _requires_shipping;}
+	public void setRequiresShipping(boolean _requires_shipping){_requires_shipping = this._requires_shipping;}
 
 	@JsonProperty("title")
 	private String _title;
 	public String getTitle(){ return _title;}
-	public void setTitle(String newtitle){_title = newtitle;}
+	public void setTitle(String _title){_title = this._title;}
 
 	@JsonProperty("compare_at_price")
 	private String _compare_at_price;
-	public String getCompare_at_price(){ return _compare_at_price;}
-	public void setCompare_at_price(String newcompare_at_price){_compare_at_price = newcompare_at_price;}
+	public String getCompareAtPrice(){ return _compare_at_price;}
+	public void setCompareAtPrice(String _compare_at_price){_compare_at_price = this._compare_at_price;}
 
 	@JsonProperty("inventory_policy")
 	private String _inventory_policy;
-	public String getInventory_policy(){ return _inventory_policy;}
-	public void setInventory_policy(String newinventory_policy){_inventory_policy = newinventory_policy;}
+	public String getInventoryPolicy(){ return _inventory_policy;}
+	public void setInventoryPolicy(String _inventory_policy){_inventory_policy = this._inventory_policy;}
 
 	@JsonProperty("inventory_quantity")
 	private int _inventory_quantity;
-	public int getInventory_quantity(){ return _inventory_quantity;}
-	public void setInventory_quantity(int newinventory_quantity){_inventory_quantity = newinventory_quantity;}
+	public int getInventoryQuantity(){ return _inventory_quantity;}
+	public void setInventoryQuantity(int _inventory_quantity){_inventory_quantity = this._inventory_quantity;}
 
 	@JsonProperty("inventory_management")
 	private String _inventory_management;
-	public String getInventory_management(){ return _inventory_management;}
-	public void setInventory_management(String newinventory_management){_inventory_management = newinventory_management;}
+	public String getInventoryManagement(){ return _inventory_management;}
+	public void setInventoryManagement(String _inventory_management){_inventory_management = this._inventory_management;}
 
 	@JsonProperty("taxable")
 	private boolean _taxable;
 	public boolean getTaxable(){ return _taxable;}
-	public void setTaxable(boolean newtaxable){_taxable = newtaxable;}
+	public void setTaxable(boolean _taxable){_taxable = this._taxable;}
 
 	@JsonProperty("grams")
 	private int _grams;
 	public int getGrams(){ return _grams;}
-	public void setGrams(int newgrams){_grams = newgrams;}
+	public void setGrams(int _grams){_grams = this._grams;}
 
 	@JsonProperty("sku")
 	private String _sku;
 	public String getSku(){ return _sku;}
-	public void setSku(String newsku){_sku = newsku;}
+	public void setSku(String _sku){_sku = this._sku;}
 
 	@JsonProperty("option1")
 	private String _option1;
 	public String getOption1(){ return _option1;}
-	public void setOption1(String newoption1){_option1 = newoption1;}
+	public void setOption1(String _option1){_option1 = this._option1;}
 
 	@JsonProperty("fulfillment_service")
 	private String _fulfillment_service;
-	public String getFulfillment_service(){ return _fulfillment_service;}
-	public void setFulfillment_service(String newfulfillment_service){_fulfillment_service = newfulfillment_service;}
+	public String getFulfillmentService(){ return _fulfillment_service;}
+	public void setFulfillmentService(String _fulfillment_service){_fulfillment_service = this._fulfillment_service;}
 
 	@JsonProperty("option2")
 	private String _option2;
 	public String getOption2(){ return _option2;}
-	public void setOption2(String newoption2){_option2 = newoption2;}
+	public void setOption2(String _option2){_option2 = this._option2;}
 
 	@JsonProperty("option3")
 	private String _option3;
 	public String getOption3(){ return _option3;}
-	public void setOption3(String newoption3){_option3 = newoption3;}
+	public void setOption3(String _option3){_option3 = this._option3;}
 
 }

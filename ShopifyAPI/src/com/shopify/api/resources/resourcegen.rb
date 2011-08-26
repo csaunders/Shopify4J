@@ -12,6 +12,7 @@ and not completely hose all of our custom model code.
 =end
 
 require 'rubygems'
+require 'active_support/all'
 require 'json'
 require 'date'
 
@@ -60,14 +61,14 @@ END
   file.write(header)
   hash.each{|resource_name, value|
     next if ["id", "created_at", "updated_at"].include? resource_name
-    function_name = resource_name.capitalize
+    function_name = resource_name.camelize
     if !value.is_a?(Hash) && !value.is_a?(Array)
       type = determine_type(value)
       # Prefix all names in case they use reserved keywords in the language
       file.write "\t@JsonProperty(\"#{resource_name}\")\n"
       file.write "\tprivate #{type} _#{resource_name};\n"
       file.write "\tpublic #{type} get#{function_name}(){ return _#{resource_name};}\n"
-      file.write "\tpublic void set#{function_name}(#{type} new#{resource_name}){_#{resource_name} = new#{resource_name};}\n"
+      file.write "\tpublic void set#{function_name}(#{type} _#{resource_name}){_#{resource_name} = this._#{resource_name};}\n"
     else
       file.write "\t// TODO: #{resource_name} is a hash or array\n"
       file.write "\t/* #{value.to_json} */\n"

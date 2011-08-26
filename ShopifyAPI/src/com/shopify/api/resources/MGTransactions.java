@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T16:56:47-04:00
+// Last Generated: 2011-08-25T23:19:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -21,22 +21,22 @@ public class MGTransactions extends ShopifyResource {
 	@JsonProperty("kind")
 	private String _kind;
 	public String getKind(){ return _kind;}
-	public void setKind(String newkind){_kind = newkind;}
+	public void setKind(String _kind){_kind = this._kind;}
 
 	@JsonProperty("order_id")
 	private int _order_id;
-	public int getOrder_id(){ return _order_id;}
-	public void setOrder_id(int neworder_id){_order_id = neworder_id;}
+	public int getOrderId(){ return _order_id;}
+	public void setOrderId(int _order_id){_order_id = this._order_id;}
 
 	@JsonProperty("amount")
 	private String _amount;
 	public String getAmount(){ return _amount;}
-	public void setAmount(String newamount){_amount = newamount;}
+	public void setAmount(String _amount){_amount = this._amount;}
 
 	@JsonProperty("authorization")
 	private String _authorization;
 	public String getAuthorization(){ return _authorization;}
-	public void setAuthorization(String newauthorization){_authorization = newauthorization;}
+	public void setAuthorization(String _authorization){_authorization = this._authorization;}
 
 	// TODO: receipt is a hash or array
 	/* {"testcase":true,"authorization":"123456"} */
@@ -44,6 +44,6 @@ public class MGTransactions extends ShopifyResource {
 	@JsonProperty("status")
 	private String _status;
 	public String getStatus(){ return _status;}
-	public void setStatus(String newstatus){_status = newstatus;}
+	public void setStatus(String _status){_status = this._status;}
 
 }

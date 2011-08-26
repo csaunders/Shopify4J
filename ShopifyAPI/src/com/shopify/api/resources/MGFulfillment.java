@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T16:56:47-04:00
+// Last Generated: 2011-08-25T23:19:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -19,22 +19,22 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGFulfillment extends ShopifyResource {
 
 	// TODO: line_items is a hash or array
-	/* [{"price":"199.00","name":"IPod Nano - 8gb - green","title":"IPod Nano - 8gb","requires_shipping":true,"quantity":1,"product_id":632910392,"id":466157049,"grams":200,"sku":"IPOD2008GREEN","vendor":null,"variant_title":"green","fulfillment_status":null,"fulfillment_service":"manual","variant_id":39072856}] */
+	/* [{"name":"IPod Nano - 8gb - green","price":"199.00","product_id":632910392,"quantity":1,"requires_shipping":true,"title":"IPod Nano - 8gb","id":466157049,"grams":200,"sku":"IPOD2008GREEN","fulfillment_status":null,"variant_title":"green","vendor":null,"fulfillment_service":"manual","variant_id":39072856}] */
 
 	@JsonProperty("tracking_company")
 	private String _tracking_company;
-	public String getTracking_company(){ return _tracking_company;}
-	public void setTracking_company(String newtracking_company){_tracking_company = newtracking_company;}
+	public String getTrackingCompany(){ return _tracking_company;}
+	public void setTrackingCompany(String _tracking_company){_tracking_company = this._tracking_company;}
 
 	@JsonProperty("order_id")
 	private int _order_id;
-	public int getOrder_id(){ return _order_id;}
-	public void setOrder_id(int neworder_id){_order_id = neworder_id;}
+	public int getOrderId(){ return _order_id;}
+	public void setOrderId(int _order_id){_order_id = this._order_id;}
 
 	@JsonProperty("tracking_number")
 	private String _tracking_number;
-	public String getTracking_number(){ return _tracking_number;}
-	public void setTracking_number(String newtracking_number){_tracking_number = newtracking_number;}
+	public String getTrackingNumber(){ return _tracking_number;}
+	public void setTrackingNumber(String _tracking_number){_tracking_number = this._tracking_number;}
 
 	// TODO: receipt is a hash or array
 	/* {"testcase":true,"authorization":"123456"} */
@@ -42,6 +42,6 @@ public class MGFulfillment extends ShopifyResource {
 	@JsonProperty("status")
 	private String _status;
 	public String getStatus(){ return _status;}
-	public void setStatus(String newstatus){_status = newstatus;}
+	public void setStatus(String _status){_status = this._status;}
 
 }

@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T16:56:47-04:00
+// Last Generated: 2011-08-25T23:19:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -20,49 +20,49 @@ public class MGProduct extends ShopifyResource {
 
 	@JsonProperty("body_html")
 	private String _body_html;
-	public String getBody_html(){ return _body_html;}
-	public void setBody_html(String newbody_html){_body_html = newbody_html;}
+	public String getBodyHtml(){ return _body_html;}
+	public void setBodyHtml(String _body_html){_body_html = this._body_html;}
 
 	@JsonProperty("handle")
 	private String _handle;
 	public String getHandle(){ return _handle;}
-	public void setHandle(String newhandle){_handle = newhandle;}
+	public void setHandle(String _handle){_handle = this._handle;}
 
 	@JsonProperty("product_type")
 	private String _product_type;
-	public String getProduct_type(){ return _product_type;}
-	public void setProduct_type(String newproduct_type){_product_type = newproduct_type;}
+	public String getProductType(){ return _product_type;}
+	public void setProductType(String _product_type){_product_type = this._product_type;}
 
 	@JsonProperty("template_suffix")
 	private String _template_suffix;
-	public String getTemplate_suffix(){ return _template_suffix;}
-	public void setTemplate_suffix(String newtemplate_suffix){_template_suffix = newtemplate_suffix;}
+	public String getTemplateSuffix(){ return _template_suffix;}
+	public void setTemplateSuffix(String _template_suffix){_template_suffix = this._template_suffix;}
 
 	@JsonProperty("title")
 	private String _title;
 	public String getTitle(){ return _title;}
-	public void setTitle(String newtitle){_title = newtitle;}
+	public void setTitle(String _title){_title = this._title;}
 
 	@JsonProperty("tags")
 	private String _tags;
 	public String getTags(){ return _tags;}
-	public void setTags(String newtags){_tags = newtags;}
+	public void setTags(String _tags){_tags = this._tags;}
 
 	// TODO: images is a hash or array
 	/* [{"position":1,"created_at":"2011-08-15T13:51:05-04:00","product_id":632910392,"updated_at":"2011-08-15T13:51:05-04:00","src":"http://static.shopify.com/s/files/1/6909/3384/products/ipod-nano.png?0","id":850703190}] */
 
 	// TODO: variants is a hash or array
-	/* [{"price":"199.00","position":1,"created_at":"2011-08-15T13:51:05-04:00","title":"Pink","requires_shipping":true,"inventory_quantity":10,"updated_at":"2011-08-15T13:51:05-04:00","inventory_policy":"continue","compare_at_price":null,"inventory_management":"shopify","taxable":true,"id":808950810,"grams":200,"sku":"IPOD2008PINK","option1":"Pink","option2":null,"fulfillment_service":"manual","option3":null},{"price":"199.00","position":2,"created_at":"2011-08-15T13:51:05-04:00","title":"Red","requires_shipping":true,"inventory_quantity":20,"updated_at":"2011-08-15T13:51:05-04:00","inventory_policy":"continue","compare_at_price":null,"inventory_management":"shopify","taxable":true,"id":49148385,"grams":200,"sku":"IPOD2008RED","option1":"Red","option2":null,"fulfillment_service":"manual","option3":null},{"price":"199.00","position":3,"created_at":"2011-08-15T13:51:05-04:00","title":"Green","requires_shipping":true,"inventory_quantity":30,"updated_at":"2011-08-15T13:51:05-04:00","inventory_policy":"continue","compare_at_price":null,"inventory_management":"shopify","taxable":true,"id":39072856,"grams":200,"sku":"IPOD2008GREEN","option1":"Green","option2":null,"fulfillment_service":"manual","option3":null},{"price":"199.00","position":4,"created_at":"2011-08-15T13:51:05-04:00","title":"Black","requires_shipping":true,"inventory_quantity":40,"updated_at":"2011-08-15T13:51:05-04:00","inventory_policy":"continue","compare_at_price":null,"inventory_management":"shopify","taxable":true,"id":457924702,"grams":200,"sku":"IPOD2008BLACK","option1":"Black","option2":null,"fulfillment_service":"manual","option3":null}] */
+	/* [{"position":1,"price":"199.00","created_at":"2011-08-15T13:51:05-04:00","requires_shipping":true,"title":"Pink","compare_at_price":null,"inventory_policy":"continue","updated_at":"2011-08-15T13:51:05-04:00","inventory_quantity":10,"inventory_management":"shopify","id":808950810,"taxable":true,"grams":200,"sku":"IPOD2008PINK","option1":"Pink","fulfillment_service":"manual","option2":null,"option3":null},{"position":2,"price":"199.00","created_at":"2011-08-15T13:51:05-04:00","requires_shipping":true,"title":"Red","compare_at_price":null,"inventory_policy":"continue","updated_at":"2011-08-15T13:51:05-04:00","inventory_quantity":20,"inventory_management":"shopify","id":49148385,"taxable":true,"grams":200,"sku":"IPOD2008RED","option1":"Red","fulfillment_service":"manual","option2":null,"option3":null},{"position":3,"price":"199.00","created_at":"2011-08-15T13:51:05-04:00","requires_shipping":true,"title":"Green","compare_at_price":null,"inventory_policy":"continue","updated_at":"2011-08-15T13:51:05-04:00","inventory_quantity":30,"inventory_management":"shopify","id":39072856,"taxable":true,"grams":200,"sku":"IPOD2008GREEN","option1":"Green","fulfillment_service":"manual","option2":null,"option3":null},{"position":4,"price":"199.00","created_at":"2011-08-15T13:51:05-04:00","requires_shipping":true,"title":"Black","compare_at_price":null,"inventory_policy":"continue","updated_at":"2011-08-15T13:51:05-04:00","inventory_quantity":40,"inventory_management":"shopify","id":457924702,"taxable":true,"grams":200,"sku":"IPOD2008BLACK","option1":"Black","fulfillment_service":"manual","option2":null,"option3":null}] */
 
 	@JsonProperty("published_at")
 	private String _published_at;
-	public String getPublished_at(){ return _published_at;}
-	public void setPublished_at(String newpublished_at){_published_at = newpublished_at;}
+	public String getPublishedAt(){ return _published_at;}
+	public void setPublishedAt(String _published_at){_published_at = this._published_at;}
 
 	@JsonProperty("vendor")
 	private String _vendor;
 	public String getVendor(){ return _vendor;}
-	public void setVendor(String newvendor){_vendor = newvendor;}
+	public void setVendor(String _vendor){_vendor = this._vendor;}
 
 	// TODO: options is a hash or array
 	/* [{"name":"Title"}] */

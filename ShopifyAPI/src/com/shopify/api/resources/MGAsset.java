@@ -6,7 +6,7 @@
 * It has been machine generated from fixtures and your changes will be
 * lost if anything new needs to be added to the API. 
 **/
-// Last Generated: 2011-08-25T16:56:47-04:00
+// Last Generated: 2011-08-25T23:19:06-04:00
 package com.shopify.api.resources;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -20,17 +20,17 @@ public class MGAsset extends ShopifyResource {
 
 	@JsonProperty("public_url")
 	private String _public_url;
-	public String getPublic_url(){ return _public_url;}
-	public void setPublic_url(String newpublic_url){_public_url = newpublic_url;}
+	public String getPublicUrl(){ return _public_url;}
+	public void setPublicUrl(String _public_url){_public_url = this._public_url;}
 
 	@JsonProperty("value")
 	private String _value;
 	public String getValue(){ return _value;}
-	public void setValue(String newvalue){_value = newvalue;}
+	public void setValue(String _value){_value = this._value;}
 
 	@JsonProperty("key")
 	private String _key;
 	public String getKey(){ return _key;}
-	public void setKey(String newkey){_key = newkey;}
+	public void setKey(String _key){_key = this._key;}
 
 }
