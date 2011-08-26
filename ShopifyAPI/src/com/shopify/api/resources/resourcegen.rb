@@ -79,7 +79,7 @@ end
 
 resources.each do |fixture_name|
   next unless File.directory? "#{resources_location}/#{fixture_name}"
-  next if Dir.entries("#{resources_location}/#{fixture_name}").include? "skip"
+  next if File.exists? "#{resources_location}/#{fixture_name}/skip"
   begin
     input = File.open("#{resources_location}/#{fixture_name}/single#{fixture_name}.json", 'rb')
     data = JSON.parse(input.read())
