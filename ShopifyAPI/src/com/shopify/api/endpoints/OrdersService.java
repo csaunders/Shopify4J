@@ -1,12 +1,15 @@
 package com.shopify.api.endpoints;
 
-import java.io.InputStream;
+import java.util.List;
 
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
 import org.codegist.crest.annotate.Path;
+import org.codegist.crest.annotate.ResponseHandler;
+
+import com.shopify.api.resources.Order;
 
 import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
@@ -15,46 +18,46 @@ import static org.codegist.crest.config.Destination.BODY;
 
 @EndPoint("")
 @ContextPath("/admin/orders")
+@ResponseHandler(ShopifyResponseHandler.class)
 public interface OrdersService extends BaseShopifyService{
 	
 	@Path(".json")
-	InputStream getOrders();
+	List<Order> getOrders();
 	
 	@Path(".json?{0}")
-	InputStream getOrders(String queryParams);
+	List<Order> getOrders(String queryParams);
 	
 	@Path("/{0}.json")
-	InputStream getOrder(int id);
+	Order getOrder(int id);
 	
 	@Path("/{0}.json?{1}")
-	InputStream getOrder(int id, String fieldsParams);
+	Order getOrder(int id, String fieldsParams);
 	
 	@Path ("/count.json")
-	InputStream getCount();
+	int getCount();
 	
 	@Path("/count.json?{0}")
-	InputStream getCount(String queryParams);
+	int getCount(String queryParams);
 	
 	@Path("/{0}/close.json")
 	@HttpMethod(POST)
-	InputStream closeOrder(int id);
+	Order closeOrder(int id);
 	
 	@Path("/{0}/open.json")
 	@HttpMethod(POST)
-	InputStream openOrder(int id);
+	Order openOrder(int id);
 	
 	@Path("/{0}/cancel.json")
 	@HttpMethod(POST)
-	InputStream cancelOrder(int id);
+	Order cancelOrder(int id);
 	
 	@Path("/{0}/cancel.json?{1}")
 	@HttpMethod(POST)
-	InputStream cancelOrder(int id, String queryParams);
+	Order cancelOrder(int id, String queryParams);
 	
 	@Path("/{0}.json")
 	@HttpMethod(PUT)
-	@Destination(BODY)
-	InputStream updateOrder(int id, String orderJson);
+	Order updateOrder(int id, @Destination(BODY) String orderJson);
 	
 	@Path("/{0}.json")
 	@HttpMethod(DELETE)

@@ -1,7 +1,12 @@
 package com.shopify.api.resources;
 
+import java.io.IOException;
+import java.io.StringWriter;
+
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
+
+import com.shopify.api.resources.json.ShopifyRequestWriter;
 
 public abstract class ShopifyResource {
 	@JsonProperty("id")
@@ -42,4 +47,14 @@ public abstract class ShopifyResource {
 		return this.getClass().getSimpleName().toLowerCase();
 	}
 	
+	public String toString() {
+		StringWriter w = new StringWriter();
+		ShopifyRequestWriter writer = new ShopifyRequestWriter();
+		try {
+			writer.write(w, this);
+		} catch (IOException e) {
+			return super.toString();
+		}
+		return w.toString();
+	}
 }

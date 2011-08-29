@@ -1,12 +1,6 @@
 package com.shopify.api.endpoints;
 
-import java.util.HashMap;
 import java.util.List;
-
-import org.apache.http.auth.AuthScope;
-import org.apache.http.auth.UsernamePasswordCredentials;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.codegist.crest.HttpClientRestService;
 
 import android.test.InstrumentationTestCase;
 
@@ -20,20 +14,6 @@ public class OrdersAPIEndpointTest extends InstrumentationTestCase {
 	ShopifyClient client;
 	OrdersService orderAPI;
 	
-	public HttpClientRestService generateHttpClient() {
-		DefaultHttpClient c = new DefaultHttpClient();
-		AuthScope auth = new AuthScope("justmops.myshopify.com", 443);
-		UsernamePasswordCredentials creds = new UsernamePasswordCredentials("25df4169edc6c05553f086391e89a106", "0988dfc35e3f317cf749f152d5849395");
-		c.getCredentialsProvider().setCredentials(auth, creds);
-		return new HttpClientRestService(c);
-	}
-	
-	public HashMap<String, String> generateConfig(){
-		HashMap<String, String> conf = new HashMap<String, String>();
-		conf.put("service.end-point", "https://justmops.myshopify.com:443");
-		return conf;
-	}
-	
 	public void setUp() throws Exception {
 		super.setUp();
 		client = new ShopifyClient(creds);
@@ -41,15 +21,12 @@ public class OrdersAPIEndpointTest extends InstrumentationTestCase {
 	}
 	
 	public void testFetchingAllOrders() throws Exception {
-		List<Order> orders = client.handleResponse(orderAPI.getOrders(), Order.class);
+		List<Order> orders = orderAPI.getOrders();
 		assertEquals(1, orders.size());
 	}
 	
 	public void testFetchingOneOrder() throws Exception {
-		List<Order> orders = client.handleResponse(orderAPI.getOrder(66222702), Order.class);
-		assertEquals(1, orders.size());
-		
-		Order o = orders.get(0);
+		Order o = orderAPI.getOrder(66222702);
 		{
 			assertEquals("#1002", o.getName());
 			assertEquals(null, o.getBrowserIp());

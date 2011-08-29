@@ -30,7 +30,7 @@ public class ShopifyClient {
 		this.creds = creds;
 		this.auth = new APIAuthorization(this.creds);
 		crestClient = new CRestBuilder()
-						.returnRawResults()
+						.expectsJson()
 						.setRestService(constructClientRestService())
 						.overrideDefaultConfigWith(constructConfiguration())
 						.build();
