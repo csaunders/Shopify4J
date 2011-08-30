@@ -22,11 +22,11 @@ public class ArticleTest extends InstrumentationTestCase {
 		JsonNode node = mapper.readValue(articleJson, JsonNode.class);
 		Article result = mapper.readValue(node.iterator().next(), Article.class);
 		{
-			assertEquals("2008-07-31T20:00:00-04:00", result.getCreated_at());
+			assertEquals("2008-07-31T20:00:00-04:00", result.getCreatedAt());
 			assertEquals("<p>Do <em>you</em> have an <strong>IPod</strong> yet?</p>", result.getBodyHtml());
 			assertEquals("get on the train now", result.getTitle());
 			assertEquals("Dennis", result.getAuthor());
-			assertEquals("2008-07-31T20:00:00-04:00", result.getUpdated_at());
+			assertEquals("2008-07-31T20:00:00-04:00", result.getUpdatedAt());
 			assertEquals(null, result.getSummaryHtml());
 			assertEquals(241253187, result.getBlogId());
 			assertEquals("Announcing", result.getTags());

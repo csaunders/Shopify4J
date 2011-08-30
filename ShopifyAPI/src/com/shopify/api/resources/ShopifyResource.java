@@ -1,23 +1,16 @@
 package com.shopify.api.resources;
 
-import java.io.IOException;
-import java.io.StringWriter;
-
-import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
-
-import com.shopify.api.resources.json.ShopifyRequestWriter;
 
 public abstract class ShopifyResource {
 	@JsonProperty("id")
 	private int id = -1;
-	
+
 	@JsonProperty("created_at")
 	private String created_at;
-	
+
 	@JsonProperty("updated_at")
 	private String updated_at;
 
@@ -29,27 +22,31 @@ public abstract class ShopifyResource {
 		this.id = id;
 	}
 
-	public String getCreated_at() {
+	@JsonProperty("created_at")
+	public String getCreatedAt() {
 		return created_at;
 	}
 
-	public void setCreated_at(String createdAt) {
+	@JsonProperty("created_at")
+	public void setCreatedAt(String createdAt) {
 		created_at = createdAt;
 	}
 
-	public String getUpdated_at() {
+	@JsonProperty("updated_at")
+	public String getUpdatedAt() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(String updatedAt) {
+	@JsonProperty("updated_at")
+	public void setUpdatedAt(String updatedAt) {
 		updated_at = updatedAt;
 	}
-	
+
 	@JsonIgnore
 	public String getFieldName() {
 		return this.getClass().getSimpleName().toLowerCase();
 	}
-	
+
 	public String toString() {
 		ObjectMapper mapper = new ObjectMapper();
 		try {

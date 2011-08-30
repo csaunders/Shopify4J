@@ -22,11 +22,11 @@ public class CommentTest extends InstrumentationTestCase {
 		
 		Comment result = reader.read(commentJson, Comment.class).get(0);
 		{
-			assertEquals("2011-08-15T13:51:05-04:00", result.getCreated_at());
+			assertEquals("2011-08-15T13:51:05-04:00", result.getCreatedAt());
 			assertEquals("<p>Hi author, I really <em>like</em> what you're doing there.</p>", result.getBodyHtml());
 			assertEquals("Hi author, I really _like_ what you're doing there.", result.getBody());
 			assertEquals("Soleone", result.getAuthor());
-			assertEquals("2011-08-15T13:51:05-04:00", result.getUpdated_at());
+			assertEquals("2011-08-15T13:51:05-04:00", result.getUpdatedAt());
 			assertEquals(241253187, result.getBlogId());
 			assertEquals(118373535, result.getId());
 			assertEquals(134645308, result.getArticleId());
