@@ -3,8 +3,11 @@ package com.shopify.api.resources;
 import java.io.IOException;
 import java.io.StringWriter;
 
+import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import com.shopify.api.resources.json.ShopifyRequestWriter;
 
@@ -48,13 +51,11 @@ public abstract class ShopifyResource {
 	}
 	
 	public String toString() {
-		StringWriter w = new StringWriter();
-		ShopifyRequestWriter writer = new ShopifyRequestWriter();
+		ObjectMapper mapper = new ObjectMapper();
 		try {
-			writer.write(w, this);
-		} catch (IOException e) {
+			return mapper.writeValueAsString(this);
+		} catch (Exception e) {
 			return super.toString();
 		}
-		return w.toString();
 	}
 }

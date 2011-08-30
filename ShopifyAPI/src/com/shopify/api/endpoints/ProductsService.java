@@ -6,6 +6,7 @@ import com.shopify.api.resources.Product;
 
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.EndPoint;
+import org.codegist.crest.annotate.Name;
 import org.codegist.crest.annotate.Path;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.HttpMethod;
@@ -41,13 +42,13 @@ public interface ProductsService extends BaseShopifyService {
 
 	@HttpMethod(POST)
 	@Path("/products.json")
-	Product createProduct(@Destination(BODY) Product product);
+	Product createProduct(@Destination(BODY) @Name("product") Product product);
 
 	@HttpMethod(PUT)
 	@Path("/products/{0}.json")
-	Product updateProduct(int id, @Destination(BODY) Product product);
+	Product updateProduct(int id, @Destination(BODY) @Name("product") Product product);
 
 	@HttpMethod(DELETE)
 	@Path("/products/{0}.json")
-	void updateProduct(int id);
+	void deleteProduct(int id);
 }

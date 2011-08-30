@@ -6,6 +6,7 @@ import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Name;
 import org.codegist.crest.annotate.Path;
 import org.codegist.crest.annotate.ResponseHandler;
 
@@ -57,7 +58,7 @@ public interface OrdersService extends BaseShopifyService{
 	
 	@Path("/{0}.json")
 	@HttpMethod(PUT)
-	Order updateOrder(int id, @Destination(BODY) String orderJson);
+	Order updateOrder(int id, @Destination(BODY) @Name("order") String orderJson);
 	
 	@Path("/{0}.json")
 	@HttpMethod(DELETE)

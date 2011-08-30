@@ -1,5 +1,6 @@
 package com.shopify.api;
 
+import java.io.IOException;
 import java.net.URI;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -7,10 +8,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
+import org.apache.http.HttpException;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HttpContext;
 
 import com.apache.commons.codec.binary.Hex;
 import com.shopify.api.endpoints.AuthAPI;
@@ -96,7 +101,18 @@ public class APIAuthorization {
 	
 	public HttpClient getAuthorizedClient(String hostName, int port) {
 		DefaultHttpClient client = new DefaultHttpClient();
-		
+		client.addRequestInterceptor(new ShopifyRequestInterceptor());
+		client.addResponseInterceptor(new HttpResponseInterceptor() {
+			public void process(HttpResponse response, HttpContext context)
+					throws HttpException, IOException {
+				/* CRest 1.0.1 throws an exception is the status code != 200,
+				 * even on 201 Created, just translate all 200 responses to error code 200. */
+				int code = response.getStatusLine().getStatusCode();
+				if (code >= 200 && code < 300) {
+					response.setStatusCode(200);
+				}
+			}
+		});
 		AuthScope scope = new AuthScope(hostName, port);
 		UsernamePasswordCredentials creds = new UsernamePasswordCredentials(credential.getApiKey(), credential.getPassword());
 		client.getCredentialsProvider().setCredentials(scope, creds);

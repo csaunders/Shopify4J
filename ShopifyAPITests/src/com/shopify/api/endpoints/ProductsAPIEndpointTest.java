@@ -7,7 +7,9 @@ import android.test.InstrumentationTestCase;
 
 import com.shopify.api.client.ShopifyClient;
 import com.shopify.api.credentials.Credential;
+import com.shopify.api.resources.Option;
 import com.shopify.api.resources.Product;
+import com.shopify.api.resources.Variant;
 
 public class ProductsAPIEndpointTest extends InstrumentationTestCase {
 	Credential creds = new Credential("25df4169edc6c05553f086391e89a106", "", "justmops", "0988dfc35e3f317cf749f152d5849395");
@@ -22,20 +24,30 @@ public class ProductsAPIEndpointTest extends InstrumentationTestCase {
 	
 	public void testMakingAPICalls() throws Exception {
 		int count = productAPI.getProductCount();
-		assertEquals(3, count);
+
+		Product newProduct = new Product();
+		newProduct.setProductType("Snowboard");
+		newProduct.setBodyHtml("<strong>Good snowboard!</strong>");
+		newProduct.setTitle("Burton Custom FreeArrayList<E>");
+		newProduct.setVariants(new ArrayList<Variant>());
+		newProduct.setVendor("appl");
+		newProduct.setOptions(new ArrayList<Option>());
+
+		Product createdProduct = productAPI.createProduct(newProduct);
+		assertEquals("Snowboard", createdProduct.getProductType());
+
+		int product_id = createdProduct.getId();
+		Product foundProduct = productAPI.getProduct(product_id);
+		assertEquals("Snowboard", foundProduct.getProductType());
+
+		assertEquals(count + 1, productAPI.getProductCount());
 
 		List<Product> response = productAPI.getProducts();
-		assertEquals(3, response.size());
+		assertEquals(count + 1, response.size());
 
-//		Product newProduct = new Product();
-//		newProduct.setProductType("Snowboard");
-//		newProduct.setBodyHtml("<strong>Good snowboard!</strong>");
-//		newProduct.setTitle("Burton Custom FreeArrayList<E>");
-//		newProduct.setVariants(new ArrayList<Variant>());
-//		newProduct.setVendor("appl");
-//		newProduct.setOptions(new ArrayList<Option>());
-//
-//		Product createdProduct = productAPI.createProduct(newProduct.toString());
+		productAPI.deleteProduct(product_id);
+
+		assertEquals(count, productAPI.getProductCount());
 	}
 	
 

@@ -18,12 +18,17 @@ public class ShopifyResponseHandler implements ResponseHandler {
 	}
 	
 	public Object handle(ResponseContext context) throws CRestException {
+		if (context.getExpectedType() == void.class) {
+			return null;
+		}
 		try {
 			InputStream stream = context.getResponse().asStream();
 			JsonNode node = mapper.readValue(stream, JsonNode.class);
 			return mapper.readValue(node.iterator().next(), context.getExpectedType());
 		} catch (Exception e) {
-			throw new CRestException(e.getMessage());
+			CRestException newexc = new CRestException(e.getMessage(), e.getCause());
+			newexc.setStackTrace(e.getStackTrace());
+			throw newexc;
 		} finally {
 			context.getResponse().close();
 		}
