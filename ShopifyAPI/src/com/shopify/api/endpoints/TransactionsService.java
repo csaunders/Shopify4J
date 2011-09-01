@@ -2,35 +2,37 @@
 *
 *
 **/
-// Generated On: 2011-08-26T15:12:08-04:00
+// Generated On: 2011-09-01T02:13:38-04:00
 package com.shopify.api.endpoints;
+
+import java.util.List;
 
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Name;
+import org.codegist.crest.annotate.ResponseHandler;
 import org.codegist.crest.annotate.Path;
 
 import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
-import static org.codegist.crest.config.Destination.HEADER;
 
 import com.shopify.api.resources.Transactions;
 
 @EndPoint("")
-@ContextPath("/admin/Transactions")
-//@ResponseHandler(ShopifyResponseHandler.class)
-//@Param(name = "Content-type", value = "application/json", dest = HEADER)
+@ContextPath("/admin/transactions")
+@ResponseHandler(ShopifyResponseHandler.class)
 public interface TransactionsService extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    Transactions[] getTransactions();
+    List<Transactions> getTransactions();
 
     @Path(".json?{0}")
-    Transactions[] getTransactions(String queryParams);
+    List<Transactions> getTransactions(String queryParams);
 
     @Path("/{0}.json")
     Transactions getTransactions(int id);
@@ -47,14 +49,12 @@ public interface TransactionsService extends BaseShopifyService {
     // POST
     @Path(".json")
     @HttpMethod(POST)
-    @Destination(BODY)
-    Transactions createTransactions(Transactions transactions);
+    Transactions createTransactions(@Destination(BODY) @Name("transactions") Transactions transactions);
 
     // PUT
     @Path("/{0}.json")
     @HttpMethod(PUT)
-    @Destination(BODY)
-    Transactions updateTransactions(int id, Transactions transactions);
+    Transactions updateTransactions(int id, @Destination(BODY) @Name("transactions") Transactions transactions);
 
     // DELETE
     @Path("/{0}.json")

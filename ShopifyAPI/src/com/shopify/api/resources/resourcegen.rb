@@ -59,32 +59,34 @@ def generate_service(className, mainPackage, file)
 // Generated On: #{DateTime.now.to_s}
 package #{mainPackage}.endpoints;
 
+import java.util.List;
+
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Name;
+import org.codegist.crest.annotate.ResponseHandler;
 import org.codegist.crest.annotate.Path;
 
 import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
-import static org.codegist.crest.config.Destination.HEADER;
 
 import #{mainPackage}.resources.#{className};
 
 @EndPoint("")
-@ContextPath("/admin/#{pluralized}")
-//@ResponseHandler(ShopifyResponseHandler.class)
-//@Param(name = "Content-type", value = "application/json", dest = HEADER)
+@ContextPath("/admin/#{pluralized.camelize(:lower)}")
+@ResponseHandler(ShopifyResponseHandler.class)
 public interface #{pluralized}Service extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    #{className}[] get#{pluralized}();
+    List<#{className}> get#{pluralized}();
 
     @Path(".json?{0}")
-    #{className}[] get#{pluralized}(String queryParams);
+    List<#{className}> get#{pluralized}(String queryParams);
 
     @Path("/{0}.json")
     #{className} get#{className}(int id);
@@ -101,14 +103,12 @@ public interface #{pluralized}Service extends BaseShopifyService {
     // POST
     @Path(".json")
     @HttpMethod(POST)
-    @Destination(BODY)
-    #{className} create#{className}(#{className} #{className.downcase});
+    #{className} create#{className}(@Destination(BODY) @Name("#{className.underscore}") #{className} #{className.downcase});
 
     // PUT
     @Path("/{0}.json")
     @HttpMethod(PUT)
-    @Destination(BODY)
-    #{className} update#{className}(int id, #{className} #{className.downcase});
+    #{className} update#{className}(int id, @Destination(BODY) @Name("#{className.underscore}") #{className} #{className.downcase});
 
     // DELETE
     @Path("/{0}.json")
@@ -166,7 +166,7 @@ end
 def generate_resource(name, data)
   gen_file = "MG#{name}"
   output = File.open("#{gen_file}.java", 'wb')
-  puts "Writing #{name}.java to disk"
+  puts "Writing #{gen_file}.java to disk"
   generate_java(gen_file, "ShopifyResource", data, output)
   output.flush()
   output.close()

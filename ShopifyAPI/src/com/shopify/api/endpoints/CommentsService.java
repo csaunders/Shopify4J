@@ -2,35 +2,37 @@
 *
 *
 **/
-// Generated On: 2011-08-26T15:12:08-04:00
+// Generated On: 2011-09-01T02:13:38-04:00
 package com.shopify.api.endpoints;
+
+import java.util.List;
 
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Name;
+import org.codegist.crest.annotate.ResponseHandler;
 import org.codegist.crest.annotate.Path;
 
 import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
-import static org.codegist.crest.config.Destination.HEADER;
 
 import com.shopify.api.resources.Comment;
 
 @EndPoint("")
-@ContextPath("/admin/Comments")
-//@ResponseHandler(ShopifyResponseHandler.class)
-//@Param(name = "Content-type", value = "application/json", dest = HEADER)
+@ContextPath("/admin/comments")
+@ResponseHandler(ShopifyResponseHandler.class)
 public interface CommentsService extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    Comment[] getComments();
+    List<Comment> getComments();
 
     @Path(".json?{0}")
-    Comment[] getComments(String queryParams);
+    List<Comment> getComments(String queryParams);
 
     @Path("/{0}.json")
     Comment getComment(int id);
@@ -47,14 +49,12 @@ public interface CommentsService extends BaseShopifyService {
     // POST
     @Path(".json")
     @HttpMethod(POST)
-    @Destination(BODY)
-    Comment createComment(Comment comment);
+    Comment createComment(@Destination(BODY) @Name("comment") Comment comment);
 
     // PUT
     @Path("/{0}.json")
     @HttpMethod(PUT)
-    @Destination(BODY)
-    Comment updateComment(int id, Comment comment);
+    Comment updateComment(int id, @Destination(BODY) @Name("comment") Comment comment);
 
     // DELETE
     @Path("/{0}.json")

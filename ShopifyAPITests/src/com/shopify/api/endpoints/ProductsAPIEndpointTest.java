@@ -23,31 +23,32 @@ public class ProductsAPIEndpointTest extends InstrumentationTestCase {
 	}
 	
 	public void testMakingAPICalls() throws Exception {
-		int count = productAPI.getProductCount();
+		int count = productAPI.getCount();
 
 		Product newProduct = new Product();
 		newProduct.setProductType("Snowboard");
 		newProduct.setBodyHtml("<strong>Good snowboard!</strong>");
-		newProduct.setTitle("Burton Custom FreeArrayList<E>");
+		newProduct.setTitle("Burton Custom Free");
 		newProduct.setVariants(new ArrayList<Variant>());
 		newProduct.setVendor("appl");
 		newProduct.setOptions(new ArrayList<Option>());
 
 		Product createdProduct = productAPI.createProduct(newProduct);
 		assertEquals("Snowboard", createdProduct.getProductType());
-
+		assertEquals("Burton Custom Free", createdProduct.getTitle());
+		
 		int product_id = createdProduct.getId();
 		Product foundProduct = productAPI.getProduct(product_id);
 		assertEquals("Snowboard", foundProduct.getProductType());
 
-		assertEquals(count + 1, productAPI.getProductCount());
+		assertEquals(count + 1, productAPI.getCount());
 
 		List<Product> response = productAPI.getProducts();
 		assertEquals(count + 1, response.size());
 
 		productAPI.deleteProduct(product_id);
 
-		assertEquals(count, productAPI.getProductCount());
+		assertEquals(count, productAPI.getCount());
 	}
 	
 

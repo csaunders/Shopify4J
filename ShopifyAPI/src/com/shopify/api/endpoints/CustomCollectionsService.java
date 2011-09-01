@@ -2,35 +2,37 @@
 *
 *
 **/
-// Generated On: 2011-08-26T15:12:08-04:00
+// Generated On: 2011-09-01T02:13:38-04:00
 package com.shopify.api.endpoints;
+
+import java.util.List;
 
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Name;
+import org.codegist.crest.annotate.ResponseHandler;
 import org.codegist.crest.annotate.Path;
 
 import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
-import static org.codegist.crest.config.Destination.HEADER;
 
 import com.shopify.api.resources.CustomCollection;
 
 @EndPoint("")
-@ContextPath("/admin/CustomCollections")
-//@ResponseHandler(ShopifyResponseHandler.class)
-//@Param(name = "Content-type", value = "application/json", dest = HEADER)
+@ContextPath("/admin/customCollections")
+@ResponseHandler(ShopifyResponseHandler.class)
 public interface CustomCollectionsService extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    CustomCollection[] getCustomCollections();
+    List<CustomCollection> getCustomCollections();
 
     @Path(".json?{0}")
-    CustomCollection[] getCustomCollections(String queryParams);
+    List<CustomCollection> getCustomCollections(String queryParams);
 
     @Path("/{0}.json")
     CustomCollection getCustomCollection(int id);
@@ -47,14 +49,12 @@ public interface CustomCollectionsService extends BaseShopifyService {
     // POST
     @Path(".json")
     @HttpMethod(POST)
-    @Destination(BODY)
-    CustomCollection createCustomCollection(CustomCollection customcollection);
+    CustomCollection createCustomCollection(@Destination(BODY) @Name("custom_collection") CustomCollection customcollection);
 
     // PUT
     @Path("/{0}.json")
     @HttpMethod(PUT)
-    @Destination(BODY)
-    CustomCollection updateCustomCollection(int id, CustomCollection customcollection);
+    CustomCollection updateCustomCollection(int id, @Destination(BODY) @Name("custom_collection") CustomCollection customcollection);
 
     // DELETE
     @Path("/{0}.json")

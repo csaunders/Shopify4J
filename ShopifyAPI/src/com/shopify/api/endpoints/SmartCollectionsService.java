@@ -2,35 +2,37 @@
 *
 *
 **/
-// Generated On: 2011-08-26T15:12:08-04:00
+// Generated On: 2011-09-01T02:13:38-04:00
 package com.shopify.api.endpoints;
+
+import java.util.List;
 
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Name;
+import org.codegist.crest.annotate.ResponseHandler;
 import org.codegist.crest.annotate.Path;
 
 import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
-import static org.codegist.crest.config.Destination.HEADER;
 
 import com.shopify.api.resources.SmartCollection;
 
 @EndPoint("")
-@ContextPath("/admin/SmartCollections")
-//@ResponseHandler(ShopifyResponseHandler.class)
-//@Param(name = "Content-type", value = "application/json", dest = HEADER)
+@ContextPath("/admin/smartCollections")
+@ResponseHandler(ShopifyResponseHandler.class)
 public interface SmartCollectionsService extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    SmartCollection[] getSmartCollections();
+    List<SmartCollection> getSmartCollections();
 
     @Path(".json?{0}")
-    SmartCollection[] getSmartCollections(String queryParams);
+    List<SmartCollection> getSmartCollections(String queryParams);
 
     @Path("/{0}.json")
     SmartCollection getSmartCollection(int id);
@@ -47,14 +49,12 @@ public interface SmartCollectionsService extends BaseShopifyService {
     // POST
     @Path(".json")
     @HttpMethod(POST)
-    @Destination(BODY)
-    SmartCollection createSmartCollection(SmartCollection smartcollection);
+    SmartCollection createSmartCollection(@Destination(BODY) @Name("smart_collection") SmartCollection smartcollection);
 
     // PUT
     @Path("/{0}.json")
     @HttpMethod(PUT)
-    @Destination(BODY)
-    SmartCollection updateSmartCollection(int id, SmartCollection smartcollection);
+    SmartCollection updateSmartCollection(int id, @Destination(BODY) @Name("smart_collection") SmartCollection smartcollection);
 
     // DELETE
     @Path("/{0}.json")

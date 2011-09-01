@@ -2,35 +2,37 @@
 *
 *
 **/
-// Generated On: 2011-08-26T15:12:08-04:00
+// Generated On: 2011-09-01T02:13:38-04:00
 package com.shopify.api.endpoints;
+
+import java.util.List;
 
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Name;
+import org.codegist.crest.annotate.ResponseHandler;
 import org.codegist.crest.annotate.Path;
 
 import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
-import static org.codegist.crest.config.Destination.HEADER;
 
 import com.shopify.api.resources.ProductImage;
 
 @EndPoint("")
-@ContextPath("/admin/ProductImages")
-//@ResponseHandler(ShopifyResponseHandler.class)
-//@Param(name = "Content-type", value = "application/json", dest = HEADER)
+@ContextPath("/admin/productImages")
+@ResponseHandler(ShopifyResponseHandler.class)
 public interface ProductImagesService extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    ProductImage[] getProductImages();
+    List<ProductImage> getProductImages();
 
     @Path(".json?{0}")
-    ProductImage[] getProductImages(String queryParams);
+    List<ProductImage> getProductImages(String queryParams);
 
     @Path("/{0}.json")
     ProductImage getProductImage(int id);
@@ -47,14 +49,12 @@ public interface ProductImagesService extends BaseShopifyService {
     // POST
     @Path(".json")
     @HttpMethod(POST)
-    @Destination(BODY)
-    ProductImage createProductImage(ProductImage productimage);
+    ProductImage createProductImage(@Destination(BODY) @Name("product_image") ProductImage productimage);
 
     // PUT
     @Path("/{0}.json")
     @HttpMethod(PUT)
-    @Destination(BODY)
-    ProductImage updateProductImage(int id, ProductImage productimage);
+    ProductImage updateProductImage(int id, @Destination(BODY) @Name("product_image") ProductImage productimage);
 
     // DELETE
     @Path("/{0}.json")

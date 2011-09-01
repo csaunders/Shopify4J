@@ -2,35 +2,37 @@
 *
 *
 **/
-// Generated On: 2011-08-26T15:12:08-04:00
+// Generated On: 2011-09-01T02:13:38-04:00
 package com.shopify.api.endpoints;
+
+import java.util.List;
 
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Name;
+import org.codegist.crest.annotate.ResponseHandler;
 import org.codegist.crest.annotate.Path;
 
 import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
-import static org.codegist.crest.config.Destination.HEADER;
 
 import com.shopify.api.resources.Theme;
 
 @EndPoint("")
-@ContextPath("/admin/Themes")
-//@ResponseHandler(ShopifyResponseHandler.class)
-//@Param(name = "Content-type", value = "application/json", dest = HEADER)
+@ContextPath("/admin/themes")
+@ResponseHandler(ShopifyResponseHandler.class)
 public interface ThemesService extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    Theme[] getThemes();
+    List<Theme> getThemes();
 
     @Path(".json?{0}")
-    Theme[] getThemes(String queryParams);
+    List<Theme> getThemes(String queryParams);
 
     @Path("/{0}.json")
     Theme getTheme(int id);
@@ -47,14 +49,12 @@ public interface ThemesService extends BaseShopifyService {
     // POST
     @Path(".json")
     @HttpMethod(POST)
-    @Destination(BODY)
-    Theme createTheme(Theme theme);
+    Theme createTheme(@Destination(BODY) @Name("theme") Theme theme);
 
     // PUT
     @Path("/{0}.json")
     @HttpMethod(PUT)
-    @Destination(BODY)
-    Theme updateTheme(int id, Theme theme);
+    Theme updateTheme(int id, @Destination(BODY) @Name("theme") Theme theme);
 
     // DELETE
     @Path("/{0}.json")

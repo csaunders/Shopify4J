@@ -2,35 +2,37 @@
 *
 *
 **/
-// Generated On: 2011-08-26T15:12:08-04:00
+// Generated On: 2011-09-01T02:13:38-04:00
 package com.shopify.api.endpoints;
+
+import java.util.List;
 
 import org.codegist.crest.annotate.ContextPath;
 import org.codegist.crest.annotate.Destination;
 import org.codegist.crest.annotate.EndPoint;
 import org.codegist.crest.annotate.HttpMethod;
+import org.codegist.crest.annotate.Name;
+import org.codegist.crest.annotate.ResponseHandler;
 import org.codegist.crest.annotate.Path;
 
 import static org.codegist.crest.HttpMethod.POST;
 import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
-import static org.codegist.crest.config.Destination.HEADER;
 
 import com.shopify.api.resources.Province;
 
 @EndPoint("")
-@ContextPath("/admin/Provinces")
-//@ResponseHandler(ShopifyResponseHandler.class)
-//@Param(name = "Content-type", value = "application/json", dest = HEADER)
+@ContextPath("/admin/provinces")
+@ResponseHandler(ShopifyResponseHandler.class)
 public interface ProvincesService extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    Province[] getProvinces();
+    List<Province> getProvinces();
 
     @Path(".json?{0}")
-    Province[] getProvinces(String queryParams);
+    List<Province> getProvinces(String queryParams);
 
     @Path("/{0}.json")
     Province getProvince(int id);
@@ -47,14 +49,12 @@ public interface ProvincesService extends BaseShopifyService {
     // POST
     @Path(".json")
     @HttpMethod(POST)
-    @Destination(BODY)
-    Province createProvince(Province province);
+    Province createProvince(@Destination(BODY) @Name("province") Province province);
 
     // PUT
     @Path("/{0}.json")
     @HttpMethod(PUT)
-    @Destination(BODY)
-    Province updateProvince(int id, Province province);
+    Province updateProvince(int id, @Destination(BODY) @Name("province") Province province);
 
     // DELETE
     @Path("/{0}.json")
