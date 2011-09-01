@@ -127,7 +127,7 @@ def generate_java(className, superClass, hash, file)
  * Place all of your changes in #{className[/MG([a-zA-Z0-9|_]+)/, 1]}.java
  *
  * It has been machine generated from fixtures and your changes will be
- * lost if anything new needs to be added to the API. 
+ * lost if anything new needs to be added to the API.
  **/
 END
   header =<<END
@@ -160,7 +160,7 @@ END
     file.write "\tpublic void set#{function_name}(#{type} _#{resource_name}){this._#{resource_name} = _#{resource_name};}\n"
     file.write "\n"
   }
-  file.write("}")
+  file.write("}\n")
 end
 
 def generate_resource(name, data)

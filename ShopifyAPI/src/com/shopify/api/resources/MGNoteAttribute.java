@@ -4,9 +4,9 @@
  * Place all of your changes in NoteAttribute.java
  *
  * It has been machine generated from fixtures and your changes will be
- * lost if anything new needs to be added to the API. 
+ * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-08-31T09:06:23-04:00
+// Last Generated: 2011-09-01T17:54:50-04:00
 package com.shopify.api.resources;
 
 import java.util.List;

@@ -2,7 +2,7 @@
 *
 *
 **/
-// Generated On: 2011-09-01T02:13:38-04:00
+// Generated On: 2011-09-01T17:54:50-04:00
 package com.shopify.api.endpoints;
 
 import java.util.List;
@@ -20,7 +20,7 @@ import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
 
-import com.shopify.api.resources.Transactions;
+import com.shopify.api.resources.Transaction;
 
 @EndPoint("")
 @ContextPath("/admin/transactions")
@@ -29,16 +29,16 @@ public interface TransactionsService extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    List<Transactions> getTransactions();
+    List<Transaction> getTransactions();
 
     @Path(".json?{0}")
-    List<Transactions> getTransactions(String queryParams);
+    List<Transaction> getTransactions(String queryParams);
 
     @Path("/{0}.json")
-    Transactions getTransactions(int id);
+    Transaction getTransaction(int id);
 
     @Path("/{0}.json?{1}")
-    Transactions getTransactions(int id, String queryParams);
+    Transaction getTransaction(int id, String queryParams);
 
     @Path("/count.json")
     int getCount();
@@ -49,15 +49,15 @@ public interface TransactionsService extends BaseShopifyService {
     // POST
     @Path(".json")
     @HttpMethod(POST)
-    Transactions createTransactions(@Destination(BODY) @Name("transactions") Transactions transactions);
+    Transaction createTransaction(@Destination(BODY) @Name("transaction") Transaction transaction);
 
     // PUT
     @Path("/{0}.json")
     @HttpMethod(PUT)
-    Transactions updateTransactions(int id, @Destination(BODY) @Name("transactions") Transactions transactions);
+    Transaction updateTransaction(int id, @Destination(BODY) @Name("transaction") Transaction transaction);
 
     // DELETE
     @Path("/{0}.json")
     @HttpMethod(DELETE)
-    void deleteTransactions(int id);
+    void deleteTransaction(int id);
 }
