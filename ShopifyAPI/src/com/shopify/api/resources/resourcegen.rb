@@ -175,11 +175,6 @@ def generate_resource(name, data)
       generate_java(name, gen_file, {}, f)
     end
   end
-  unless File.exists? "../endpoints/#{name.pluralize}Service.java"
-    File.open("../endpoints/#{name.pluralize}Service.java", 'wb') do |f|
-      generate_service name, @package, f
-    end
-  end
 end
 
 @resources.each do |fixture_name|
@@ -189,6 +184,11 @@ end
     input.close()
     data = data[data.keys.first]
     generate_resource fixture_name, data
+    unless File.exists? "../endpoints/#{fixture_name.pluralize}Service.java"
+      File.open("../endpoints/#{fixture_name.pluralize}Service.java", 'wb') do |f|
+        generate_service fixture_name, @package, f
+      end
+    end
   rescue JSON::ParserError => err
     puts "ERROR: Could not write #{fixture_name}.java to disk.  Could the JSON be missing?"
     puts "REASON: #{err}"
