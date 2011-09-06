@@ -14,7 +14,7 @@ public class JsonDirectoryCredentialsStore implements ShopifyCredentialsStore {
 	}
 	
 	public JsonDirectoryCredentialsStore(File directory) throws IOException {
-		if (directory.isDirectory())
+		if (!directory.isDirectory())
 			throw new IOException("Expected a directory");
 		this.directory = directory;
 		this.mapper = new ObjectMapper();
@@ -27,7 +27,7 @@ public class JsonDirectoryCredentialsStore implements ShopifyCredentialsStore {
 	
 	public void saveCredential(Credential credential) throws Exception {
 		String store = credential.getShopName();
-		File file = new File(directory, store);
+		File file = new File(directory, store + ".json");
 		mapper.writeValue(file, credential);
 	}
 }

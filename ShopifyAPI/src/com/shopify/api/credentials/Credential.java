@@ -1,19 +1,10 @@
 package com.shopify.api.credentials;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-
 public class Credential {
 	
-	@JsonProperty("shop_name")
 	private String shopName;
-	
-	@JsonProperty("api_key")
 	private String apiKey;
-	
-	@JsonProperty("password")
 	private String password;
-	
-	@JsonProperty("secret")
 	private String sharedSecret;
 	
 	public Credential(String apiKey, String sharedSecret, String shopName) {
@@ -27,11 +18,14 @@ public class Credential {
 		this.password = password;
 	}
 	
+	// Beans nead null constructors
+	public Credential() {}
+
 	public String getApiKey() {
 		return apiKey;
 	}
 
-	public void setApi_key(String apiKey) {
+	public void setApiKey(String apiKey) {
 		this.apiKey = apiKey;
 	}
 
