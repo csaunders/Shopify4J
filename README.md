@@ -13,9 +13,16 @@ For an example of how to make API calls, take a look at OrdersAPIEndpointTest.ja
 These files were machine generated using the fixtures data from the test assets.  If you need to add additional
 functionality to a model, you should make your changes to the subclass AssetName.java.
 
+# Demo #
+
+The included ShopifyProductsListDemo shows how to set up an application that will authorize against a users
+Shopify store, calculate the API password for that store, fetch a list of products from a store and tell you
+how many products it has.
+
+The handshaking/OAuth-like aspect of the application was taken from [this tutorial](http://donpark.org/blog/2009/01/24/android-client-side-oauth).
+
 # Known Issues #
 
-* The only known verb that works is GET, so developers have read-only access to Shopify stores.
-* There currently isn't a way to get handshaking to work in order to generate a user password for
-  a shop.  It should be possible by setting your callback URL to be yourapp://completeauth or something
-  similar.  [Check out Step 4 of this tutorial to get an idea of how it should work](http://donpark.org/blog/2009/01/24/android-client-side-oauth).
+* Trying to update information can lead to unexpected results.
+* There are several dependencies which can lead to large applications.  It is in your best interest to
+  get proguard working so you strip away any unused classes.

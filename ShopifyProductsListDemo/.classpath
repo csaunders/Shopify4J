@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="src" path="ShopifyAPI_src"/>
+	<classpathentry kind="lib" path="libs/codegist-crest-1.0.1-all.jar"/>
+	<classpathentry kind="lib" path="libs/codegist-crest-1.0.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-core-asl-1.8.5.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-mapper-asl-1.8.5.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-mrbean-1.8.5.jar"/>
+	<classpathentry kind="lib" path="libs/httpmime-4.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

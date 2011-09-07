@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    <TextView
+        android:id="@+id/shopNameHeading"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_height="wrap_content"
+        android:text="@string/shopify_shop_name_heading"
+        android:layout_width="fill_parent" />
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shopNameHeading"
+        android:id="@+id/addShopShopname"
+        android:width="200dp"
+        android:hint="@string/shopify_shop_name_hint" android:layout_width="wrap_content"/>
+    <TextView
+        android:layout_toRightOf="@id/addShopShopname"
+        android:layout_alignBaseline="@id/addShopShopname"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/dot_myshopify_dot_com" android:id="@+id/textView1"/>
+    <Button
+        android:layout_height="wrap_content"
+        android:text="@string/authorize"
+        android:layout_width="wrap_content"
+        android:id="@+id/addShopAuthorizeButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>

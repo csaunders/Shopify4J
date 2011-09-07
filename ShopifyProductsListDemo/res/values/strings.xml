@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, ShopifyProductListDemoActivity!</string>
+    <string name="app_name">ShopifyProductListDemo</string>
+    <string name="shopify_api_key">522bae089dc2a4ec2b95abe3993edb55</string>
+    <string name="shopify_shared_secret">88e75ad76fbedc6510a0f88a3749f896</string>
+    <string name="shopify_shop_name_heading">Shop Name</string>
+    <string name="dot_myshopify_dot_com">.myshopify.com</string>
+    <string name="shopify_shop_name_hint">snowdevil</string>
+    <string name="authorize">Authorize</string>
+    <string name="missingShopName">Shop name is missing</string>
+</resources>
