@@ -1,4 +1,4 @@
-Shopjfy - Caffeinated Shopify Bindings
+# Shopjfy - Caffeinated Shopify Bindings #
 
 The Shopjfy library allows Android developers to programatically access the Admin section of Shopify stores.
 
