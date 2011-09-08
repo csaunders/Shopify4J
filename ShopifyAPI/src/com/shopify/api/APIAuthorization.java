@@ -58,7 +58,7 @@ public class APIAuthorization {
 		return preDigest.toString();
 	}
 	
-	public boolean getAPIPassword(HashMap<String, String> responseParameters) throws Exception {
+	public boolean computeAPIPassword(HashMap<String, String> responseParameters) throws Exception {
 		if(isValidShopifyResponse(responseParameters)) {
 			StringBuilder builder = new StringBuilder();
 			builder.append(credential.getSharedSecret());

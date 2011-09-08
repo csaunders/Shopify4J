@@ -50,7 +50,7 @@ public class APIAuthorizationTest extends AndroidTestCase {
 	
 	public void testGetAPIPassword() {
 		try {
-			assertTrue(auth.getAPIPassword(responseParams));
+			assertTrue(auth.computeAPIPassword(responseParams));
 		} catch (Exception exc) {
 			fail();
 		}

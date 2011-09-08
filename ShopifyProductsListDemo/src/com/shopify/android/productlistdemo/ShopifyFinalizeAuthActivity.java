@@ -27,7 +27,7 @@ public class ShopifyFinalizeAuthActivity extends Activity{
 			String endpoint = params.get("shop");
 			String shopname = endpoint.substring(0, endpoint.indexOf('.'));
 			APIAuthorization auth = new APIAuthorization(store, shopname);
-			auth.getAPIPassword(params);
+			auth.computeAPIPassword(params);
 
 			Intent i = new Intent(this, ShopifyProductListDemoActivity.class);
 			Bundle extras = new Bundle();
