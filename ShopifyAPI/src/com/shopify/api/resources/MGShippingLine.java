@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,24 +20,30 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGShippingLine extends ShopifyResource {
 
 	@JsonProperty("price")
-	private String _price;
+	public String getPrice() {
+		return (String)attributes.get("price");
+	}
 	@JsonProperty("price")
-	public String getPrice(){ return _price;}
-	@JsonProperty("price")
-	public void setPrice(String _price){this._price = _price;}
+	public void setPrice(String _price) {
+		attributes.put("price", _price);
+	}
 
 	@JsonProperty("title")
-	private String _title;
+	public String getTitle() {
+		return (String)attributes.get("title");
+	}
 	@JsonProperty("title")
-	public String getTitle(){ return _title;}
-	@JsonProperty("title")
-	public void setTitle(String _title){this._title = _title;}
+	public void setTitle(String _title) {
+		attributes.put("title", _title);
+	}
 
 	@JsonProperty("code")
-	private String _code;
+	public String getCode() {
+		return (String)attributes.get("code");
+	}
 	@JsonProperty("code")
-	public String getCode(){ return _code;}
-	@JsonProperty("code")
-	public void setCode(String _code){this._code = _code;}
+	public void setCode(String _code) {
+		attributes.put("code", _code);
+	}
 
 }

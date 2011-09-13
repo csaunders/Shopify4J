@@ -1,45 +1,46 @@
 package com.shopify.api.resources;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.node.ObjectNode;
 
 public abstract class ShopifyResource {
+	protected HashMap<String, Object> attributes = new HashMap<String, Object>();
+
 	@JsonProperty("id")
-	private int id = -1;
-
-	@JsonProperty("created_at")
-	private String created_at;
-
-	@JsonProperty("updated_at")
-	private String updated_at;
-
 	public int getId() {
-		return id;
+		Integer value = (Integer)attributes.get("id");
+		return value != null ? value : 0;
 	}
 
+	@JsonProperty("id")
 	public void setId(int id) {
-		this.id = id;
+		attributes.put("id", id);
 	}
 
 	@JsonProperty("created_at")
 	public String getCreatedAt() {
-		return created_at;
+		return (String)attributes.get("created_at");
 	}
 
 	@JsonProperty("created_at")
 	public void setCreatedAt(String createdAt) {
-		created_at = createdAt;
+		attributes.put("created_at", createdAt);
 	}
 
 	@JsonProperty("updated_at")
 	public String getUpdatedAt() {
-		return updated_at;
+		return (String)attributes.get("updated_at");
 	}
 
 	@JsonProperty("updated_at")
 	public void setUpdatedAt(String updatedAt) {
-		updated_at = updatedAt;
+		attributes.put("updated_at", updatedAt);
 	}
 
 	@JsonIgnore
@@ -49,10 +50,10 @@ public abstract class ShopifyResource {
 
 	public String toString() {
 		ObjectMapper mapper = new ObjectMapper();
-		try {
-			return mapper.writeValueAsString(this);
-		} catch (Exception e) {
-			return super.toString();
+		JsonNode root = mapper.createObjectNode();
+		for (Map.Entry<String, Object> entry : attributes.entrySet()) {
+			((ObjectNode)root).put(entry.getKey(), mapper.valueToTree(entry.getValue()));
 		}
+		return root.toString();
 	}
 }

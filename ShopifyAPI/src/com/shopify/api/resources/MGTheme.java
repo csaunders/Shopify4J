@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,17 +20,21 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGTheme extends ShopifyResource {
 
 	@JsonProperty("name")
-	private String _name;
+	public String getName() {
+		return (String)attributes.get("name");
+	}
 	@JsonProperty("name")
-	public String getName(){ return _name;}
-	@JsonProperty("name")
-	public void setName(String _name){this._name = _name;}
+	public void setName(String _name) {
+		attributes.put("name", _name);
+	}
 
 	@JsonProperty("role")
-	private String _role;
+	public String getRole() {
+		return (String)attributes.get("role");
+	}
 	@JsonProperty("role")
-	public String getRole(){ return _role;}
-	@JsonProperty("role")
-	public void setRole(String _role){this._role = _role;}
+	public void setRole(String _role) {
+		attributes.put("role", _role);
+	}
 
 }

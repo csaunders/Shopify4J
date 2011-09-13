@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,80 +20,102 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGProduct extends ShopifyResource {
 
 	@JsonProperty("body_html")
-	private String _body_html;
+	public String getBodyHtml() {
+		return (String)attributes.get("body_html");
+	}
 	@JsonProperty("body_html")
-	public String getBodyHtml(){ return _body_html;}
-	@JsonProperty("body_html")
-	public void setBodyHtml(String _body_html){this._body_html = _body_html;}
+	public void setBodyHtml(String _body_html) {
+		attributes.put("body_html", _body_html);
+	}
 
 	@JsonProperty("handle")
-	private String _handle;
+	public String getHandle() {
+		return (String)attributes.get("handle");
+	}
 	@JsonProperty("handle")
-	public String getHandle(){ return _handle;}
-	@JsonProperty("handle")
-	public void setHandle(String _handle){this._handle = _handle;}
+	public void setHandle(String _handle) {
+		attributes.put("handle", _handle);
+	}
 
 	@JsonProperty("product_type")
-	private String _product_type;
+	public String getProductType() {
+		return (String)attributes.get("product_type");
+	}
 	@JsonProperty("product_type")
-	public String getProductType(){ return _product_type;}
-	@JsonProperty("product_type")
-	public void setProductType(String _product_type){this._product_type = _product_type;}
+	public void setProductType(String _product_type) {
+		attributes.put("product_type", _product_type);
+	}
 
 	@JsonProperty("template_suffix")
-	private String _template_suffix;
+	public String getTemplateSuffix() {
+		return (String)attributes.get("template_suffix");
+	}
 	@JsonProperty("template_suffix")
-	public String getTemplateSuffix(){ return _template_suffix;}
-	@JsonProperty("template_suffix")
-	public void setTemplateSuffix(String _template_suffix){this._template_suffix = _template_suffix;}
+	public void setTemplateSuffix(String _template_suffix) {
+		attributes.put("template_suffix", _template_suffix);
+	}
 
 	@JsonProperty("title")
-	private String _title;
+	public String getTitle() {
+		return (String)attributes.get("title");
+	}
 	@JsonProperty("title")
-	public String getTitle(){ return _title;}
-	@JsonProperty("title")
-	public void setTitle(String _title){this._title = _title;}
+	public void setTitle(String _title) {
+		attributes.put("title", _title);
+	}
 
 	@JsonProperty("tags")
-	private String _tags;
+	public String getTags() {
+		return (String)attributes.get("tags");
+	}
 	@JsonProperty("tags")
-	public String getTags(){ return _tags;}
-	@JsonProperty("tags")
-	public void setTags(String _tags){this._tags = _tags;}
+	public void setTags(String _tags) {
+		attributes.put("tags", _tags);
+	}
 
 	@JsonProperty("images")
-	private List<Image> _images;
+	public List<Image> getImages() {
+		return (List<Image>)attributes.get("images");
+	}
 	@JsonProperty("images")
-	public List<Image> getImages(){ return _images;}
-	@JsonProperty("images")
-	public void setImages(List<Image> _images){this._images = _images;}
+	public void setImages(List<Image> _images) {
+		attributes.put("images", _images);
+	}
 
 	@JsonProperty("variants")
-	private List<Variant> _variants;
+	public List<Variant> getVariants() {
+		return (List<Variant>)attributes.get("variants");
+	}
 	@JsonProperty("variants")
-	public List<Variant> getVariants(){ return _variants;}
-	@JsonProperty("variants")
-	public void setVariants(List<Variant> _variants){this._variants = _variants;}
+	public void setVariants(List<Variant> _variants) {
+		attributes.put("variants", _variants);
+	}
 
 	@JsonProperty("published_at")
-	private String _published_at;
+	public String getPublishedAt() {
+		return (String)attributes.get("published_at");
+	}
 	@JsonProperty("published_at")
-	public String getPublishedAt(){ return _published_at;}
-	@JsonProperty("published_at")
-	public void setPublishedAt(String _published_at){this._published_at = _published_at;}
+	public void setPublishedAt(String _published_at) {
+		attributes.put("published_at", _published_at);
+	}
 
 	@JsonProperty("vendor")
-	private String _vendor;
+	public String getVendor() {
+		return (String)attributes.get("vendor");
+	}
 	@JsonProperty("vendor")
-	public String getVendor(){ return _vendor;}
-	@JsonProperty("vendor")
-	public void setVendor(String _vendor){this._vendor = _vendor;}
+	public void setVendor(String _vendor) {
+		attributes.put("vendor", _vendor);
+	}
 
 	@JsonProperty("options")
-	private List<Option> _options;
+	public List<Option> getOptions() {
+		return (List<Option>)attributes.get("options");
+	}
 	@JsonProperty("options")
-	public List<Option> getOptions(){ return _options;}
-	@JsonProperty("options")
-	public void setOptions(List<Option> _options){this._options = _options;}
+	public void setOptions(List<Option> _options) {
+		attributes.put("options", _options);
+	}
 
 }

@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,52 +20,66 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGSmartCollection extends ShopifyResource {
 
 	@JsonProperty("body_html")
-	private String _body_html;
+	public String getBodyHtml() {
+		return (String)attributes.get("body_html");
+	}
 	@JsonProperty("body_html")
-	public String getBodyHtml(){ return _body_html;}
-	@JsonProperty("body_html")
-	public void setBodyHtml(String _body_html){this._body_html = _body_html;}
+	public void setBodyHtml(String _body_html) {
+		attributes.put("body_html", _body_html);
+	}
 
 	@JsonProperty("handle")
-	private String _handle;
+	public String getHandle() {
+		return (String)attributes.get("handle");
+	}
 	@JsonProperty("handle")
-	public String getHandle(){ return _handle;}
-	@JsonProperty("handle")
-	public void setHandle(String _handle){this._handle = _handle;}
+	public void setHandle(String _handle) {
+		attributes.put("handle", _handle);
+	}
 
 	@JsonProperty("template_suffix")
-	private String _template_suffix;
+	public String getTemplateSuffix() {
+		return (String)attributes.get("template_suffix");
+	}
 	@JsonProperty("template_suffix")
-	public String getTemplateSuffix(){ return _template_suffix;}
-	@JsonProperty("template_suffix")
-	public void setTemplateSuffix(String _template_suffix){this._template_suffix = _template_suffix;}
+	public void setTemplateSuffix(String _template_suffix) {
+		attributes.put("template_suffix", _template_suffix);
+	}
 
 	@JsonProperty("title")
-	private String _title;
+	public String getTitle() {
+		return (String)attributes.get("title");
+	}
 	@JsonProperty("title")
-	public String getTitle(){ return _title;}
-	@JsonProperty("title")
-	public void setTitle(String _title){this._title = _title;}
+	public void setTitle(String _title) {
+		attributes.put("title", _title);
+	}
 
 	@JsonProperty("rules")
-	private List<Rule> _rules;
+	public List<Rule> getRules() {
+		return (List<Rule>)attributes.get("rules");
+	}
 	@JsonProperty("rules")
-	public List<Rule> getRules(){ return _rules;}
-	@JsonProperty("rules")
-	public void setRules(List<Rule> _rules){this._rules = _rules;}
+	public void setRules(List<Rule> _rules) {
+		attributes.put("rules", _rules);
+	}
 
 	@JsonProperty("sort_order")
-	private String _sort_order;
+	public String getSortOrder() {
+		return (String)attributes.get("sort_order");
+	}
 	@JsonProperty("sort_order")
-	public String getSortOrder(){ return _sort_order;}
-	@JsonProperty("sort_order")
-	public void setSortOrder(String _sort_order){this._sort_order = _sort_order;}
+	public void setSortOrder(String _sort_order) {
+		attributes.put("sort_order", _sort_order);
+	}
 
 	@JsonProperty("published_at")
-	private String _published_at;
+	public String getPublishedAt() {
+		return (String)attributes.get("published_at");
+	}
 	@JsonProperty("published_at")
-	public String getPublishedAt(){ return _published_at;}
-	@JsonProperty("published_at")
-	public void setPublishedAt(String _published_at){this._published_at = _published_at;}
+	public void setPublishedAt(String _published_at) {
+		attributes.put("published_at", _published_at);
+	}
 
 }

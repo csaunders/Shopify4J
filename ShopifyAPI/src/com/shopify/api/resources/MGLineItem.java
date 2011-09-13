@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,94 +20,125 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGLineItem extends ShopifyResource {
 
 	@JsonProperty("price")
-	private String _price;
+	public String getPrice() {
+		return (String)attributes.get("price");
+	}
 	@JsonProperty("price")
-	public String getPrice(){ return _price;}
-	@JsonProperty("price")
-	public void setPrice(String _price){this._price = _price;}
+	public void setPrice(String _price) {
+		attributes.put("price", _price);
+	}
 
 	@JsonProperty("name")
-	private String _name;
+	public String getName() {
+		return (String)attributes.get("name");
+	}
 	@JsonProperty("name")
-	public String getName(){ return _name;}
-	@JsonProperty("name")
-	public void setName(String _name){this._name = _name;}
+	public void setName(String _name) {
+		attributes.put("name", _name);
+	}
 
 	@JsonProperty("title")
-	private String _title;
+	public String getTitle() {
+		return (String)attributes.get("title");
+	}
 	@JsonProperty("title")
-	public String getTitle(){ return _title;}
-	@JsonProperty("title")
-	public void setTitle(String _title){this._title = _title;}
+	public void setTitle(String _title) {
+		attributes.put("title", _title);
+	}
 
 	@JsonProperty("requires_shipping")
-	private boolean _requires_shipping;
+	public boolean getRequiresShipping() {
+		Boolean value = (Boolean)attributes.get("requires_shipping");
+		return value != null ? value : false;
+	}
 	@JsonProperty("requires_shipping")
-	public boolean getRequiresShipping(){ return _requires_shipping;}
-	@JsonProperty("requires_shipping")
-	public void setRequiresShipping(boolean _requires_shipping){this._requires_shipping = _requires_shipping;}
+	public void setRequiresShipping(boolean _requires_shipping) {
+		attributes.put("requires_shipping", _requires_shipping);
+	}
 
 	@JsonProperty("quantity")
-	private int _quantity;
+	public int getQuantity() {
+		Integer value = (Integer)attributes.get("quantity");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("quantity")
-	public int getQuantity(){ return _quantity;}
-	@JsonProperty("quantity")
-	public void setQuantity(int _quantity){this._quantity = _quantity;}
+	public void setQuantity(int _quantity) {
+		attributes.put("quantity", _quantity);
+	}
 
 	@JsonProperty("product_id")
-	private int _product_id;
+	public int getProductId() {
+		Integer value = (Integer)attributes.get("product_id");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("product_id")
-	public int getProductId(){ return _product_id;}
-	@JsonProperty("product_id")
-	public void setProductId(int _product_id){this._product_id = _product_id;}
+	public void setProductId(int _product_id) {
+		attributes.put("product_id", _product_id);
+	}
 
 	@JsonProperty("grams")
-	private int _grams;
+	public int getGrams() {
+		Integer value = (Integer)attributes.get("grams");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("grams")
-	public int getGrams(){ return _grams;}
-	@JsonProperty("grams")
-	public void setGrams(int _grams){this._grams = _grams;}
+	public void setGrams(int _grams) {
+		attributes.put("grams", _grams);
+	}
 
 	@JsonProperty("sku")
-	private String _sku;
+	public String getSku() {
+		return (String)attributes.get("sku");
+	}
 	@JsonProperty("sku")
-	public String getSku(){ return _sku;}
-	@JsonProperty("sku")
-	public void setSku(String _sku){this._sku = _sku;}
+	public void setSku(String _sku) {
+		attributes.put("sku", _sku);
+	}
 
 	@JsonProperty("vendor")
-	private String _vendor;
+	public String getVendor() {
+		return (String)attributes.get("vendor");
+	}
 	@JsonProperty("vendor")
-	public String getVendor(){ return _vendor;}
-	@JsonProperty("vendor")
-	public void setVendor(String _vendor){this._vendor = _vendor;}
+	public void setVendor(String _vendor) {
+		attributes.put("vendor", _vendor);
+	}
 
 	@JsonProperty("variant_title")
-	private String _variant_title;
+	public String getVariantTitle() {
+		return (String)attributes.get("variant_title");
+	}
 	@JsonProperty("variant_title")
-	public String getVariantTitle(){ return _variant_title;}
-	@JsonProperty("variant_title")
-	public void setVariantTitle(String _variant_title){this._variant_title = _variant_title;}
+	public void setVariantTitle(String _variant_title) {
+		attributes.put("variant_title", _variant_title);
+	}
 
 	@JsonProperty("fulfillment_status")
-	private String _fulfillment_status;
+	public String getFulfillmentStatus() {
+		return (String)attributes.get("fulfillment_status");
+	}
 	@JsonProperty("fulfillment_status")
-	public String getFulfillmentStatus(){ return _fulfillment_status;}
-	@JsonProperty("fulfillment_status")
-	public void setFulfillmentStatus(String _fulfillment_status){this._fulfillment_status = _fulfillment_status;}
+	public void setFulfillmentStatus(String _fulfillment_status) {
+		attributes.put("fulfillment_status", _fulfillment_status);
+	}
 
 	@JsonProperty("fulfillment_service")
-	private String _fulfillment_service;
+	public String getFulfillmentService() {
+		return (String)attributes.get("fulfillment_service");
+	}
 	@JsonProperty("fulfillment_service")
-	public String getFulfillmentService(){ return _fulfillment_service;}
-	@JsonProperty("fulfillment_service")
-	public void setFulfillmentService(String _fulfillment_service){this._fulfillment_service = _fulfillment_service;}
+	public void setFulfillmentService(String _fulfillment_service) {
+		attributes.put("fulfillment_service", _fulfillment_service);
+	}
 
 	@JsonProperty("variant_id")
-	private int _variant_id;
+	public int getVariantId() {
+		Integer value = (Integer)attributes.get("variant_id");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("variant_id")
-	public int getVariantId(){ return _variant_id;}
-	@JsonProperty("variant_id")
-	public void setVariantId(int _variant_id){this._variant_id = _variant_id;}
+	public void setVariantId(int _variant_id) {
+		attributes.put("variant_id", _variant_id);
+	}
 
 }

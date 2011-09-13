@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,45 +20,58 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGTransaction extends ShopifyResource {
 
 	@JsonProperty("kind")
-	private String _kind;
+	public String getKind() {
+		return (String)attributes.get("kind");
+	}
 	@JsonProperty("kind")
-	public String getKind(){ return _kind;}
-	@JsonProperty("kind")
-	public void setKind(String _kind){this._kind = _kind;}
+	public void setKind(String _kind) {
+		attributes.put("kind", _kind);
+	}
 
 	@JsonProperty("order_id")
-	private int _order_id;
+	public int getOrderId() {
+		Integer value = (Integer)attributes.get("order_id");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("order_id")
-	public int getOrderId(){ return _order_id;}
-	@JsonProperty("order_id")
-	public void setOrderId(int _order_id){this._order_id = _order_id;}
+	public void setOrderId(int _order_id) {
+		attributes.put("order_id", _order_id);
+	}
 
 	@JsonProperty("amount")
-	private String _amount;
+	public String getAmount() {
+		return (String)attributes.get("amount");
+	}
 	@JsonProperty("amount")
-	public String getAmount(){ return _amount;}
-	@JsonProperty("amount")
-	public void setAmount(String _amount){this._amount = _amount;}
+	public void setAmount(String _amount) {
+		attributes.put("amount", _amount);
+	}
 
 	@JsonProperty("authorization")
-	private String _authorization;
+	public String getAuthorization() {
+		return (String)attributes.get("authorization");
+	}
 	@JsonProperty("authorization")
-	public String getAuthorization(){ return _authorization;}
-	@JsonProperty("authorization")
-	public void setAuthorization(String _authorization){this._authorization = _authorization;}
+	public void setAuthorization(String _authorization) {
+		attributes.put("authorization", _authorization);
+	}
 
 	@JsonProperty("receipt")
-	private Receipt _receipt;
+	public Receipt getReceipt() {
+		return (Receipt)attributes.get("receipt");
+	}
 	@JsonProperty("receipt")
-	public Receipt getReceipt(){ return _receipt;}
-	@JsonProperty("receipt")
-	public void setReceipt(Receipt _receipt){this._receipt = _receipt;}
+	public void setReceipt(Receipt _receipt) {
+		attributes.put("receipt", _receipt);
+	}
 
 	@JsonProperty("status")
-	private String _status;
+	public String getStatus() {
+		return (String)attributes.get("status");
+	}
 	@JsonProperty("status")
-	public String getStatus(){ return _status;}
-	@JsonProperty("status")
-	public void setStatus(String _status){this._status = _status;}
+	public void setStatus(String _status) {
+		attributes.put("status", _status);
+	}
 
 }

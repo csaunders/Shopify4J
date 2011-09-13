@@ -6,7 +6,7 @@ import com.shopify.api.resources.ShopifyResource;
 
 public class MyShopifyResource extends ShopifyResource {
 	@JsonProperty("a")
-	private String a;
-	public String getA() { return a; }
-	public void setA(String newA) { a = newA; }
+	public String getA() { return (String)attributes.get("a"); }
+	@JsonProperty("a")
+	public void setA(String newA) { attributes.put("a", newA); }
 }

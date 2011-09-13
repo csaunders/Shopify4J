@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,45 +20,58 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGFulfillment extends ShopifyResource {
 
 	@JsonProperty("line_items")
-	private List<LineItem> _line_items;
+	public List<LineItem> getLineItems() {
+		return (List<LineItem>)attributes.get("line_items");
+	}
 	@JsonProperty("line_items")
-	public List<LineItem> getLineItems(){ return _line_items;}
-	@JsonProperty("line_items")
-	public void setLineItems(List<LineItem> _line_items){this._line_items = _line_items;}
+	public void setLineItems(List<LineItem> _line_items) {
+		attributes.put("line_items", _line_items);
+	}
 
 	@JsonProperty("tracking_company")
-	private String _tracking_company;
+	public String getTrackingCompany() {
+		return (String)attributes.get("tracking_company");
+	}
 	@JsonProperty("tracking_company")
-	public String getTrackingCompany(){ return _tracking_company;}
-	@JsonProperty("tracking_company")
-	public void setTrackingCompany(String _tracking_company){this._tracking_company = _tracking_company;}
+	public void setTrackingCompany(String _tracking_company) {
+		attributes.put("tracking_company", _tracking_company);
+	}
 
 	@JsonProperty("order_id")
-	private int _order_id;
+	public int getOrderId() {
+		Integer value = (Integer)attributes.get("order_id");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("order_id")
-	public int getOrderId(){ return _order_id;}
-	@JsonProperty("order_id")
-	public void setOrderId(int _order_id){this._order_id = _order_id;}
+	public void setOrderId(int _order_id) {
+		attributes.put("order_id", _order_id);
+	}
 
 	@JsonProperty("tracking_number")
-	private String _tracking_number;
+	public String getTrackingNumber() {
+		return (String)attributes.get("tracking_number");
+	}
 	@JsonProperty("tracking_number")
-	public String getTrackingNumber(){ return _tracking_number;}
-	@JsonProperty("tracking_number")
-	public void setTrackingNumber(String _tracking_number){this._tracking_number = _tracking_number;}
+	public void setTrackingNumber(String _tracking_number) {
+		attributes.put("tracking_number", _tracking_number);
+	}
 
 	@JsonProperty("receipt")
-	private Receipt _receipt;
+	public Receipt getReceipt() {
+		return (Receipt)attributes.get("receipt");
+	}
 	@JsonProperty("receipt")
-	public Receipt getReceipt(){ return _receipt;}
-	@JsonProperty("receipt")
-	public void setReceipt(Receipt _receipt){this._receipt = _receipt;}
+	public void setReceipt(Receipt _receipt) {
+		attributes.put("receipt", _receipt);
+	}
 
 	@JsonProperty("status")
-	private String _status;
+	public String getStatus() {
+		return (String)attributes.get("status");
+	}
 	@JsonProperty("status")
-	public String getStatus(){ return _status;}
-	@JsonProperty("status")
-	public void setStatus(String _status){this._status = _status;}
+	public void setStatus(String _status) {
+		attributes.put("status", _status);
+	}
 
 }

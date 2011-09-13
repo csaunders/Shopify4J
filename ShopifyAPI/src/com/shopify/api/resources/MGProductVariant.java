@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,108 +20,143 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGProductVariant extends ShopifyResource {
 
 	@JsonProperty("position")
-	private int _position;
+	public int getPosition() {
+		Integer value = (Integer)attributes.get("position");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("position")
-	public int getPosition(){ return _position;}
-	@JsonProperty("position")
-	public void setPosition(int _position){this._position = _position;}
+	public void setPosition(int _position) {
+		attributes.put("position", _position);
+	}
 
 	@JsonProperty("price")
-	private String _price;
+	public String getPrice() {
+		return (String)attributes.get("price");
+	}
 	@JsonProperty("price")
-	public String getPrice(){ return _price;}
-	@JsonProperty("price")
-	public void setPrice(String _price){this._price = _price;}
+	public void setPrice(String _price) {
+		attributes.put("price", _price);
+	}
 
 	@JsonProperty("requires_shipping")
-	private boolean _requires_shipping;
+	public boolean getRequiresShipping() {
+		Boolean value = (Boolean)attributes.get("requires_shipping");
+		return value != null ? value : false;
+	}
 	@JsonProperty("requires_shipping")
-	public boolean getRequiresShipping(){ return _requires_shipping;}
-	@JsonProperty("requires_shipping")
-	public void setRequiresShipping(boolean _requires_shipping){this._requires_shipping = _requires_shipping;}
+	public void setRequiresShipping(boolean _requires_shipping) {
+		attributes.put("requires_shipping", _requires_shipping);
+	}
 
 	@JsonProperty("title")
-	private String _title;
+	public String getTitle() {
+		return (String)attributes.get("title");
+	}
 	@JsonProperty("title")
-	public String getTitle(){ return _title;}
-	@JsonProperty("title")
-	public void setTitle(String _title){this._title = _title;}
+	public void setTitle(String _title) {
+		attributes.put("title", _title);
+	}
 
 	@JsonProperty("compare_at_price")
-	private String _compare_at_price;
+	public String getCompareAtPrice() {
+		return (String)attributes.get("compare_at_price");
+	}
 	@JsonProperty("compare_at_price")
-	public String getCompareAtPrice(){ return _compare_at_price;}
-	@JsonProperty("compare_at_price")
-	public void setCompareAtPrice(String _compare_at_price){this._compare_at_price = _compare_at_price;}
+	public void setCompareAtPrice(String _compare_at_price) {
+		attributes.put("compare_at_price", _compare_at_price);
+	}
 
 	@JsonProperty("inventory_policy")
-	private String _inventory_policy;
+	public String getInventoryPolicy() {
+		return (String)attributes.get("inventory_policy");
+	}
 	@JsonProperty("inventory_policy")
-	public String getInventoryPolicy(){ return _inventory_policy;}
-	@JsonProperty("inventory_policy")
-	public void setInventoryPolicy(String _inventory_policy){this._inventory_policy = _inventory_policy;}
+	public void setInventoryPolicy(String _inventory_policy) {
+		attributes.put("inventory_policy", _inventory_policy);
+	}
 
 	@JsonProperty("inventory_quantity")
-	private int _inventory_quantity;
+	public int getInventoryQuantity() {
+		Integer value = (Integer)attributes.get("inventory_quantity");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("inventory_quantity")
-	public int getInventoryQuantity(){ return _inventory_quantity;}
-	@JsonProperty("inventory_quantity")
-	public void setInventoryQuantity(int _inventory_quantity){this._inventory_quantity = _inventory_quantity;}
+	public void setInventoryQuantity(int _inventory_quantity) {
+		attributes.put("inventory_quantity", _inventory_quantity);
+	}
 
 	@JsonProperty("inventory_management")
-	private String _inventory_management;
+	public String getInventoryManagement() {
+		return (String)attributes.get("inventory_management");
+	}
 	@JsonProperty("inventory_management")
-	public String getInventoryManagement(){ return _inventory_management;}
-	@JsonProperty("inventory_management")
-	public void setInventoryManagement(String _inventory_management){this._inventory_management = _inventory_management;}
+	public void setInventoryManagement(String _inventory_management) {
+		attributes.put("inventory_management", _inventory_management);
+	}
 
 	@JsonProperty("taxable")
-	private boolean _taxable;
+	public boolean getTaxable() {
+		Boolean value = (Boolean)attributes.get("taxable");
+		return value != null ? value : false;
+	}
 	@JsonProperty("taxable")
-	public boolean getTaxable(){ return _taxable;}
-	@JsonProperty("taxable")
-	public void setTaxable(boolean _taxable){this._taxable = _taxable;}
+	public void setTaxable(boolean _taxable) {
+		attributes.put("taxable", _taxable);
+	}
 
 	@JsonProperty("grams")
-	private int _grams;
+	public int getGrams() {
+		Integer value = (Integer)attributes.get("grams");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("grams")
-	public int getGrams(){ return _grams;}
-	@JsonProperty("grams")
-	public void setGrams(int _grams){this._grams = _grams;}
+	public void setGrams(int _grams) {
+		attributes.put("grams", _grams);
+	}
 
 	@JsonProperty("sku")
-	private String _sku;
+	public String getSku() {
+		return (String)attributes.get("sku");
+	}
 	@JsonProperty("sku")
-	public String getSku(){ return _sku;}
-	@JsonProperty("sku")
-	public void setSku(String _sku){this._sku = _sku;}
+	public void setSku(String _sku) {
+		attributes.put("sku", _sku);
+	}
 
 	@JsonProperty("option1")
-	private String _option1;
+	public String getOption1() {
+		return (String)attributes.get("option1");
+	}
 	@JsonProperty("option1")
-	public String getOption1(){ return _option1;}
-	@JsonProperty("option1")
-	public void setOption1(String _option1){this._option1 = _option1;}
+	public void setOption1(String _option1) {
+		attributes.put("option1", _option1);
+	}
 
 	@JsonProperty("fulfillment_service")
-	private String _fulfillment_service;
+	public String getFulfillmentService() {
+		return (String)attributes.get("fulfillment_service");
+	}
 	@JsonProperty("fulfillment_service")
-	public String getFulfillmentService(){ return _fulfillment_service;}
-	@JsonProperty("fulfillment_service")
-	public void setFulfillmentService(String _fulfillment_service){this._fulfillment_service = _fulfillment_service;}
+	public void setFulfillmentService(String _fulfillment_service) {
+		attributes.put("fulfillment_service", _fulfillment_service);
+	}
 
 	@JsonProperty("option2")
-	private String _option2;
+	public String getOption2() {
+		return (String)attributes.get("option2");
+	}
 	@JsonProperty("option2")
-	public String getOption2(){ return _option2;}
-	@JsonProperty("option2")
-	public void setOption2(String _option2){this._option2 = _option2;}
+	public void setOption2(String _option2) {
+		attributes.put("option2", _option2);
+	}
 
 	@JsonProperty("option3")
-	private String _option3;
+	public String getOption3() {
+		return (String)attributes.get("option3");
+	}
 	@JsonProperty("option3")
-	public String getOption3(){ return _option3;}
-	@JsonProperty("option3")
-	public void setOption3(String _option3){this._option3 = _option3;}
+	public void setOption3(String _option3) {
+		attributes.put("option3", _option3);
+	}
 
 }

@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,38 +20,49 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGEvent extends ShopifyResource {
 
 	@JsonProperty("verb")
-	private String _verb;
+	public String getVerb() {
+		return (String)attributes.get("verb");
+	}
 	@JsonProperty("verb")
-	public String getVerb(){ return _verb;}
-	@JsonProperty("verb")
-	public void setVerb(String _verb){this._verb = _verb;}
+	public void setVerb(String _verb) {
+		attributes.put("verb", _verb);
+	}
 
 	@JsonProperty("body")
-	private String _body;
+	public String getBody() {
+		return (String)attributes.get("body");
+	}
 	@JsonProperty("body")
-	public String getBody(){ return _body;}
-	@JsonProperty("body")
-	public void setBody(String _body){this._body = _body;}
+	public void setBody(String _body) {
+		attributes.put("body", _body);
+	}
 
 	@JsonProperty("subject_id")
-	private int _subject_id;
+	public int getSubjectId() {
+		Integer value = (Integer)attributes.get("subject_id");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("subject_id")
-	public int getSubjectId(){ return _subject_id;}
-	@JsonProperty("subject_id")
-	public void setSubjectId(int _subject_id){this._subject_id = _subject_id;}
+	public void setSubjectId(int _subject_id) {
+		attributes.put("subject_id", _subject_id);
+	}
 
 	@JsonProperty("subject_type")
-	private String _subject_type;
+	public String getSubjectType() {
+		return (String)attributes.get("subject_type");
+	}
 	@JsonProperty("subject_type")
-	public String getSubjectType(){ return _subject_type;}
-	@JsonProperty("subject_type")
-	public void setSubjectType(String _subject_type){this._subject_type = _subject_type;}
+	public void setSubjectType(String _subject_type) {
+		attributes.put("subject_type", _subject_type);
+	}
 
 	@JsonProperty("message")
-	private String _message;
+	public String getMessage() {
+		return (String)attributes.get("message");
+	}
 	@JsonProperty("message")
-	public String getMessage(){ return _message;}
-	@JsonProperty("message")
-	public void setMessage(String _message){this._message = _message;}
+	public void setMessage(String _message) {
+		attributes.put("message", _message);
+	}
 
 }

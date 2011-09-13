@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,17 +20,21 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGScriptTag extends ShopifyResource {
 
 	@JsonProperty("src")
-	private String _src;
+	public String getSrc() {
+		return (String)attributes.get("src");
+	}
 	@JsonProperty("src")
-	public String getSrc(){ return _src;}
-	@JsonProperty("src")
-	public void setSrc(String _src){this._src = _src;}
+	public void setSrc(String _src) {
+		attributes.put("src", _src);
+	}
 
 	@JsonProperty("event")
-	private String _event;
+	public String getEvent() {
+		return (String)attributes.get("event");
+	}
 	@JsonProperty("event")
-	public String getEvent(){ return _event;}
-	@JsonProperty("event")
-	public void setEvent(String _event){this._event = _event;}
+	public void setEvent(String _event) {
+		attributes.put("event", _event);
+	}
 
 }

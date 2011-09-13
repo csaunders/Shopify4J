@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,24 +20,30 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGAsset extends ShopifyResource {
 
 	@JsonProperty("public_url")
-	private String _public_url;
+	public String getPublicUrl() {
+		return (String)attributes.get("public_url");
+	}
 	@JsonProperty("public_url")
-	public String getPublicUrl(){ return _public_url;}
-	@JsonProperty("public_url")
-	public void setPublicUrl(String _public_url){this._public_url = _public_url;}
+	public void setPublicUrl(String _public_url) {
+		attributes.put("public_url", _public_url);
+	}
 
 	@JsonProperty("value")
-	private String _value;
+	public String getValue() {
+		return (String)attributes.get("value");
+	}
 	@JsonProperty("value")
-	public String getValue(){ return _value;}
-	@JsonProperty("value")
-	public void setValue(String _value){this._value = _value;}
+	public void setValue(String _value) {
+		attributes.put("value", _value);
+	}
 
 	@JsonProperty("key")
-	private String _key;
+	public String getKey() {
+		return (String)attributes.get("key");
+	}
 	@JsonProperty("key")
-	public String getKey(){ return _key;}
-	@JsonProperty("key")
-	public void setKey(String _key){this._key = _key;}
+	public void setKey(String _key) {
+		attributes.put("key", _key);
+	}
 
 }

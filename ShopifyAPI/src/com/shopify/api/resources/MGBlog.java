@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,45 +20,57 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGBlog extends ShopifyResource {
 
 	@JsonProperty("handle")
-	private String _handle;
+	public String getHandle() {
+		return (String)attributes.get("handle");
+	}
 	@JsonProperty("handle")
-	public String getHandle(){ return _handle;}
-	@JsonProperty("handle")
-	public void setHandle(String _handle){this._handle = _handle;}
+	public void setHandle(String _handle) {
+		attributes.put("handle", _handle);
+	}
 
 	@JsonProperty("template_suffix")
-	private String _template_suffix;
+	public String getTemplateSuffix() {
+		return (String)attributes.get("template_suffix");
+	}
 	@JsonProperty("template_suffix")
-	public String getTemplateSuffix(){ return _template_suffix;}
-	@JsonProperty("template_suffix")
-	public void setTemplateSuffix(String _template_suffix){this._template_suffix = _template_suffix;}
+	public void setTemplateSuffix(String _template_suffix) {
+		attributes.put("template_suffix", _template_suffix);
+	}
 
 	@JsonProperty("title")
-	private String _title;
+	public String getTitle() {
+		return (String)attributes.get("title");
+	}
 	@JsonProperty("title")
-	public String getTitle(){ return _title;}
-	@JsonProperty("title")
-	public void setTitle(String _title){this._title = _title;}
+	public void setTitle(String _title) {
+		attributes.put("title", _title);
+	}
 
 	@JsonProperty("feedburner_location")
-	private String _feedburner_location;
+	public String getFeedburnerLocation() {
+		return (String)attributes.get("feedburner_location");
+	}
 	@JsonProperty("feedburner_location")
-	public String getFeedburnerLocation(){ return _feedburner_location;}
-	@JsonProperty("feedburner_location")
-	public void setFeedburnerLocation(String _feedburner_location){this._feedburner_location = _feedburner_location;}
+	public void setFeedburnerLocation(String _feedburner_location) {
+		attributes.put("feedburner_location", _feedburner_location);
+	}
 
 	@JsonProperty("feedburner")
-	private String _feedburner;
+	public String getFeedburner() {
+		return (String)attributes.get("feedburner");
+	}
 	@JsonProperty("feedburner")
-	public String getFeedburner(){ return _feedburner;}
-	@JsonProperty("feedburner")
-	public void setFeedburner(String _feedburner){this._feedburner = _feedburner;}
+	public void setFeedburner(String _feedburner) {
+		attributes.put("feedburner", _feedburner);
+	}
 
 	@JsonProperty("commentable")
-	private String _commentable;
+	public String getCommentable() {
+		return (String)attributes.get("commentable");
+	}
 	@JsonProperty("commentable")
-	public String getCommentable(){ return _commentable;}
-	@JsonProperty("commentable")
-	public void setCommentable(String _commentable){this._commentable = _commentable;}
+	public void setCommentable(String _commentable) {
+		attributes.put("commentable", _commentable);
+	}
 
 }

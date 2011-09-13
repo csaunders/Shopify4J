@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,234 +20,305 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGOrder extends ShopifyResource {
 
 	@JsonProperty("tax_lines")
-	private List<TaxLine> _tax_lines;
+	public List<TaxLine> getTaxLines() {
+		return (List<TaxLine>)attributes.get("tax_lines");
+	}
 	@JsonProperty("tax_lines")
-	public List<TaxLine> getTaxLines(){ return _tax_lines;}
-	@JsonProperty("tax_lines")
-	public void setTaxLines(List<TaxLine> _tax_lines){this._tax_lines = _tax_lines;}
+	public void setTaxLines(List<TaxLine> _tax_lines) {
+		attributes.put("tax_lines", _tax_lines);
+	}
 
 	@JsonProperty("name")
-	private String _name;
+	public String getName() {
+		return (String)attributes.get("name");
+	}
 	@JsonProperty("name")
-	public String getName(){ return _name;}
-	@JsonProperty("name")
-	public void setName(String _name){this._name = _name;}
+	public void setName(String _name) {
+		attributes.put("name", _name);
+	}
 
 	@JsonProperty("number")
-	private int _number;
+	public int getNumber() {
+		Integer value = (Integer)attributes.get("number");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("number")
-	public int getNumber(){ return _number;}
-	@JsonProperty("number")
-	public void setNumber(int _number){this._number = _number;}
+	public void setNumber(int _number) {
+		attributes.put("number", _number);
+	}
 
 	@JsonProperty("line_items")
-	private List<LineItem> _line_items;
+	public List<LineItem> getLineItems() {
+		return (List<LineItem>)attributes.get("line_items");
+	}
 	@JsonProperty("line_items")
-	public List<LineItem> getLineItems(){ return _line_items;}
-	@JsonProperty("line_items")
-	public void setLineItems(List<LineItem> _line_items){this._line_items = _line_items;}
+	public void setLineItems(List<LineItem> _line_items) {
+		attributes.put("line_items", _line_items);
+	}
 
 	@JsonProperty("total_discounts")
-	private String _total_discounts;
+	public String getTotalDiscounts() {
+		return (String)attributes.get("total_discounts");
+	}
 	@JsonProperty("total_discounts")
-	public String getTotalDiscounts(){ return _total_discounts;}
-	@JsonProperty("total_discounts")
-	public void setTotalDiscounts(String _total_discounts){this._total_discounts = _total_discounts;}
+	public void setTotalDiscounts(String _total_discounts) {
+		attributes.put("total_discounts", _total_discounts);
+	}
 
 	@JsonProperty("browser_ip")
-	private String _browser_ip;
+	public String getBrowserIp() {
+		return (String)attributes.get("browser_ip");
+	}
 	@JsonProperty("browser_ip")
-	public String getBrowserIp(){ return _browser_ip;}
-	@JsonProperty("browser_ip")
-	public void setBrowserIp(String _browser_ip){this._browser_ip = _browser_ip;}
+	public void setBrowserIp(String _browser_ip) {
+		attributes.put("browser_ip", _browser_ip);
+	}
 
 	@JsonProperty("payment_details")
-	private PaymentDetails _payment_details;
+	public PaymentDetails getPaymentDetails() {
+		return (PaymentDetails)attributes.get("payment_details");
+	}
 	@JsonProperty("payment_details")
-	public PaymentDetails getPaymentDetails(){ return _payment_details;}
-	@JsonProperty("payment_details")
-	public void setPaymentDetails(PaymentDetails _payment_details){this._payment_details = _payment_details;}
+	public void setPaymentDetails(PaymentDetails _payment_details) {
+		attributes.put("payment_details", _payment_details);
+	}
 
 	@JsonProperty("cancel_reason")
-	private String _cancel_reason;
+	public String getCancelReason() {
+		return (String)attributes.get("cancel_reason");
+	}
 	@JsonProperty("cancel_reason")
-	public String getCancelReason(){ return _cancel_reason;}
-	@JsonProperty("cancel_reason")
-	public void setCancelReason(String _cancel_reason){this._cancel_reason = _cancel_reason;}
+	public void setCancelReason(String _cancel_reason) {
+		attributes.put("cancel_reason", _cancel_reason);
+	}
 
 	@JsonProperty("landing_site_ref")
-	private String _landing_site_ref;
+	public String getLandingSiteRef() {
+		return (String)attributes.get("landing_site_ref");
+	}
 	@JsonProperty("landing_site_ref")
-	public String getLandingSiteRef(){ return _landing_site_ref;}
-	@JsonProperty("landing_site_ref")
-	public void setLandingSiteRef(String _landing_site_ref){this._landing_site_ref = _landing_site_ref;}
+	public void setLandingSiteRef(String _landing_site_ref) {
+		attributes.put("landing_site_ref", _landing_site_ref);
+	}
 
 	@JsonProperty("token")
-	private String _token;
+	public String getToken() {
+		return (String)attributes.get("token");
+	}
 	@JsonProperty("token")
-	public String getToken(){ return _token;}
-	@JsonProperty("token")
-	public void setToken(String _token){this._token = _token;}
+	public void setToken(String _token) {
+		attributes.put("token", _token);
+	}
 
 	@JsonProperty("total_price")
-	private String _total_price;
+	public String getTotalPrice() {
+		return (String)attributes.get("total_price");
+	}
 	@JsonProperty("total_price")
-	public String getTotalPrice(){ return _total_price;}
-	@JsonProperty("total_price")
-	public void setTotalPrice(String _total_price){this._total_price = _total_price;}
+	public void setTotalPrice(String _total_price) {
+		attributes.put("total_price", _total_price);
+	}
 
 	@JsonProperty("landing_site")
-	private String _landing_site;
+	public String getLandingSite() {
+		return (String)attributes.get("landing_site");
+	}
 	@JsonProperty("landing_site")
-	public String getLandingSite(){ return _landing_site;}
-	@JsonProperty("landing_site")
-	public void setLandingSite(String _landing_site){this._landing_site = _landing_site;}
+	public void setLandingSite(String _landing_site) {
+		attributes.put("landing_site", _landing_site);
+	}
 
 	@JsonProperty("taxes_included")
-	private boolean _taxes_included;
+	public boolean getTaxesIncluded() {
+		Boolean value = (Boolean)attributes.get("taxes_included");
+		return value != null ? value : false;
+	}
 	@JsonProperty("taxes_included")
-	public boolean getTaxesIncluded(){ return _taxes_included;}
-	@JsonProperty("taxes_included")
-	public void setTaxesIncluded(boolean _taxes_included){this._taxes_included = _taxes_included;}
+	public void setTaxesIncluded(boolean _taxes_included) {
+		attributes.put("taxes_included", _taxes_included);
+	}
 
 	@JsonProperty("shipping_lines")
-	private List<ShippingLine> _shipping_lines;
+	public List<ShippingLine> getShippingLines() {
+		return (List<ShippingLine>)attributes.get("shipping_lines");
+	}
 	@JsonProperty("shipping_lines")
-	public List<ShippingLine> getShippingLines(){ return _shipping_lines;}
-	@JsonProperty("shipping_lines")
-	public void setShippingLines(List<ShippingLine> _shipping_lines){this._shipping_lines = _shipping_lines;}
+	public void setShippingLines(List<ShippingLine> _shipping_lines) {
+		attributes.put("shipping_lines", _shipping_lines);
+	}
 
 	@JsonProperty("cancelled_at")
-	private String _cancelled_at;
+	public String getCancelledAt() {
+		return (String)attributes.get("cancelled_at");
+	}
 	@JsonProperty("cancelled_at")
-	public String getCancelledAt(){ return _cancelled_at;}
-	@JsonProperty("cancelled_at")
-	public void setCancelledAt(String _cancelled_at){this._cancelled_at = _cancelled_at;}
+	public void setCancelledAt(String _cancelled_at) {
+		attributes.put("cancelled_at", _cancelled_at);
+	}
 
 	@JsonProperty("shipping_address")
-	private ShippingAddress _shipping_address;
+	public ShippingAddress getShippingAddress() {
+		return (ShippingAddress)attributes.get("shipping_address");
+	}
 	@JsonProperty("shipping_address")
-	public ShippingAddress getShippingAddress(){ return _shipping_address;}
-	@JsonProperty("shipping_address")
-	public void setShippingAddress(ShippingAddress _shipping_address){this._shipping_address = _shipping_address;}
+	public void setShippingAddress(ShippingAddress _shipping_address) {
+		attributes.put("shipping_address", _shipping_address);
+	}
 
 	@JsonProperty("referring_site")
-	private String _referring_site;
+	public String getReferringSite() {
+		return (String)attributes.get("referring_site");
+	}
 	@JsonProperty("referring_site")
-	public String getReferringSite(){ return _referring_site;}
-	@JsonProperty("referring_site")
-	public void setReferringSite(String _referring_site){this._referring_site = _referring_site;}
+	public void setReferringSite(String _referring_site) {
+		attributes.put("referring_site", _referring_site);
+	}
 
 	@JsonProperty("total_line_items_price")
-	private String _total_line_items_price;
+	public String getTotalLineItemsPrice() {
+		return (String)attributes.get("total_line_items_price");
+	}
 	@JsonProperty("total_line_items_price")
-	public String getTotalLineItemsPrice(){ return _total_line_items_price;}
-	@JsonProperty("total_line_items_price")
-	public void setTotalLineItemsPrice(String _total_line_items_price){this._total_line_items_price = _total_line_items_price;}
+	public void setTotalLineItemsPrice(String _total_line_items_price) {
+		attributes.put("total_line_items_price", _total_line_items_price);
+	}
 
 	@JsonProperty("order_number")
-	private int _order_number;
+	public int getOrderNumber() {
+		Integer value = (Integer)attributes.get("order_number");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("order_number")
-	public int getOrderNumber(){ return _order_number;}
-	@JsonProperty("order_number")
-	public void setOrderNumber(int _order_number){this._order_number = _order_number;}
+	public void setOrderNumber(int _order_number) {
+		attributes.put("order_number", _order_number);
+	}
 
 	@JsonProperty("note")
-	private String _note;
+	public String getNote() {
+		return (String)attributes.get("note");
+	}
 	@JsonProperty("note")
-	public String getNote(){ return _note;}
-	@JsonProperty("note")
-	public void setNote(String _note){this._note = _note;}
+	public void setNote(String _note) {
+		attributes.put("note", _note);
+	}
 
 	@JsonProperty("subtotal_price")
-	private String _subtotal_price;
+	public String getSubtotalPrice() {
+		return (String)attributes.get("subtotal_price");
+	}
 	@JsonProperty("subtotal_price")
-	public String getSubtotalPrice(){ return _subtotal_price;}
-	@JsonProperty("subtotal_price")
-	public void setSubtotalPrice(String _subtotal_price){this._subtotal_price = _subtotal_price;}
+	public void setSubtotalPrice(String _subtotal_price) {
+		attributes.put("subtotal_price", _subtotal_price);
+	}
 
 	@JsonProperty("billing_address")
-	private BillingAddress _billing_address;
+	public BillingAddress getBillingAddress() {
+		return (BillingAddress)attributes.get("billing_address");
+	}
 	@JsonProperty("billing_address")
-	public BillingAddress getBillingAddress(){ return _billing_address;}
-	@JsonProperty("billing_address")
-	public void setBillingAddress(BillingAddress _billing_address){this._billing_address = _billing_address;}
+	public void setBillingAddress(BillingAddress _billing_address) {
+		attributes.put("billing_address", _billing_address);
+	}
 
 	@JsonProperty("note_attributes")
-	private List<NoteAttribute> _note_attributes;
+	public List<NoteAttribute> getNoteAttributes() {
+		return (List<NoteAttribute>)attributes.get("note_attributes");
+	}
 	@JsonProperty("note_attributes")
-	public List<NoteAttribute> getNoteAttributes(){ return _note_attributes;}
-	@JsonProperty("note_attributes")
-	public void setNoteAttributes(List<NoteAttribute> _note_attributes){this._note_attributes = _note_attributes;}
+	public void setNoteAttributes(List<NoteAttribute> _note_attributes) {
+		attributes.put("note_attributes", _note_attributes);
+	}
 
 	@JsonProperty("buyer_accepts_marketing")
-	private boolean _buyer_accepts_marketing;
+	public boolean getBuyerAcceptsMarketing() {
+		Boolean value = (Boolean)attributes.get("buyer_accepts_marketing");
+		return value != null ? value : false;
+	}
 	@JsonProperty("buyer_accepts_marketing")
-	public boolean getBuyerAcceptsMarketing(){ return _buyer_accepts_marketing;}
-	@JsonProperty("buyer_accepts_marketing")
-	public void setBuyerAcceptsMarketing(boolean _buyer_accepts_marketing){this._buyer_accepts_marketing = _buyer_accepts_marketing;}
+	public void setBuyerAcceptsMarketing(boolean _buyer_accepts_marketing) {
+		attributes.put("buyer_accepts_marketing", _buyer_accepts_marketing);
+	}
 
 	@JsonProperty("closed_at")
-	private String _closed_at;
+	public String getClosedAt() {
+		return (String)attributes.get("closed_at");
+	}
 	@JsonProperty("closed_at")
-	public String getClosedAt(){ return _closed_at;}
-	@JsonProperty("closed_at")
-	public void setClosedAt(String _closed_at){this._closed_at = _closed_at;}
+	public void setClosedAt(String _closed_at) {
+		attributes.put("closed_at", _closed_at);
+	}
 
 	@JsonProperty("currency")
-	private String _currency;
+	public String getCurrency() {
+		return (String)attributes.get("currency");
+	}
 	@JsonProperty("currency")
-	public String getCurrency(){ return _currency;}
-	@JsonProperty("currency")
-	public void setCurrency(String _currency){this._currency = _currency;}
+	public void setCurrency(String _currency) {
+		attributes.put("currency", _currency);
+	}
 
 	@JsonProperty("financial_status")
-	private String _financial_status;
+	public String getFinancialStatus() {
+		return (String)attributes.get("financial_status");
+	}
 	@JsonProperty("financial_status")
-	public String getFinancialStatus(){ return _financial_status;}
-	@JsonProperty("financial_status")
-	public void setFinancialStatus(String _financial_status){this._financial_status = _financial_status;}
+	public void setFinancialStatus(String _financial_status) {
+		attributes.put("financial_status", _financial_status);
+	}
 
 	@JsonProperty("fulfillment_status")
-	private String _fulfillment_status;
+	public String getFulfillmentStatus() {
+		return (String)attributes.get("fulfillment_status");
+	}
 	@JsonProperty("fulfillment_status")
-	public String getFulfillmentStatus(){ return _fulfillment_status;}
-	@JsonProperty("fulfillment_status")
-	public void setFulfillmentStatus(String _fulfillment_status){this._fulfillment_status = _fulfillment_status;}
+	public void setFulfillmentStatus(String _fulfillment_status) {
+		attributes.put("fulfillment_status", _fulfillment_status);
+	}
 
 	@JsonProperty("gateway")
-	private String _gateway;
+	public String getGateway() {
+		return (String)attributes.get("gateway");
+	}
 	@JsonProperty("gateway")
-	public String getGateway(){ return _gateway;}
-	@JsonProperty("gateway")
-	public void setGateway(String _gateway){this._gateway = _gateway;}
+	public void setGateway(String _gateway) {
+		attributes.put("gateway", _gateway);
+	}
 
 	@JsonProperty("customer")
-	private Customer _customer;
+	public Customer getCustomer() {
+		return (Customer)attributes.get("customer");
+	}
 	@JsonProperty("customer")
-	public Customer getCustomer(){ return _customer;}
-	@JsonProperty("customer")
-	public void setCustomer(Customer _customer){this._customer = _customer;}
+	public void setCustomer(Customer _customer) {
+		attributes.put("customer", _customer);
+	}
 
 	@JsonProperty("total_tax")
-	private String _total_tax;
+	public String getTotalTax() {
+		return (String)attributes.get("total_tax");
+	}
 	@JsonProperty("total_tax")
-	public String getTotalTax(){ return _total_tax;}
-	@JsonProperty("total_tax")
-	public void setTotalTax(String _total_tax){this._total_tax = _total_tax;}
+	public void setTotalTax(String _total_tax) {
+		attributes.put("total_tax", _total_tax);
+	}
 
 	@JsonProperty("email")
-	private String _email;
+	public String getEmail() {
+		return (String)attributes.get("email");
+	}
 	@JsonProperty("email")
-	public String getEmail(){ return _email;}
-	@JsonProperty("email")
-	public void setEmail(String _email){this._email = _email;}
+	public void setEmail(String _email) {
+		attributes.put("email", _email);
+	}
 
 	@JsonProperty("total_weight")
-	private int _total_weight;
+	public int getTotalWeight() {
+		Integer value = (Integer)attributes.get("total_weight");
+		return value != null ? value : 0;
+	}
 	@JsonProperty("total_weight")
-	public int getTotalWeight(){ return _total_weight;}
-	@JsonProperty("total_weight")
-	public void setTotalWeight(int _total_weight){this._total_weight = _total_weight;}
+	public void setTotalWeight(int _total_weight) {
+		attributes.put("total_weight", _total_weight);
+	}
 
 }

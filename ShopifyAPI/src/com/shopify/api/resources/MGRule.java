@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-01T17:54:50-04:00
+// Last Generated: 2011-09-12T22:14:03-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -20,24 +20,30 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class MGRule extends ShopifyResource {
 
 	@JsonProperty("column")
-	private String _column;
+	public String getColumn() {
+		return (String)attributes.get("column");
+	}
 	@JsonProperty("column")
-	public String getColumn(){ return _column;}
-	@JsonProperty("column")
-	public void setColumn(String _column){this._column = _column;}
+	public void setColumn(String _column) {
+		attributes.put("column", _column);
+	}
 
 	@JsonProperty("relation")
-	private String _relation;
+	public String getRelation() {
+		return (String)attributes.get("relation");
+	}
 	@JsonProperty("relation")
-	public String getRelation(){ return _relation;}
-	@JsonProperty("relation")
-	public void setRelation(String _relation){this._relation = _relation;}
+	public void setRelation(String _relation) {
+		attributes.put("relation", _relation);
+	}
 
 	@JsonProperty("condition")
-	private String _condition;
+	public String getCondition() {
+		return (String)attributes.get("condition");
+	}
 	@JsonProperty("condition")
-	public String getCondition(){ return _condition;}
-	@JsonProperty("condition")
-	public void setCondition(String _condition){this._condition = _condition;}
+	public void setCondition(String _condition) {
+		attributes.put("condition", _condition);
+	}
 
 }

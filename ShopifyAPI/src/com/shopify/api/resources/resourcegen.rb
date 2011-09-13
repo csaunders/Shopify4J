@@ -41,11 +41,20 @@ def determine_type(name, value)
   elsif value.class == Fixnum
     return "int"
   elsif value.class == Float
-    return "float"
+    return "double"
   elsif value.class == TrueClass || value.class == FalseClass
     return "boolean"
   else
     return "String"
+  end
+end
+
+def get_box_type(type)
+  case type
+  when 'int' then ['Integer', '0']
+  when 'double' then ['Double', '0.0']
+  when 'boolean' then ['Boolean', 'false']
+  else [nil, nil]
   end
 end
 
@@ -151,13 +160,22 @@ END
     next if ["id", "created_at", "updated_at"].include? resource_name
     function_name = resource_name.camelize
     type = determine_type(resource_name, value)
+    boxtype, default_value = get_box_type(type)
     # Prefix all names in case they use reserved keywords in the language
+    #
     file.write "\t@JsonProperty(\"#{resource_name}\")\n"
-    file.write "\tprivate #{type} _#{resource_name};\n"
+    file.write "\tpublic #{type} get#{function_name}() {\n"
+    if boxtype
+      file.write "\t\t#{boxtype} value = (#{boxtype})attributes.get(\"#{resource_name}\");\n"
+      file.write "\t\treturn value != null ? value : #{default_value};\n"
+    else
+      file.write "\t\treturn (#{type})attributes.get(\"#{resource_name}\");\n"
+    end
+    file.write "\t}\n"
     file.write "\t@JsonProperty(\"#{resource_name}\")\n"
-    file.write "\tpublic #{type} get#{function_name}(){ return _#{resource_name};}\n"
-    file.write "\t@JsonProperty(\"#{resource_name}\")\n"
-    file.write "\tpublic void set#{function_name}(#{type} _#{resource_name}){this._#{resource_name} = _#{resource_name};}\n"
+    file.write "\tpublic void set#{function_name}(#{type} _#{resource_name}) {\n"
+    file.write "\t\tattributes.put(\"#{resource_name}\", _#{resource_name});\n"
+    file.write "\t}\n"
     file.write "\n"
   }
   file.write("}\n")
