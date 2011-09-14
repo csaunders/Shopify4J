@@ -6,7 +6,7 @@ The API is implemented as JSON over HTTP using the CRest library.
 
 # Usage #
 
-For an example of how to make API calls, take a look at OrdersAPIEndpointTest.java
+For an example of how to make API calls, take a look at the ShopifyProductsListDemo
 
 ## MGAssetName.java ##
 
@@ -18,6 +18,26 @@ functionality to a model, you should make your changes to the subclass AssetName
 In order to make API calls, you will need to get the user to authorize your [application as shown in the documentation](http://api.shopify.com/authentication.html).
 Thankfully, we've taken care of all the authentication parts.  You simply need to populate a basic Credentials object then redirect the user to
 the authorization URL that can be created from it.
+
+>	public URI constructShopAuthRequest() {
+>		String shopname = "Your-Shop-Here";
+>		try {
+>			JsonDirectoryCredentialsStore store = new JsonDirectoryCredentialsStore(new File("/tmp"));
+>			Credential emptyCredential = makeEmptyCredential(shopname);
+>			store.saveCredential(emptyCredential);
+>
+>			APIAuthorization auth = new APIAuthorization(emptyCredential);
+>			return auth.generateAuthRequest();
+>		} catch (Exception e) {
+>			e.printStackTrace();
+>		}
+>	}
+>
+>	protected Credential makeEmptyCredential(String shopname) {
+>		String apiKey = getString("apiKey");
+>		String sekretz = getString("ftw");
+>		return new Credential(apiKey, sekretz, shopname);
+>	}
 
 ## Android Specifics ##
 In order to authenticate, you'll need to create a browser Intent with the generated authentication URL.
