@@ -20,7 +20,7 @@ Thankfully, we've taken care of all the authentication parts.  You simply need t
 the authorization URL that can be created from it.
 
 ## Android Specifics ##
-In order to authenticate, you'll need to create a browser Intent with the generate authentication URL.
+In order to authenticate, you'll need to create a browser Intent with the generated authentication URL.
 
 What you must ensure is that your App has a callback uri defined, otherwise you won't be able to get the token returned from the API which you
 can use to make authenticated API requests.  Under your apps page for your partners account, you'll have a "return URL" for your application.
