@@ -19,25 +19,27 @@ In order to make API calls, you will need to get the user to authorize your [app
 Thankfully, we've taken care of all the authentication parts.  You simply need to populate a basic Credentials object then redirect the user to
 the authorization URL that can be created from it.
 
->	public URI constructShopAuthRequest() {
->		String shopname = "Your-Shop-Here";
->		try {
->			JsonDirectoryCredentialsStore store = new JsonDirectoryCredentialsStore(new File("/tmp"));
->			Credential emptyCredential = makeEmptyCredential(shopname);
->			store.saveCredential(emptyCredential);
->
->			APIAuthorization auth = new APIAuthorization(emptyCredential);
->			return auth.generateAuthRequest();
->		} catch (Exception e) {
->			e.printStackTrace();
->		}
->	}
->
->	protected Credential makeEmptyCredential(String shopname) {
->		String apiKey = getString("apiKey");
->		String sekretz = getString("ftw");
->		return new Credential(apiKey, sekretz, shopname);
->	}
+```java
+public URI constructShopAuthRequest() {
+  String shopname = "Your-Shop-Here";
+  try {
+    JsonDirectoryCredentialsStore store = new JsonDirectoryCredentialsStore(new File("/tmp"));
+    Credential emptyCredential = makeEmptyCredential(shopname);
+    store.saveCredential(emptyCredential);
+
+    APIAuthorization auth = new APIAuthorization(emptyCredential);
+    return auth.generateAuthRequest();
+  } catch (Exception e) {
+    e.printStackTrace();
+  }
+}
+
+protected Credential makeEmptyCredential(String shopname) {
+  String apiKey = getString("apiKey");
+  String sekretz = getString("ftw");
+  return new Credential(apiKey, sekretz, shopname);
+}
+```
 
 ## Android Specifics ##
 In order to authenticate, you'll need to create a browser Intent with the generated authentication URL.
@@ -46,19 +48,21 @@ What you must ensure is that your App has a callback uri defined, otherwise you 
 can use to make authenticated API requests.  Under your apps page for your partners account, you'll have a "return URL" for your application.
 This will need to be something custom and hopefully namespaced such as:
 
-> myShopifyApplicationURI://example
+    myShopifyApplicationURI://example
 
 You'll also need to configure your Android manifest so that it responds to all uris that begin with //comexamplemyapplication//.
 This can be done by adding something similar to the following to your app:
 
->         <activity android:name=".MyShopifyAPICallbackActivity">
->            <intent-filter>
->	            <action android:name="android.intent.action.VIEW" />
->	            <category android:name="android.intent.category.DEFAULT" />
->	            <category android:name="android.intent.category.BROWSABLE" />
->	            <data android:scheme="comexamplemyapplication" />
->            </intent-filter>
->        </activity>
+```xml
+<activity android:name=".MyShopifyAPICallbackActivity">
+  <intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data android:scheme="comexamplemyapplication" />
+  </intent-filter>
+</activity>
+```
 
 ### Android Demo ####
 
