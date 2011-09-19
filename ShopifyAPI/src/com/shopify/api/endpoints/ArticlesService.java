@@ -23,41 +23,41 @@ import static org.codegist.crest.config.Destination.BODY;
 import com.shopify.api.resources.Article;
 
 @EndPoint("")
-@ContextPath("/admin/articles")
+@ContextPath("/admin/blogs/")
 @ResponseHandler(ShopifyResponseHandler.class)
 public interface ArticlesService extends BaseShopifyService {
 
     // GET
-    @Path(".json")
-    List<Article> getArticles();
+    @Path("{0}/articles.json")
+    List<Article> getArticles(int blogId);
 
-    @Path(".json?{0}")
-    List<Article> getArticles(String queryParams);
+    @Path("{0}/articles.json?{1}")
+    List<Article> getArticles(int blogId, String queryParams);
 
-    @Path("/{0}.json")
-    Article getArticle(int id);
+    @Path("{0}/articles/{1}.json")
+    Article getArticle(int blogId, int articleId);
 
-    @Path("/{0}.json?{1}")
-    Article getArticle(int id, String queryParams);
+    @Path("{0}/articles/{1}.json?{2}")
+    Article getArticle(int blogId, int articleId, String queryParams);
 
-    @Path("/count.json")
-    int getCount();
+    @Path("{0}/articles/count.json")
+    int getCount(int blogId);
 
-    @Path("/count.json?{0}")
-    int getCount(String queryParams);
+    @Path("{0}/articles/count.json?{1}")
+    int getCount(int blogId, String queryParams);
 
     // POST
-    @Path(".json")
+    @Path("{0}/articles.json")
     @HttpMethod(POST)
-    Article createArticle(@Destination(BODY) @Name("article") Article article);
+    Article createArticle(int blogId, @Destination(BODY) @Name("article") Article article);
 
     // PUT
-    @Path("/{0}.json")
+    @Path("{0}/articles/{1}.json")
     @HttpMethod(PUT)
-    Article updateArticle(int id, @Destination(BODY) @Name("article") Article article);
+    Article updateArticle(int blogId, int articleId, @Destination(BODY) @Name("article") Article article);
 
     // DELETE
-    @Path("/{0}.json")
+    @Path("{0}/articles/{1}.json")
     @HttpMethod(DELETE)
     void deleteArticle(int id);
 }
