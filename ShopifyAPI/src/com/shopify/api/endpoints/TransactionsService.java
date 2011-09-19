@@ -23,41 +23,54 @@ import static org.codegist.crest.config.Destination.BODY;
 import com.shopify.api.resources.Transaction;
 
 @EndPoint("")
-@ContextPath("/admin/transactions")
+@ContextPath("/admin/orders/")
 @ResponseHandler(ShopifyResponseHandler.class)
 public interface TransactionsService extends BaseShopifyService {
 
     // GET
-    @Path(".json")
-    List<Transaction> getTransactions();
+    @Path("{0}/transactions.json")
+    List<Transaction> getTransactions(int orderId);
 
-    @Path(".json?{0}")
-    List<Transaction> getTransactions(String queryParams);
+    @Path("{0}/transactions.json?{1}")
+    List<Transaction> getTransactions(int orderId, String queryParams);
 
-    @Path("/{0}.json")
-    Transaction getTransaction(int id);
+    @Path("{0}/transactions/{1}.json")
+    Transaction getTransaction(int orderId, int transactionId);
 
-    @Path("/{0}.json?{1}")
-    Transaction getTransaction(int id, String queryParams);
+    @Path("{0}/transactions/{1}.json?{2}")
+    Transaction getTransaction(int orderId, int transactionId, String queryParams);
 
-    @Path("/count.json")
-    int getCount();
+    @Path("{0}/transactions/count.json")
+    int getCount(int orderId);
 
-    @Path("/count.json?{0}")
-    int getCount(String queryParams);
+    @Path("{0}/transactions/count.json?{1}")
+    int getCount(int orderId, String queryParams);
 
     // POST
-    @Path(".json")
+    @Path("{0}/transactions.json")
     @HttpMethod(POST)
-    Transaction createTransaction(@Destination(BODY) @Name("transaction") Transaction transaction);
+    Transaction createTransaction(int orderId, @Destination(BODY) @Name("transaction") Transaction transaction);
 
+    /*
+     * According to Shopify API Documentation PUT and DELETE aren't supported
+     * through the API for transactions.  Going to leave these here, but there
+     * is no guarantee it will work
+     */
     // PUT
-    @Path("/{0}.json")
+    /**
+     * @deprecated
+     * This action is currently not supported by the Shopify API 
+     */
+    @Path("{0}/transactions/{1}.json")
     @HttpMethod(PUT)
-    Transaction updateTransaction(int id, @Destination(BODY) @Name("transaction") Transaction transaction);
+    Transaction updateTransaction(int orderId, int transactionId, @Destination(BODY) @Name("transaction") Transaction transaction);
 
     // DELETE
-    @Path("/{0}.json")
+    /**
+     * @deprecated
+     * This action is currently not supported by the Shopify API 
+     */
+    @Path("{0}/transactions/{1}.json")
     @HttpMethod(DELETE)
-    void deleteTransaction(int id);
+    void deleteTransaction(int orderId, int transactionId);
 }

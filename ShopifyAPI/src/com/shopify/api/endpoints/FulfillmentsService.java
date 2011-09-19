@@ -23,41 +23,41 @@ import static org.codegist.crest.config.Destination.BODY;
 import com.shopify.api.resources.Fulfillment;
 
 @EndPoint("")
-@ContextPath("/admin/fulfillments")
+@ContextPath("/admin/orders/")
 @ResponseHandler(ShopifyResponseHandler.class)
 public interface FulfillmentsService extends BaseShopifyService {
 
     // GET
-    @Path(".json")
-    List<Fulfillment> getFulfillments();
+    @Path("{0}/fulfillments.json")
+    List<Fulfillment> getFulfillments(int orderId);
 
-    @Path(".json?{0}")
-    List<Fulfillment> getFulfillments(String queryParams);
+    @Path("{0}/fulfillments.json?{1}")
+    List<Fulfillment> getFulfillments(int orderId, String queryParams);
 
-    @Path("/{0}.json")
-    Fulfillment getFulfillment(int id);
+    @Path("{0}/fulfillments/{1}.json")
+    Fulfillment getFulfillment(int orderId, int fulfillmentId);
 
-    @Path("/{0}.json?{1}")
-    Fulfillment getFulfillment(int id, String queryParams);
+    @Path("{0}/fulfillments/{1}.json?{2}")
+    Fulfillment getFulfillment(int orderId, int fulfillmentId, String queryParams);
 
-    @Path("/count.json")
-    int getCount();
+    @Path("{0}/fulfillments/count.json")
+    int getCount(int orderId);
 
-    @Path("/count.json?{0}")
-    int getCount(String queryParams);
+    @Path("{0}/fulfillments/count.json?{1}")
+    int getCount(int orderId, String queryParams);
 
     // POST
-    @Path(".json")
+    @Path("{0}/fulfillments.json")
     @HttpMethod(POST)
-    Fulfillment createFulfillment(@Destination(BODY) @Name("fulfillment") Fulfillment fulfillment);
+    Fulfillment createFulfillment(int orderId, @Destination(BODY) @Name("fulfillment") Fulfillment fulfillment);
 
     // PUT
-    @Path("/{0}.json")
+    @Path("{0}/fulfillments/{1}.json")
     @HttpMethod(PUT)
-    Fulfillment updateFulfillment(int id, @Destination(BODY) @Name("fulfillment") Fulfillment fulfillment);
+    Fulfillment updateFulfillment(int orderId, int fulfillmentId, @Destination(BODY) @Name("fulfillment") Fulfillment fulfillment);
 
     // DELETE
-    @Path("/{0}.json")
+    @Path("{0}/fulfillments/{1}.json")
     @HttpMethod(DELETE)
-    void deleteFulfillment(int id);
+    void deleteFulfillment(int orderId, int fulfillmentId);
 }
