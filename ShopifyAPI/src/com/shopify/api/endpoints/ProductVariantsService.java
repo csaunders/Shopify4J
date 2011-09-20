@@ -23,41 +23,41 @@ import static org.codegist.crest.config.Destination.BODY;
 import com.shopify.api.resources.ProductVariant;
 
 @EndPoint("")
-@ContextPath("/admin/productVariants")
+@ContextPath("/admin/products/")
 @ResponseHandler(ShopifyResponseHandler.class)
 public interface ProductVariantsService extends BaseShopifyService {
 
     // GET
-    @Path(".json")
-    List<ProductVariant> getProductVariants();
+    @Path("{0}/variants.json")
+    List<ProductVariant> getProductVariants(int productId);
 
-    @Path(".json?{0}")
-    List<ProductVariant> getProductVariants(String queryParams);
+    @Path("{0}/variants.json?{1}")
+    List<ProductVariant> getProductVariants(int productId, String queryParams);
 
-    @Path("/{0}.json")
-    ProductVariant getProductVariant(int id);
+    @Path("{0}/variants/{1}.json")
+    ProductVariant getProductVariant(int productId, int variantId);
 
-    @Path("/{0}.json?{1}")
-    ProductVariant getProductVariant(int id, String queryParams);
+    @Path("{0}/variants/{1}.json?{2}")
+    ProductVariant getProductVariant(int productId, int variantId, String queryParams);
 
-    @Path("/count.json")
-    int getCount();
+    @Path("{0}/variants/count.json")
+    int getCount(int productId);
 
-    @Path("/count.json?{0}")
-    int getCount(String queryParams);
+    @Path("{0}/count.json?{1}")
+    int getCount(int productId, String queryParams);
 
     // POST
-    @Path(".json")
+    @Path("{0}/variants.json")
     @HttpMethod(POST)
-    ProductVariant createProductVariant(@Destination(BODY) @Name("product_variant") ProductVariant productvariant);
+    ProductVariant createProductVariant(int productId, @Destination(BODY) @Name("product_variant") ProductVariant productvariant);
 
     // PUT
-    @Path("/{0}.json")
+    @Path("{0}/variants/{1}.json")
     @HttpMethod(PUT)
-    ProductVariant updateProductVariant(int id, @Destination(BODY) @Name("product_variant") ProductVariant productvariant);
+    ProductVariant updateProductVariant(int productId, int variantIdd, @Destination(BODY) @Name("product_variant") ProductVariant productvariant);
 
     // DELETE
-    @Path("/{0}.json")
+    @Path("{0}/variants/{1}.json")
     @HttpMethod(DELETE)
-    void deleteProductVariant(int id);
+    void deleteProductVariant(int productId, int variantId);
 }

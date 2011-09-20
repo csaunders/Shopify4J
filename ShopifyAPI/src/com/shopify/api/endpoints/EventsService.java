@@ -23,40 +23,52 @@ import static org.codegist.crest.config.Destination.BODY;
 import com.shopify.api.resources.Event;
 
 @EndPoint("")
-@ContextPath("/admin/events")
+@ContextPath("/admin/orders/")
 @ResponseHandler(ShopifyResponseHandler.class)
 public interface EventsService extends BaseShopifyService {
 
     // GET
-    @Path(".json")
-    List<Event> getEvents();
+    @Path("{0}/events.json")
+    List<Event> getEvents(int orderId);
 
-    @Path(".json?{0}")
-    List<Event> getEvents(String queryParams);
+    @Path("{0}/events.json?{1}")
+    List<Event> getEvents(int orderId, String queryParams);
 
-    @Path("/{0}.json")
-    Event getEvent(int id);
+    @Path("{0}/events/{1}.json")
+    Event getEvent(int orderId, int eventId);
 
-    @Path("/{0}.json?{1}")
-    Event getEvent(int id, String queryParams);
+    @Path("{0}/events/{1}.json?{2}")
+    Event getEvent(int orderId, int eventId, String queryParams);
 
-    @Path("/count.json")
-    int getCount();
+    @Path("{0}/events/count.json")
+    int getCount(int orderId);
 
-    @Path("/count.json?{0}")
-    int getCount(String queryParams);
+    @Path("{0}/events/count.json?{1}")
+    int getCount(int orderId, String queryParams);
 
     // POST
+    /**
+     * @deprecated
+     * Currently not supported by the Shopify API
+     */
     @Path(".json")
     @HttpMethod(POST)
     Event createEvent(@Destination(BODY) @Name("event") Event event);
 
     // PUT
+    /**
+     * @deprecated
+     * Currently not supported by the Shopify API
+     */
     @Path("/{0}.json")
     @HttpMethod(PUT)
     Event updateEvent(int id, @Destination(BODY) @Name("event") Event event);
 
     // DELETE
+    /**
+     * @deprecated
+     * Currently not supported by the Shopify API
+     */
     @Path("/{0}.json")
     @HttpMethod(DELETE)
     void deleteEvent(int id);
