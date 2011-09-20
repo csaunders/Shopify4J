@@ -16,14 +16,17 @@ require 'active_support/all'
 require 'json'
 require 'date'
 
-resources_location = "../../../../../../ShopifyAPITests/assets/fixtures"
+repo_root = File.expand_path "../../../../../../..", __FILE__
+fixtures_dir = repo_root + "/ShopifyAPITests/assets/fixtures"
+endpoints_dir = File.expand_path "../../endpoints", __FILE__
+@resources_dir = File.expand_path "..", __FILE__
 
 @package = "com.shopify.api"
 
-@resources = Dir.entries(resources_location).reject do |name|
+@resources = Dir.entries(fixtures_dir).reject do |name|
   ["..", "."].include? name or
-    not File.directory? "#{resources_location}/#{name}" or
-    File.exists? "#{resources_location}/#{name}/skip"
+    not File.directory? "#{fixtures_dir}/#{name}" or
+    File.exists? "#{fixtures_dir}/#{name}/skip"
 end
 
 @subresources = []
@@ -184,13 +187,13 @@ end
 
 def generate_resource(name, data)
   gen_file = "MG#{name}"
-  output = File.open("#{gen_file}.java", 'wb')
+  output = File.open("#{@resources_dir}/#{gen_file}.java", 'wb')
   puts "Writing #{gen_file}.java to disk"
   generate_java(gen_file, "ShopifyResource", data, output)
   output.flush()
   output.close()
-  unless File.exists? "#{name}.java"
-    File.open("#{name}.java", "wb") do |f|
+  unless File.exists? "#{@resources_dir}/#{name}.java"
+    File.open("#{@resources_dir}/#{name}.java", "wb") do |f|
       generate_java(name, gen_file, {}, f)
     end
   end
@@ -198,13 +201,13 @@ end
 
 @resources.each do |fixture_name|
   begin
-    input = File.open("#{resources_location}/#{fixture_name}/single#{fixture_name}.json", 'rb')
+    input = File.open("#{fixtures_dir}/#{fixture_name}/single#{fixture_name}.json", 'rb')
     data = JSON.parse(input.read())
     input.close()
     data = data[data.keys.first]
     generate_resource fixture_name, data
-    unless File.exists? "../endpoints/#{fixture_name.pluralize}Service.java"
-      File.open("../endpoints/#{fixture_name.pluralize}Service.java", 'wb') do |f|
+    unless File.exists? "#{endpoints_dir}/#{fixture_name.pluralize}Service.java"
+      File.open("#{endpoints_dir}/#{fixture_name.pluralize}Service.java", 'wb') do |f|
         generate_service fixture_name, @package, f
       end
     end
