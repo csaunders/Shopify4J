@@ -11,8 +11,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.node.ObjectNode;
 
 public abstract class ShopifyResource {
-	protected HashMap<String, Object> attributes = new HashMap<String, Object>();
-	protected HashSet<String> dirtyKeys = new HashSet<String>();
+	private HashMap<String, Object> attributes = new HashMap<String, Object>();
+	private HashSet<String> dirtyKeys = new HashSet<String>();
 
 	@JsonProperty("id")
 	public int getId() {

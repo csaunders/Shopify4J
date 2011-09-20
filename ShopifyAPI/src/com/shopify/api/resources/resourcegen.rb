@@ -166,15 +166,15 @@ END
     file.write "\t@JsonProperty(\"#{resource_name}\")\n"
     file.write "\tpublic #{type} get#{function_name}() {\n"
     if boxtype
-      file.write "\t\t#{boxtype} value = (#{boxtype})attributes.get(\"#{resource_name}\");\n"
+      file.write "\t\t#{boxtype} value = (#{boxtype})getAttribute(\"#{resource_name}\");\n"
       file.write "\t\treturn value != null ? value : #{default_value};\n"
     else
-      file.write "\t\treturn (#{type})attributes.get(\"#{resource_name}\");\n"
+      file.write "\t\treturn (#{type})attributes.getAttribute(\"#{resource_name}\");\n"
     end
     file.write "\t}\n"
     file.write "\t@JsonProperty(\"#{resource_name}\")\n"
     file.write "\tpublic void set#{function_name}(#{type} _#{resource_name}) {\n"
-    file.write "\t\tattributes.put(\"#{resource_name}\", _#{resource_name});\n"
+    file.write "\t\tsetAttribute(\"#{resource_name}\", _#{resource_name});\n"
     file.write "\t}\n"
     file.write "\n"
   }
