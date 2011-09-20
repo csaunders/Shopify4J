@@ -17,25 +17,25 @@ require 'json'
 require 'date'
 
 repo_root = File.expand_path "../../../../../../..", __FILE__
-fixtures_dir = repo_root + "/ShopifyAPITests/assets/fixtures"
+fixtures_root = repo_root + "/ShopifyAPITests/assets/fixtures"
 endpoints_dir = File.expand_path "../../endpoints", __FILE__
 @resources_dir = File.expand_path "..", __FILE__
 
 @package = "com.shopify.api"
 
-@resources = Dir.entries(fixtures_dir).reject do |name|
+fixture_dirs = Dir.entries(fixtures_root).reject do |name|
   ["..", "."].include? name or
-    not File.directory? "#{fixtures_dir}/#{name}" or
-    File.exists? "#{fixtures_dir}/#{name}/skip"
+    not File.directory? "#{fixtures_root}/#{name}" or
+    File.exists? "#{fixtures_root}/#{name}/skip"
 end
 
-@subresources = []
+@resources = []
 
 def determine_type(name, value)
   if value.class == Hash
     name = name.camelize
-    if not @resources.include?(name) || @subresources.include?(name)
-      @subresources <<= name
+    unless @resources.include?(name)
+      @resources <<= name
       generate_resource name, value
     end
     return name
@@ -199,21 +199,43 @@ def generate_resource(name, data)
   end
 end
 
-@resources.each do |fixture_name|
-  begin
-    input = File.open("#{fixtures_dir}/#{fixture_name}/single#{fixture_name}.json", 'rb')
-    data = JSON.parse(input.read())
-    input.close()
-    data = data[data.keys.first]
-    generate_resource fixture_name, data
-    unless File.exists? "#{endpoints_dir}/#{fixture_name.pluralize}Service.java"
-      File.open("#{endpoints_dir}/#{fixture_name.pluralize}Service.java", 'wb') do |f|
-        generate_service fixture_name, @package, f
+fixture_dirs.each do |fixture_dir|
+  data = nil
+  resource_name = nil
+  Dir.glob("#{fixtures_root}/#{fixture_dir}/*.json").each do |filename|
+    File.open(filename, 'rb') do |input|
+      begin
+        data = JSON.parse(input.read())
+      rescue JSON::ParserError => err
+        puts "ERROR: Could not parse #{filename}. Could the JSON be missing?"
+        puts "REASON: #{err}"
+        next
       end
+
+      next unless data && data.first
+      name, data = data.first
+      name = name.camelize
+      if data.class == Array
+        name = name.singularize
+        data = data.first
+      end
+      next unless data.class == Hash
+      resource_name = name
+      break
     end
-  rescue JSON::ParserError => err
-    puts "ERROR: Could not write #{fixture_name}.java to disk.  Could the JSON be missing?"
-    puts "REASON: #{err}"
+  end
+  unless resource_name
+    puts "ERROR: Could not find resource data in fixture directory #{fixture_dir}"
     next
+  end
+  next if @resources.include?(resource_name)
+
+  @resources <<= resource_name
+  generate_resource resource_name, data
+
+  unless File.exists? "#{endpoints_dir}/#{resource_name.pluralize}Service.java"
+    File.open("#{endpoints_dir}/#{resource_name.pluralize}Service.java", 'wb') do |f|
+      generate_service resource_name, @package, f
+    end
   end
 end
