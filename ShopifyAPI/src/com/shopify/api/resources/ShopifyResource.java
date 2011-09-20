@@ -1,6 +1,7 @@
 package com.shopify.api.resources;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 import org.codehaus.jackson.JsonNode;
@@ -11,36 +12,37 @@ import org.codehaus.jackson.node.ObjectNode;
 
 public abstract class ShopifyResource {
 	protected HashMap<String, Object> attributes = new HashMap<String, Object>();
+	protected HashSet<String> dirtyKeys = new HashSet<String>();
 
 	@JsonProperty("id")
 	public int getId() {
-		Integer value = (Integer)attributes.get("id");
+		Integer value = (Integer)getAttribute("id");
 		return value != null ? value : 0;
 	}
 
 	@JsonProperty("id")
 	public void setId(int id) {
-		attributes.put("id", id);
+		setAttribute("id", id);
 	}
 
 	@JsonProperty("created_at")
 	public String getCreatedAt() {
-		return (String)attributes.get("created_at");
+		return (String)getAttribute("created_at");
 	}
 
 	@JsonProperty("created_at")
 	public void setCreatedAt(String createdAt) {
-		attributes.put("created_at", createdAt);
+		setAttribute("created_at", createdAt);
 	}
 
 	@JsonProperty("updated_at")
 	public String getUpdatedAt() {
-		return (String)attributes.get("updated_at");
+		return (String) getAttribute("updated_at");
 	}
 
 	@JsonProperty("updated_at")
 	public void setUpdatedAt(String updatedAt) {
-		attributes.put("updated_at", updatedAt);
+		setAttribute("updated_at", updatedAt);
 	}
 
 	@JsonIgnore
@@ -55,5 +57,23 @@ public abstract class ShopifyResource {
 			((ObjectNode)root).put(entry.getKey(), mapper.valueToTree(entry.getValue()));
 		}
 		return root.toString();
+	}
+
+	protected void setAttribute(String attributeName, Object attributeValue) {
+		if(attributes.containsKey(attributeName)) {
+			if(!attributes.get(attributeName).equals(attributeValue)) {
+				dirtyKeys.add(attributeName);
+			}
+		} else {
+			attributes.put(attributeName, attributeValue);
+		}
+	}
+
+	protected Object getAttribute(String attributeName) {
+		return attributes.get(attributeName);
+	}
+
+	public boolean isDirty() {
+		return !dirtyKeys.isEmpty();
 	}
 }
