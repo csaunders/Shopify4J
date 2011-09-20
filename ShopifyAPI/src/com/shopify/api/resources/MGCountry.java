@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,30 +21,30 @@ public class MGCountry extends ShopifyResource {
 
 	@JsonProperty("name")
 	public String getName() {
-		return (String)attributes.get("name");
+		return (String)getAttribute("name");
 	}
 	@JsonProperty("name")
 	public void setName(String _name) {
-		attributes.put("name", _name);
+		setAttribute("name", _name);
 	}
 
 	@JsonProperty("tax")
 	public double getTax() {
-		Double value = (Double)attributes.get("tax");
+		Double value = (Double)getAttribute("tax");
 		return value != null ? value : 0.0;
 	}
 	@JsonProperty("tax")
 	public void setTax(double _tax) {
-		attributes.put("tax", _tax);
+		setAttribute("tax", _tax);
 	}
 
 	@JsonProperty("code")
 	public String getCode() {
-		return (String)attributes.get("code");
+		return (String)getAttribute("code");
 	}
 	@JsonProperty("code")
 	public void setCode(String _code) {
-		attributes.put("code", _code);
+		setAttribute("code", _code);
 	}
 
 }

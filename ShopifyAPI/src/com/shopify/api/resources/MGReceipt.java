@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,21 +21,21 @@ public class MGReceipt extends ShopifyResource {
 
 	@JsonProperty("testcase")
 	public boolean getTestcase() {
-		Boolean value = (Boolean)attributes.get("testcase");
+		Boolean value = (Boolean)getAttribute("testcase");
 		return value != null ? value : false;
 	}
 	@JsonProperty("testcase")
 	public void setTestcase(boolean _testcase) {
-		attributes.put("testcase", _testcase);
+		setAttribute("testcase", _testcase);
 	}
 
 	@JsonProperty("authorization")
 	public String getAuthorization() {
-		return (String)attributes.get("authorization");
+		return (String)getAttribute("authorization");
 	}
 	@JsonProperty("authorization")
 	public void setAuthorization(String _authorization) {
-		attributes.put("authorization", _authorization);
+		setAttribute("authorization", _authorization);
 	}
 
 }

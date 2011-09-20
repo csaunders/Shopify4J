@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,57 +21,57 @@ public class MGFulfillment extends ShopifyResource {
 
 	@JsonProperty("line_items")
 	public List<LineItem> getLineItems() {
-		return (List<LineItem>)attributes.get("line_items");
+		return (List<LineItem>)getAttribute("line_items");
 	}
 	@JsonProperty("line_items")
 	public void setLineItems(List<LineItem> _line_items) {
-		attributes.put("line_items", _line_items);
+		setAttribute("line_items", _line_items);
 	}
 
 	@JsonProperty("tracking_company")
 	public String getTrackingCompany() {
-		return (String)attributes.get("tracking_company");
+		return (String)getAttribute("tracking_company");
 	}
 	@JsonProperty("tracking_company")
 	public void setTrackingCompany(String _tracking_company) {
-		attributes.put("tracking_company", _tracking_company);
+		setAttribute("tracking_company", _tracking_company);
 	}
 
 	@JsonProperty("order_id")
 	public int getOrderId() {
-		Integer value = (Integer)attributes.get("order_id");
+		Integer value = (Integer)getAttribute("order_id");
 		return value != null ? value : 0;
 	}
 	@JsonProperty("order_id")
 	public void setOrderId(int _order_id) {
-		attributes.put("order_id", _order_id);
+		setAttribute("order_id", _order_id);
 	}
 
 	@JsonProperty("tracking_number")
 	public String getTrackingNumber() {
-		return (String)attributes.get("tracking_number");
+		return (String)getAttribute("tracking_number");
 	}
 	@JsonProperty("tracking_number")
 	public void setTrackingNumber(String _tracking_number) {
-		attributes.put("tracking_number", _tracking_number);
+		setAttribute("tracking_number", _tracking_number);
 	}
 
 	@JsonProperty("receipt")
 	public Receipt getReceipt() {
-		return (Receipt)attributes.get("receipt");
+		return (Receipt)getAttribute("receipt");
 	}
 	@JsonProperty("receipt")
 	public void setReceipt(Receipt _receipt) {
-		attributes.put("receipt", _receipt);
+		setAttribute("receipt", _receipt);
 	}
 
 	@JsonProperty("status")
 	public String getStatus() {
-		return (String)attributes.get("status");
+		return (String)getAttribute("status");
 	}
 	@JsonProperty("status")
 	public void setStatus(String _status) {
-		attributes.put("status", _status);
+		setAttribute("status", _status);
 	}
 
 }

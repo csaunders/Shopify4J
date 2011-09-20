@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,20 +21,20 @@ public class MGRedirect extends ShopifyResource {
 
 	@JsonProperty("path")
 	public String getPath() {
-		return (String)attributes.get("path");
+		return (String)getAttribute("path");
 	}
 	@JsonProperty("path")
 	public void setPath(String _path) {
-		attributes.put("path", _path);
+		setAttribute("path", _path);
 	}
 
 	@JsonProperty("target")
 	public String getTarget() {
-		return (String)attributes.get("target");
+		return (String)getAttribute("target");
 	}
 	@JsonProperty("target")
 	public void setTarget(String _target) {
-		attributes.put("target", _target);
+		setAttribute("target", _target);
 	}
 
 }

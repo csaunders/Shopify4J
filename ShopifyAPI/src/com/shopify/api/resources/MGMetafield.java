@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,47 +21,47 @@ public class MGMetafield extends ShopifyResource {
 
 	@JsonProperty("namespace")
 	public String getNamespace() {
-		return (String)attributes.get("namespace");
+		return (String)getAttribute("namespace");
 	}
 	@JsonProperty("namespace")
 	public void setNamespace(String _namespace) {
-		attributes.put("namespace", _namespace);
+		setAttribute("namespace", _namespace);
 	}
 
 	@JsonProperty("value")
 	public String getValue() {
-		return (String)attributes.get("value");
+		return (String)getAttribute("value");
 	}
 	@JsonProperty("value")
 	public void setValue(String _value) {
-		attributes.put("value", _value);
+		setAttribute("value", _value);
 	}
 
 	@JsonProperty("description")
 	public String getDescription() {
-		return (String)attributes.get("description");
+		return (String)getAttribute("description");
 	}
 	@JsonProperty("description")
 	public void setDescription(String _description) {
-		attributes.put("description", _description);
+		setAttribute("description", _description);
 	}
 
 	@JsonProperty("key")
 	public String getKey() {
-		return (String)attributes.get("key");
+		return (String)getAttribute("key");
 	}
 	@JsonProperty("key")
 	public void setKey(String _key) {
-		attributes.put("key", _key);
+		setAttribute("key", _key);
 	}
 
 	@JsonProperty("value_type")
 	public String getValueType() {
-		return (String)attributes.get("value_type");
+		return (String)getAttribute("value_type");
 	}
 	@JsonProperty("value_type")
 	public void setValueType(String _value_type) {
-		attributes.put("value_type", _value_type);
+		setAttribute("value_type", _value_type);
 	}
 
 }

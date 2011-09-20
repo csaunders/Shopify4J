@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,57 +21,57 @@ public class MGTransaction extends ShopifyResource {
 
 	@JsonProperty("kind")
 	public String getKind() {
-		return (String)attributes.get("kind");
+		return (String)getAttribute("kind");
 	}
 	@JsonProperty("kind")
 	public void setKind(String _kind) {
-		attributes.put("kind", _kind);
+		setAttribute("kind", _kind);
 	}
 
 	@JsonProperty("order_id")
 	public int getOrderId() {
-		Integer value = (Integer)attributes.get("order_id");
+		Integer value = (Integer)getAttribute("order_id");
 		return value != null ? value : 0;
 	}
 	@JsonProperty("order_id")
 	public void setOrderId(int _order_id) {
-		attributes.put("order_id", _order_id);
+		setAttribute("order_id", _order_id);
 	}
 
 	@JsonProperty("amount")
 	public String getAmount() {
-		return (String)attributes.get("amount");
+		return (String)getAttribute("amount");
 	}
 	@JsonProperty("amount")
 	public void setAmount(String _amount) {
-		attributes.put("amount", _amount);
+		setAttribute("amount", _amount);
 	}
 
 	@JsonProperty("authorization")
 	public String getAuthorization() {
-		return (String)attributes.get("authorization");
+		return (String)getAttribute("authorization");
 	}
 	@JsonProperty("authorization")
 	public void setAuthorization(String _authorization) {
-		attributes.put("authorization", _authorization);
+		setAttribute("authorization", _authorization);
 	}
 
 	@JsonProperty("receipt")
 	public Receipt getReceipt() {
-		return (Receipt)attributes.get("receipt");
+		return (Receipt)getAttribute("receipt");
 	}
 	@JsonProperty("receipt")
 	public void setReceipt(Receipt _receipt) {
-		attributes.put("receipt", _receipt);
+		setAttribute("receipt", _receipt);
 	}
 
 	@JsonProperty("status")
 	public String getStatus() {
-		return (String)attributes.get("status");
+		return (String)getAttribute("status");
 	}
 	@JsonProperty("status")
 	public void setStatus(String _status) {
-		attributes.put("status", _status);
+		setAttribute("status", _status);
 	}
 
 }

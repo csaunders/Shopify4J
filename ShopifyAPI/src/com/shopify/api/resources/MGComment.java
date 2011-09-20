@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,94 +21,94 @@ public class MGComment extends ShopifyResource {
 
 	@JsonProperty("body_html")
 	public String getBodyHtml() {
-		return (String)attributes.get("body_html");
+		return (String)getAttribute("body_html");
 	}
 	@JsonProperty("body_html")
 	public void setBodyHtml(String _body_html) {
-		attributes.put("body_html", _body_html);
+		setAttribute("body_html", _body_html);
 	}
 
 	@JsonProperty("author")
 	public String getAuthor() {
-		return (String)attributes.get("author");
+		return (String)getAttribute("author");
 	}
 	@JsonProperty("author")
 	public void setAuthor(String _author) {
-		attributes.put("author", _author);
+		setAttribute("author", _author);
 	}
 
 	@JsonProperty("body")
 	public String getBody() {
-		return (String)attributes.get("body");
+		return (String)getAttribute("body");
 	}
 	@JsonProperty("body")
 	public void setBody(String _body) {
-		attributes.put("body", _body);
+		setAttribute("body", _body);
 	}
 
 	@JsonProperty("blog_id")
 	public int getBlogId() {
-		Integer value = (Integer)attributes.get("blog_id");
+		Integer value = (Integer)getAttribute("blog_id");
 		return value != null ? value : 0;
 	}
 	@JsonProperty("blog_id")
 	public void setBlogId(int _blog_id) {
-		attributes.put("blog_id", _blog_id);
+		setAttribute("blog_id", _blog_id);
 	}
 
 	@JsonProperty("article_id")
 	public int getArticleId() {
-		Integer value = (Integer)attributes.get("article_id");
+		Integer value = (Integer)getAttribute("article_id");
 		return value != null ? value : 0;
 	}
 	@JsonProperty("article_id")
 	public void setArticleId(int _article_id) {
-		attributes.put("article_id", _article_id);
+		setAttribute("article_id", _article_id);
 	}
 
 	@JsonProperty("ip")
 	public String getIp() {
-		return (String)attributes.get("ip");
+		return (String)getAttribute("ip");
 	}
 	@JsonProperty("ip")
 	public void setIp(String _ip) {
-		attributes.put("ip", _ip);
+		setAttribute("ip", _ip);
 	}
 
 	@JsonProperty("published_at")
 	public String getPublishedAt() {
-		return (String)attributes.get("published_at");
+		return (String)getAttribute("published_at");
 	}
 	@JsonProperty("published_at")
 	public void setPublishedAt(String _published_at) {
-		attributes.put("published_at", _published_at);
+		setAttribute("published_at", _published_at);
 	}
 
 	@JsonProperty("user_agent")
 	public String getUserAgent() {
-		return (String)attributes.get("user_agent");
+		return (String)getAttribute("user_agent");
 	}
 	@JsonProperty("user_agent")
 	public void setUserAgent(String _user_agent) {
-		attributes.put("user_agent", _user_agent);
+		setAttribute("user_agent", _user_agent);
 	}
 
 	@JsonProperty("status")
 	public String getStatus() {
-		return (String)attributes.get("status");
+		return (String)getAttribute("status");
 	}
 	@JsonProperty("status")
 	public void setStatus(String _status) {
-		attributes.put("status", _status);
+		setAttribute("status", _status);
 	}
 
 	@JsonProperty("email")
 	public String getEmail() {
-		return (String)attributes.get("email");
+		return (String)getAttribute("email");
 	}
 	@JsonProperty("email")
 	public void setEmail(String _email) {
-		attributes.put("email", _email);
+		setAttribute("email", _email);
 	}
 
 }

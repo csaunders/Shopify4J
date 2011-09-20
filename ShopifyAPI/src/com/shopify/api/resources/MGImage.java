@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,31 +21,31 @@ public class MGImage extends ShopifyResource {
 
 	@JsonProperty("position")
 	public int getPosition() {
-		Integer value = (Integer)attributes.get("position");
+		Integer value = (Integer)getAttribute("position");
 		return value != null ? value : 0;
 	}
 	@JsonProperty("position")
 	public void setPosition(int _position) {
-		attributes.put("position", _position);
+		setAttribute("position", _position);
 	}
 
 	@JsonProperty("product_id")
 	public int getProductId() {
-		Integer value = (Integer)attributes.get("product_id");
+		Integer value = (Integer)getAttribute("product_id");
 		return value != null ? value : 0;
 	}
 	@JsonProperty("product_id")
 	public void setProductId(int _product_id) {
-		attributes.put("product_id", _product_id);
+		setAttribute("product_id", _product_id);
 	}
 
 	@JsonProperty("src")
 	public String getSrc() {
-		return (String)attributes.get("src");
+		return (String)getAttribute("src");
 	}
 	@JsonProperty("src")
 	public void setSrc(String _src) {
-		attributes.put("src", _src);
+		setAttribute("src", _src);
 	}
 
 }

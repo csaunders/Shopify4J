@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,65 +21,65 @@ public class MGSmartCollection extends ShopifyResource {
 
 	@JsonProperty("body_html")
 	public String getBodyHtml() {
-		return (String)attributes.get("body_html");
+		return (String)getAttribute("body_html");
 	}
 	@JsonProperty("body_html")
 	public void setBodyHtml(String _body_html) {
-		attributes.put("body_html", _body_html);
+		setAttribute("body_html", _body_html);
 	}
 
 	@JsonProperty("handle")
 	public String getHandle() {
-		return (String)attributes.get("handle");
+		return (String)getAttribute("handle");
 	}
 	@JsonProperty("handle")
 	public void setHandle(String _handle) {
-		attributes.put("handle", _handle);
+		setAttribute("handle", _handle);
 	}
 
 	@JsonProperty("template_suffix")
 	public String getTemplateSuffix() {
-		return (String)attributes.get("template_suffix");
+		return (String)getAttribute("template_suffix");
 	}
 	@JsonProperty("template_suffix")
 	public void setTemplateSuffix(String _template_suffix) {
-		attributes.put("template_suffix", _template_suffix);
+		setAttribute("template_suffix", _template_suffix);
 	}
 
 	@JsonProperty("title")
 	public String getTitle() {
-		return (String)attributes.get("title");
+		return (String)getAttribute("title");
 	}
 	@JsonProperty("title")
 	public void setTitle(String _title) {
-		attributes.put("title", _title);
+		setAttribute("title", _title);
 	}
 
 	@JsonProperty("rules")
 	public List<Rule> getRules() {
-		return (List<Rule>)attributes.get("rules");
+		return (List<Rule>)getAttribute("rules");
 	}
 	@JsonProperty("rules")
 	public void setRules(List<Rule> _rules) {
-		attributes.put("rules", _rules);
+		setAttribute("rules", _rules);
 	}
 
 	@JsonProperty("sort_order")
 	public String getSortOrder() {
-		return (String)attributes.get("sort_order");
+		return (String)getAttribute("sort_order");
 	}
 	@JsonProperty("sort_order")
 	public void setSortOrder(String _sort_order) {
-		attributes.put("sort_order", _sort_order);
+		setAttribute("sort_order", _sort_order);
 	}
 
 	@JsonProperty("published_at")
 	public String getPublishedAt() {
-		return (String)attributes.get("published_at");
+		return (String)getAttribute("published_at");
 	}
 	@JsonProperty("published_at")
 	public void setPublishedAt(String _published_at) {
-		attributes.put("published_at", _published_at);
+		setAttribute("published_at", _published_at);
 	}
 
 }

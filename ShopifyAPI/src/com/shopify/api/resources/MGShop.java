@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,183 +21,183 @@ public class MGShop extends ShopifyResource {
 
 	@JsonProperty("address1")
 	public String getAddress1() {
-		return (String)attributes.get("address1");
+		return (String)getAttribute("address1");
 	}
 	@JsonProperty("address1")
 	public void setAddress1(String _address1) {
-		attributes.put("address1", _address1);
+		setAttribute("address1", _address1);
 	}
 
 	@JsonProperty("city")
 	public String getCity() {
-		return (String)attributes.get("city");
+		return (String)getAttribute("city");
 	}
 	@JsonProperty("city")
 	public void setCity(String _city) {
-		attributes.put("city", _city);
+		setAttribute("city", _city);
 	}
 
 	@JsonProperty("name")
 	public String getName() {
-		return (String)attributes.get("name");
+		return (String)getAttribute("name");
 	}
 	@JsonProperty("name")
 	public void setName(String _name) {
-		attributes.put("name", _name);
+		setAttribute("name", _name);
 	}
 
 	@JsonProperty("shop_owner")
 	public String getShopOwner() {
-		return (String)attributes.get("shop_owner");
+		return (String)getAttribute("shop_owner");
 	}
 	@JsonProperty("shop_owner")
 	public void setShopOwner(String _shop_owner) {
-		attributes.put("shop_owner", _shop_owner);
+		setAttribute("shop_owner", _shop_owner);
 	}
 
 	@JsonProperty("zip")
 	public String getZip() {
-		return (String)attributes.get("zip");
+		return (String)getAttribute("zip");
 	}
 	@JsonProperty("zip")
 	public void setZip(String _zip) {
-		attributes.put("zip", _zip);
+		setAttribute("zip", _zip);
 	}
 
 	@JsonProperty("plan_name")
 	public String getPlanName() {
-		return (String)attributes.get("plan_name");
+		return (String)getAttribute("plan_name");
 	}
 	@JsonProperty("plan_name")
 	public void setPlanName(String _plan_name) {
-		attributes.put("plan_name", _plan_name);
+		setAttribute("plan_name", _plan_name);
 	}
 
 	@JsonProperty("money_format")
 	public String getMoneyFormat() {
-		return (String)attributes.get("money_format");
+		return (String)getAttribute("money_format");
 	}
 	@JsonProperty("money_format")
 	public void setMoneyFormat(String _money_format) {
-		attributes.put("money_format", _money_format);
+		setAttribute("money_format", _money_format);
 	}
 
 	@JsonProperty("money_with_currency_format")
 	public String getMoneyWithCurrencyFormat() {
-		return (String)attributes.get("money_with_currency_format");
+		return (String)getAttribute("money_with_currency_format");
 	}
 	@JsonProperty("money_with_currency_format")
 	public void setMoneyWithCurrencyFormat(String _money_with_currency_format) {
-		attributes.put("money_with_currency_format", _money_with_currency_format);
+		setAttribute("money_with_currency_format", _money_with_currency_format);
 	}
 
 	@JsonProperty("country")
 	public String getCountry() {
-		return (String)attributes.get("country");
+		return (String)getAttribute("country");
 	}
 	@JsonProperty("country")
 	public void setCountry(String _country) {
-		attributes.put("country", _country);
+		setAttribute("country", _country);
 	}
 
 	@JsonProperty("public")
 	public boolean getPublic() {
-		Boolean value = (Boolean)attributes.get("public");
+		Boolean value = (Boolean)getAttribute("public");
 		return value != null ? value : false;
 	}
 	@JsonProperty("public")
 	public void setPublic(boolean _public) {
-		attributes.put("public", _public);
+		setAttribute("public", _public);
 	}
 
 	@JsonProperty("taxes_included")
 	public String getTaxesIncluded() {
-		return (String)attributes.get("taxes_included");
+		return (String)getAttribute("taxes_included");
 	}
 	@JsonProperty("taxes_included")
 	public void setTaxesIncluded(String _taxes_included) {
-		attributes.put("taxes_included", _taxes_included);
+		setAttribute("taxes_included", _taxes_included);
 	}
 
 	@JsonProperty("domain")
 	public String getDomain() {
-		return (String)attributes.get("domain");
+		return (String)getAttribute("domain");
 	}
 	@JsonProperty("domain")
 	public void setDomain(String _domain) {
-		attributes.put("domain", _domain);
+		setAttribute("domain", _domain);
 	}
 
 	@JsonProperty("timezone")
 	public String getTimezone() {
-		return (String)attributes.get("timezone");
+		return (String)getAttribute("timezone");
 	}
 	@JsonProperty("timezone")
 	public void setTimezone(String _timezone) {
-		attributes.put("timezone", _timezone);
+		setAttribute("timezone", _timezone);
 	}
 
 	@JsonProperty("tax_shipping")
 	public String getTaxShipping() {
-		return (String)attributes.get("tax_shipping");
+		return (String)getAttribute("tax_shipping");
 	}
 	@JsonProperty("tax_shipping")
 	public void setTaxShipping(String _tax_shipping) {
-		attributes.put("tax_shipping", _tax_shipping);
+		setAttribute("tax_shipping", _tax_shipping);
 	}
 
 	@JsonProperty("phone")
 	public String getPhone() {
-		return (String)attributes.get("phone");
+		return (String)getAttribute("phone");
 	}
 	@JsonProperty("phone")
 	public void setPhone(String _phone) {
-		attributes.put("phone", _phone);
+		setAttribute("phone", _phone);
 	}
 
 	@JsonProperty("currency")
 	public String getCurrency() {
-		return (String)attributes.get("currency");
+		return (String)getAttribute("currency");
 	}
 	@JsonProperty("currency")
 	public void setCurrency(String _currency) {
-		attributes.put("currency", _currency);
+		setAttribute("currency", _currency);
 	}
 
 	@JsonProperty("province")
 	public String getProvince() {
-		return (String)attributes.get("province");
+		return (String)getAttribute("province");
 	}
 	@JsonProperty("province")
 	public void setProvince(String _province) {
-		attributes.put("province", _province);
+		setAttribute("province", _province);
 	}
 
 	@JsonProperty("source")
 	public String getSource() {
-		return (String)attributes.get("source");
+		return (String)getAttribute("source");
 	}
 	@JsonProperty("source")
 	public void setSource(String _source) {
-		attributes.put("source", _source);
+		setAttribute("source", _source);
 	}
 
 	@JsonProperty("myshopify_domain")
 	public String getMyshopifyDomain() {
-		return (String)attributes.get("myshopify_domain");
+		return (String)getAttribute("myshopify_domain");
 	}
 	@JsonProperty("myshopify_domain")
 	public void setMyshopifyDomain(String _myshopify_domain) {
-		attributes.put("myshopify_domain", _myshopify_domain);
+		setAttribute("myshopify_domain", _myshopify_domain);
 	}
 
 	@JsonProperty("email")
 	public String getEmail() {
-		return (String)attributes.get("email");
+		return (String)getAttribute("email");
 	}
 	@JsonProperty("email")
 	public void setEmail(String _email) {
-		attributes.put("email", _email);
+		setAttribute("email", _email);
 	}
 
 }

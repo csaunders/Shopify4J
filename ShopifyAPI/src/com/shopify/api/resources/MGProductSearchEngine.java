@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,11 +21,11 @@ public class MGProductSearchEngine extends ShopifyResource {
 
 	@JsonProperty("name")
 	public String getName() {
-		return (String)attributes.get("name");
+		return (String)getAttribute("name");
 	}
 	@JsonProperty("name")
 	public void setName(String _name) {
-		attributes.put("name", _name);
+		setAttribute("name", _name);
 	}
 
 }

@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,29 +21,29 @@ public class MGShippingLine extends ShopifyResource {
 
 	@JsonProperty("price")
 	public String getPrice() {
-		return (String)attributes.get("price");
+		return (String)getAttribute("price");
 	}
 	@JsonProperty("price")
 	public void setPrice(String _price) {
-		attributes.put("price", _price);
+		setAttribute("price", _price);
 	}
 
 	@JsonProperty("title")
 	public String getTitle() {
-		return (String)attributes.get("title");
+		return (String)getAttribute("title");
 	}
 	@JsonProperty("title")
 	public void setTitle(String _title) {
-		attributes.put("title", _title);
+		setAttribute("title", _title);
 	}
 
 	@JsonProperty("code")
 	public String getCode() {
-		return (String)attributes.get("code");
+		return (String)getAttribute("code");
 	}
 	@JsonProperty("code")
 	public void setCode(String _code) {
-		attributes.put("code", _code);
+		setAttribute("code", _code);
 	}
 
 }

@@ -169,7 +169,7 @@ END
       file.write "\t\t#{boxtype} value = (#{boxtype})getAttribute(\"#{resource_name}\");\n"
       file.write "\t\treturn value != null ? value : #{default_value};\n"
     else
-      file.write "\t\treturn (#{type})attributes.getAttribute(\"#{resource_name}\");\n"
+      file.write "\t\treturn (#{type})getAttribute(\"#{resource_name}\");\n"
     end
     file.write "\t}\n"
     file.write "\t@JsonProperty(\"#{resource_name}\")\n"

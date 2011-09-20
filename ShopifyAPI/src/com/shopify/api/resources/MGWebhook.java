@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,29 +21,29 @@ public class MGWebhook extends ShopifyResource {
 
 	@JsonProperty("address")
 	public String getAddress() {
-		return (String)attributes.get("address");
+		return (String)getAttribute("address");
 	}
 	@JsonProperty("address")
 	public void setAddress(String _address) {
-		attributes.put("address", _address);
+		setAttribute("address", _address);
 	}
 
 	@JsonProperty("format")
 	public String getFormat() {
-		return (String)attributes.get("format");
+		return (String)getAttribute("format");
 	}
 	@JsonProperty("format")
 	public void setFormat(String _format) {
-		attributes.put("format", _format);
+		setAttribute("format", _format);
 	}
 
 	@JsonProperty("topic")
 	public String getTopic() {
-		return (String)attributes.get("topic");
+		return (String)getAttribute("topic");
 	}
 	@JsonProperty("topic")
 	public void setTopic(String _topic) {
-		attributes.put("topic", _topic);
+		setAttribute("topic", _topic);
 	}
 
 }

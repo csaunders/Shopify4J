@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,85 +21,85 @@ public class MGCustomer extends ShopifyResource {
 
 	@JsonProperty("accepts_marketing")
 	public boolean getAcceptsMarketing() {
-		Boolean value = (Boolean)attributes.get("accepts_marketing");
+		Boolean value = (Boolean)getAttribute("accepts_marketing");
 		return value != null ? value : false;
 	}
 	@JsonProperty("accepts_marketing")
 	public void setAcceptsMarketing(boolean _accepts_marketing) {
-		attributes.put("accepts_marketing", _accepts_marketing);
+		setAttribute("accepts_marketing", _accepts_marketing);
 	}
 
 	@JsonProperty("orders_count")
 	public int getOrdersCount() {
-		Integer value = (Integer)attributes.get("orders_count");
+		Integer value = (Integer)getAttribute("orders_count");
 		return value != null ? value : 0;
 	}
 	@JsonProperty("orders_count")
 	public void setOrdersCount(int _orders_count) {
-		attributes.put("orders_count", _orders_count);
+		setAttribute("orders_count", _orders_count);
 	}
 
 	@JsonProperty("addresses")
 	public List<Address> getAddresses() {
-		return (List<Address>)attributes.get("addresses");
+		return (List<Address>)getAttribute("addresses");
 	}
 	@JsonProperty("addresses")
 	public void setAddresses(List<Address> _addresses) {
-		attributes.put("addresses", _addresses);
+		setAttribute("addresses", _addresses);
 	}
 
 	@JsonProperty("tags")
 	public String getTags() {
-		return (String)attributes.get("tags");
+		return (String)getAttribute("tags");
 	}
 	@JsonProperty("tags")
 	public void setTags(String _tags) {
-		attributes.put("tags", _tags);
+		setAttribute("tags", _tags);
 	}
 
 	@JsonProperty("last_name")
 	public String getLastName() {
-		return (String)attributes.get("last_name");
+		return (String)getAttribute("last_name");
 	}
 	@JsonProperty("last_name")
 	public void setLastName(String _last_name) {
-		attributes.put("last_name", _last_name);
+		setAttribute("last_name", _last_name);
 	}
 
 	@JsonProperty("note")
 	public String getNote() {
-		return (String)attributes.get("note");
+		return (String)getAttribute("note");
 	}
 	@JsonProperty("note")
 	public void setNote(String _note) {
-		attributes.put("note", _note);
+		setAttribute("note", _note);
 	}
 
 	@JsonProperty("email")
 	public String getEmail() {
-		return (String)attributes.get("email");
+		return (String)getAttribute("email");
 	}
 	@JsonProperty("email")
 	public void setEmail(String _email) {
-		attributes.put("email", _email);
+		setAttribute("email", _email);
 	}
 
 	@JsonProperty("first_name")
 	public String getFirstName() {
-		return (String)attributes.get("first_name");
+		return (String)getAttribute("first_name");
 	}
 	@JsonProperty("first_name")
 	public void setFirstName(String _first_name) {
-		attributes.put("first_name", _first_name);
+		setAttribute("first_name", _first_name);
 	}
 
 	@JsonProperty("total_spent")
 	public String getTotalSpent() {
-		return (String)attributes.get("total_spent");
+		return (String)getAttribute("total_spent");
 	}
 	@JsonProperty("total_spent")
 	public void setTotalSpent(String _total_spent) {
-		attributes.put("total_spent", _total_spent);
+		setAttribute("total_spent", _total_spent);
 	}
 
 }

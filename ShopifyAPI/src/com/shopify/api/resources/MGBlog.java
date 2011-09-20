@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,56 +21,56 @@ public class MGBlog extends ShopifyResource {
 
 	@JsonProperty("handle")
 	public String getHandle() {
-		return (String)attributes.get("handle");
+		return (String)getAttribute("handle");
 	}
 	@JsonProperty("handle")
 	public void setHandle(String _handle) {
-		attributes.put("handle", _handle);
+		setAttribute("handle", _handle);
 	}
 
 	@JsonProperty("template_suffix")
 	public String getTemplateSuffix() {
-		return (String)attributes.get("template_suffix");
+		return (String)getAttribute("template_suffix");
 	}
 	@JsonProperty("template_suffix")
 	public void setTemplateSuffix(String _template_suffix) {
-		attributes.put("template_suffix", _template_suffix);
+		setAttribute("template_suffix", _template_suffix);
 	}
 
 	@JsonProperty("title")
 	public String getTitle() {
-		return (String)attributes.get("title");
+		return (String)getAttribute("title");
 	}
 	@JsonProperty("title")
 	public void setTitle(String _title) {
-		attributes.put("title", _title);
+		setAttribute("title", _title);
 	}
 
 	@JsonProperty("feedburner_location")
 	public String getFeedburnerLocation() {
-		return (String)attributes.get("feedburner_location");
+		return (String)getAttribute("feedburner_location");
 	}
 	@JsonProperty("feedburner_location")
 	public void setFeedburnerLocation(String _feedburner_location) {
-		attributes.put("feedburner_location", _feedburner_location);
+		setAttribute("feedburner_location", _feedburner_location);
 	}
 
 	@JsonProperty("feedburner")
 	public String getFeedburner() {
-		return (String)attributes.get("feedburner");
+		return (String)getAttribute("feedburner");
 	}
 	@JsonProperty("feedburner")
 	public void setFeedburner(String _feedburner) {
-		attributes.put("feedburner", _feedburner);
+		setAttribute("feedburner", _feedburner);
 	}
 
 	@JsonProperty("commentable")
 	public String getCommentable() {
-		return (String)attributes.get("commentable");
+		return (String)getAttribute("commentable");
 	}
 	@JsonProperty("commentable")
 	public void setCommentable(String _commentable) {
-		attributes.put("commentable", _commentable);
+		setAttribute("commentable", _commentable);
 	}
 
 }

@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-12T22:14:03-04:00
+// Last Generated: 2011-09-20T09:56:16-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -21,48 +21,48 @@ public class MGEvent extends ShopifyResource {
 
 	@JsonProperty("verb")
 	public String getVerb() {
-		return (String)attributes.get("verb");
+		return (String)getAttribute("verb");
 	}
 	@JsonProperty("verb")
 	public void setVerb(String _verb) {
-		attributes.put("verb", _verb);
+		setAttribute("verb", _verb);
 	}
 
 	@JsonProperty("body")
 	public String getBody() {
-		return (String)attributes.get("body");
+		return (String)getAttribute("body");
 	}
 	@JsonProperty("body")
 	public void setBody(String _body) {
-		attributes.put("body", _body);
+		setAttribute("body", _body);
 	}
 
 	@JsonProperty("subject_id")
 	public int getSubjectId() {
-		Integer value = (Integer)attributes.get("subject_id");
+		Integer value = (Integer)getAttribute("subject_id");
 		return value != null ? value : 0;
 	}
 	@JsonProperty("subject_id")
 	public void setSubjectId(int _subject_id) {
-		attributes.put("subject_id", _subject_id);
+		setAttribute("subject_id", _subject_id);
 	}
 
 	@JsonProperty("subject_type")
 	public String getSubjectType() {
-		return (String)attributes.get("subject_type");
+		return (String)getAttribute("subject_type");
 	}
 	@JsonProperty("subject_type")
 	public void setSubjectType(String _subject_type) {
-		attributes.put("subject_type", _subject_type);
+		setAttribute("subject_type", _subject_type);
 	}
 
 	@JsonProperty("message")
 	public String getMessage() {
-		return (String)attributes.get("message");
+		return (String)getAttribute("message");
 	}
 	@JsonProperty("message")
 	public void setMessage(String _message) {
-		attributes.put("message", _message);
+		setAttribute("message", _message);
 	}
 
 }
