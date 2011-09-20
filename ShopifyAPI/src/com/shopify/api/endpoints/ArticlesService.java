@@ -59,5 +59,5 @@ public interface ArticlesService extends BaseShopifyService {
     // DELETE
     @Path("{0}/articles/{1}.json")
     @HttpMethod(DELETE)
-    void deleteArticle(int id);
+    void deleteArticle(int blogId, int id);
 }
