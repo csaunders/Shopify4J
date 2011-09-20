@@ -60,13 +60,12 @@ public abstract class ShopifyResource {
 	}
 
 	protected void setAttribute(String attributeName, Object attributeValue) {
-		if(attributes.containsKey(attributeName)) {
-			if(!attributes.get(attributeName).equals(attributeValue)) {
+		if(attributeValue == null) return;
+
+		if(attributes.containsKey(attributeName) && !attributes.get(attributeName).equals(attributeValue)) {
 				dirtyKeys.add(attributeName);
-			}
-		} else {
-			attributes.put(attributeName, attributeValue);
 		}
+		attributes.put(attributeName, attributeValue);
 	}
 
 	protected Object getAttribute(String attributeName) {
