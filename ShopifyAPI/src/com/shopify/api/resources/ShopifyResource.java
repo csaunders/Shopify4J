@@ -54,11 +54,9 @@ public abstract class ShopifyResource {
 	public String toString() {
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode root = mapper.createObjectNode();
-		JsonNode attrs = mapper.createObjectNode();
 		for (String key : determineKeys()) {
-			((ObjectNode)attrs).put(key, mapper.valueToTree(attributes.get(key)));
+			((ObjectNode)root).put(key, mapper.valueToTree(attributes.get(key)));
 		}
-		((ObjectNode)root).put(getFieldName(), attrs);
 		return root.toString();
 	}
 

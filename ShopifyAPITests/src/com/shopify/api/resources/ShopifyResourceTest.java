@@ -78,12 +78,12 @@ public class ShopifyResourceTest extends AndroidTestCase {
 	}
 
 	public void testConvertingCleanResourceToJSON() {
-		String expectedJSON = "{\"someshopifyresource\":{\"created_at\":\"2011-01-01T00:00:00-04:00\"}}";
+		String expectedJSON = "{\"created_at\":\"2011-01-01T00:00:00-04:00\"}";
 		assertEquals(expectedJSON, resource.toString());
 	}
 
 	public void testConvertingDirtyResourceToJSON() {
-		String expectedJSON = "{\"someshopifyresource\":{\"foo\":\"bar\"}}";
+		String expectedJSON = "{\"foo\":\"bar\"}";
 		resource.setAttribute("foo", "bar");
 		assertTrue(resource.isDirty());
 		assertEquals(expectedJSON, resource.toString());
