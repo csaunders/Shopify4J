@@ -60,8 +60,6 @@ public abstract class ShopifyResource {
 	}
 
 	protected void setAttribute(String attributeName, Object attributeValue) {
-		if(attributeValue == null) return;
-
 		if(attributes.containsKey(attributeName) && !attributes.get(attributeName).equals(attributeValue)) {
 				dirtyKeys.add(attributeName);
 		}
@@ -74,5 +72,9 @@ public abstract class ShopifyResource {
 
 	public boolean isDirty() {
 		return !dirtyKeys.isEmpty();
+	}
+
+	public void clean() {
+		dirtyKeys.clear();
 	}
 }

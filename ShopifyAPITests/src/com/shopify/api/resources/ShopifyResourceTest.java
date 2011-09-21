@@ -34,6 +34,7 @@ public class ShopifyResourceTest extends AndroidTestCase {
 
 	public void testSettingValuesOnNewObjectDoesNotFlagAsDirty() {
 		resource.setCreatedAt("2011-01-01T00:00:00-04:00");
+
 		assertFalse(resource.isDirty());
 		assertEquals("2011-01-01T00:00:00-04:00", resource.getCreatedAt());
 
@@ -50,11 +51,13 @@ public class ShopifyResourceTest extends AndroidTestCase {
 		assertFalse(resource.isDirty());
 	}
 
-	public void testCannotSetValueToNull() {
+	public void testCanSetValueToNull() {
 		resource.setCreatedAt("2011-01-01T00:00:00-04:00");
-		resource.setCreatedAt(null);
 		assertFalse(resource.isDirty());
-		assertEquals("2011-01-01T00:00:00-04:00", resource.getCreatedAt());
+
+		resource.setCreatedAt(null);
+		assertTrue(resource.isDirty());
+		assertEquals(null, resource.getCreatedAt());
 	}
 
 }
