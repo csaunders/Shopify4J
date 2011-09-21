@@ -3,6 +3,7 @@ package com.shopify.api.resources;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.annotate.JsonIgnore;
@@ -53,15 +54,22 @@ public abstract class ShopifyResource {
 	public String toString() {
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode root = mapper.createObjectNode();
-		for (Map.Entry<String, Object> entry : attributes.entrySet()) {
-			((ObjectNode)root).put(entry.getKey(), mapper.valueToTree(entry.getValue()));
+		JsonNode attrs = mapper.createObjectNode();
+		for (String key : determineKeys()) {
+			((ObjectNode)attrs).put(key, mapper.valueToTree(attributes.get(key)));
 		}
+		((ObjectNode)root).put(getFieldName(), attrs);
 		return root.toString();
 	}
 
+	protected Set<String> determineKeys(){
+		return isDirty() ? dirtyKeys : attributes.keySet();
+	}
+
 	protected void setAttribute(String attributeName, Object attributeValue) {
-		if(attributes.containsKey(attributeName) && !attributes.get(attributeName).equals(attributeValue)) {
-				dirtyKeys.add(attributeName);
+		Object currentValue = attributes.get(attributeName);
+		if(currentValue == null || !currentValue.equals(attributeValue)) {
+			dirtyKeys.add(attributeName);
 		}
 		attributes.put(attributeName, attributeValue);
 	}
@@ -72,6 +80,16 @@ public abstract class ShopifyResource {
 
 	public boolean isDirty() {
 		return !dirtyKeys.isEmpty();
+	}
+
+	public void makeDirty() {
+		dirtyKeys.addAll(attributes.keySet());
+	}
+
+	public void makeDirty(String attribute) {
+		if(attributes.keySet().contains(attribute)) {
+			dirtyKeys.add(attribute);
+		}
 	}
 
 	public void clean() {
