@@ -10,6 +10,7 @@ import org.codegist.crest.annotate.Name;
 import org.codegist.crest.annotate.Path;
 import org.codegist.crest.annotate.ResponseHandler;
 
+import com.shopify.api.handlers.ShopifyResponseHandler;
 import com.shopify.api.resources.Order;
 
 import static org.codegist.crest.HttpMethod.POST;

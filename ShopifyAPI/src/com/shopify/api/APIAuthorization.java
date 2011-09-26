@@ -19,6 +19,8 @@ import org.apache.http.protocol.HttpContext;
 
 import com.apache.commons.codec.binary.Hex;
 import com.shopify.api.endpoints.AuthAPI;
+import com.shopify.api.interceptors.ShopifyRequestInterceptor;
+import com.shopify.api.interceptors.ShopifyResponseInterceptor;
 import com.shopify.api.credentials.ShopifyCredentialsStore;
 import com.shopify.api.credentials.Credential;
 
@@ -102,17 +104,7 @@ public class APIAuthorization {
 	public HttpClient getAuthorizedClient(String hostName, int port) {
 		DefaultHttpClient client = new DefaultHttpClient();
 		client.addRequestInterceptor(new ShopifyRequestInterceptor());
-		client.addResponseInterceptor(new HttpResponseInterceptor() {
-			public void process(HttpResponse response, HttpContext context)
-					throws HttpException, IOException {
-				/* CRest 1.0.1 throws an exception is the status code != 200,
-				 * even on 201 Created, just translate all 200 responses to error code 200. */
-				int code = response.getStatusLine().getStatusCode();
-				if (code >= 200 && code < 300) {
-					response.setStatusCode(200);
-				}
-			}
-		});
+		client.addResponseInterceptor(new ShopifyResponseInterceptor());
 		AuthScope scope = new AuthScope(hostName, port);
 		UsernamePasswordCredentials creds = new UsernamePasswordCredentials(credential.getApiKey(), credential.getPassword());
 		client.getCredentialsProvider().setCredentials(scope, creds);

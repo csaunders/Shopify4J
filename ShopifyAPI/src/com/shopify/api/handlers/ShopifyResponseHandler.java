@@ -1,4 +1,4 @@
-package com.shopify.api.endpoints;
+package com.shopify.api.handlers;
 
 import java.io.InputStream;
 import java.util.Map;
@@ -9,6 +9,8 @@ import org.codegist.crest.handler.ResponseHandler;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.shopify.api.resources.ShopifyResource;
+
 public class ShopifyResponseHandler implements ResponseHandler {
 
 	private ObjectMapper mapper;
@@ -16,7 +18,7 @@ public class ShopifyResponseHandler implements ResponseHandler {
 	public ShopifyResponseHandler(Map<String, Object> parameters) {
 		mapper = new ObjectMapper();
 	}
-	
+
 	public Object handle(ResponseContext context) throws CRestException {
 		if (context.getExpectedType() == void.class) {
 			return null;
@@ -24,7 +26,11 @@ public class ShopifyResponseHandler implements ResponseHandler {
 		try {
 			InputStream stream = context.getResponse().asStream();
 			JsonNode node = mapper.readValue(stream, JsonNode.class);
-			return mapper.readValue(node.iterator().next(), context.getExpectedType());
+			Object deserialized = mapper.readValue(node.iterator().next(), context.getExpectedType());
+			if(deserialized instanceof ShopifyResource) {
+				((ShopifyResource) deserialized).clean();
+			}
+			return deserialized;
 		} catch (Exception e) {
 			CRestException newexc = new CRestException(e.getMessage(), e.getCause());
 			newexc.setStackTrace(e.getStackTrace());

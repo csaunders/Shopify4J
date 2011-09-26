@@ -1,4 +1,4 @@
-package com.shopify.api;
+package com.shopify.api.interceptors;
 
 import java.io.IOException;
 

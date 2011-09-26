@@ -83,6 +83,7 @@ import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
 
+import #{mainPackage}.handlers.ShopifyResponseHandler;
 import #{mainPackage}.resources.#{className};
 
 @EndPoint("")

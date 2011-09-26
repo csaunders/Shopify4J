@@ -22,7 +22,7 @@ public class OrdersAPIEndpointTest extends InstrumentationTestCase {
 	
 	public void testFetchingAllOrders() throws Exception {
 		List<Order> orders = orderAPI.getOrders();
-		assertEquals(1, orders.size());
+		assertEquals(4, orders.size());
 	}
 	
 	public void testFetchingOneOrder() throws Exception {
@@ -33,6 +33,7 @@ public class OrdersAPIEndpointTest extends InstrumentationTestCase {
 			assertEquals("0.00", o.getTotalDiscounts());
 			assertEquals("f0d72ad56ef9ce9ca31c3c6fae5dd6a6", o.getToken());
 			assertEquals(1, o.getShippingLines().size());
+			assertFalse(o.isDirty());
 			
 			Customer c = o.getCustomer();
 			{

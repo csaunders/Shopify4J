@@ -20,6 +20,7 @@ import static org.codegist.crest.HttpMethod.PUT;
 import static org.codegist.crest.HttpMethod.DELETE;
 import static org.codegist.crest.config.Destination.BODY;
 
+import com.shopify.api.handlers.ShopifyResponseHandler;
 import com.shopify.api.resources.ProductImage;
 
 @EndPoint("")
