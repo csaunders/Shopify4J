@@ -16,6 +16,7 @@ public abstract class GenericShopifyCallbackActivity extends Activity {
 	JsonDirectoryCredentialsStore store;
 	
 	public void onResume() {
+		super.onResume();
 		HashMap<String, String> params = extractCallbackParams(this.getIntent().getData());
 		String shop = extractShopName(params.get(SHOP));
 		try {
