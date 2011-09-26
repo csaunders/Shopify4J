@@ -64,6 +64,25 @@ This can be done by adding something similar to the following to your app:
 </activity>
 ```
 
+#### For the Lazy ####
+
+You can have your callback activity extend the GenericShopifyCallbackActivity which will use the JsonDirectoryCredentialsStore for loading
+and saving shop authentication data.  Though for the time being you are still responsible for ensuring the entry for the shop in question
+is still initialized properly.
+
+But for your callbacks all you need to do now is:
+
+```java
+public class YourFinalizeAuthActivity extends GenericShopifyCallbackActivity {
+
+       @Override
+       public Class<?> getOnSuccessActivity(){
+       	      return YourActivityToLaunchAfterSuccess.class;
+       }
+       
+}
+```
+
 ### Android Demo ####
 
 The included ShopifyProductsListDemo shows how to set up an application that will authorize against a users
