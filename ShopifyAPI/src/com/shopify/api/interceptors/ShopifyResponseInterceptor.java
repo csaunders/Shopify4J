@@ -9,7 +9,6 @@ import org.apache.http.protocol.HttpContext;
 
 public class ShopifyResponseInterceptor implements HttpResponseInterceptor {
 
-	@Override
 	public void process(HttpResponse response, HttpContext context)
 			throws HttpException, IOException {
 		/* CRest 1.0.1 throws an exception is the status code != 200,
