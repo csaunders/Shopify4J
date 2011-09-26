@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -19,15 +19,6 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 public class MGArticle extends ShopifyResource {
 
-	@JsonProperty("body_html")
-	public String getBodyHtml() {
-		return (String)getAttribute("body_html");
-	}
-	@JsonProperty("body_html")
-	public void setBodyHtml(String _body_html) {
-		setAttribute("body_html", _body_html);
-	}
-
 	@JsonProperty("author")
 	public String getAuthor() {
 		return (String)getAttribute("author");
@@ -35,15 +26,6 @@ public class MGArticle extends ShopifyResource {
 	@JsonProperty("author")
 	public void setAuthor(String _author) {
 		setAttribute("author", _author);
-	}
-
-	@JsonProperty("title")
-	public String getTitle() {
-		return (String)getAttribute("title");
-	}
-	@JsonProperty("title")
-	public void setTitle(String _title) {
-		setAttribute("title", _title);
 	}
 
 	@JsonProperty("blog_id")
@@ -54,6 +36,24 @@ public class MGArticle extends ShopifyResource {
 	@JsonProperty("blog_id")
 	public void setBlogId(int _blog_id) {
 		setAttribute("blog_id", _blog_id);
+	}
+
+	@JsonProperty("body_html")
+	public String getBodyHtml() {
+		return (String)getAttribute("body_html");
+	}
+	@JsonProperty("body_html")
+	public void setBodyHtml(String _body_html) {
+		setAttribute("body_html", _body_html);
+	}
+
+	@JsonProperty("published_at")
+	public String getPublishedAt() {
+		return (String)getAttribute("published_at");
+	}
+	@JsonProperty("published_at")
+	public void setPublishedAt(String _published_at) {
+		setAttribute("published_at", _published_at);
 	}
 
 	@JsonProperty("summary_html")
@@ -74,6 +74,15 @@ public class MGArticle extends ShopifyResource {
 		setAttribute("tags", _tags);
 	}
 
+	@JsonProperty("title")
+	public String getTitle() {
+		return (String)getAttribute("title");
+	}
+	@JsonProperty("title")
+	public void setTitle(String _title) {
+		setAttribute("title", _title);
+	}
+
 	@JsonProperty("user_id")
 	public int getUserId() {
 		Integer value = (Integer)getAttribute("user_id");
@@ -82,15 +91,6 @@ public class MGArticle extends ShopifyResource {
 	@JsonProperty("user_id")
 	public void setUserId(int _user_id) {
 		setAttribute("user_id", _user_id);
-	}
-
-	@JsonProperty("published_at")
-	public String getPublishedAt() {
-		return (String)getAttribute("published_at");
-	}
-	@JsonProperty("published_at")
-	public void setPublishedAt(String _published_at) {
-		setAttribute("published_at", _published_at);
 	}
 
 }

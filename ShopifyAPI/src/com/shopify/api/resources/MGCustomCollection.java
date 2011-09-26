@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -37,6 +37,24 @@ public class MGCustomCollection extends ShopifyResource {
 		setAttribute("handle", _handle);
 	}
 
+	@JsonProperty("published_at")
+	public String getPublishedAt() {
+		return (String)getAttribute("published_at");
+	}
+	@JsonProperty("published_at")
+	public void setPublishedAt(String _published_at) {
+		setAttribute("published_at", _published_at);
+	}
+
+	@JsonProperty("sort_order")
+	public String getSortOrder() {
+		return (String)getAttribute("sort_order");
+	}
+	@JsonProperty("sort_order")
+	public void setSortOrder(String _sort_order) {
+		setAttribute("sort_order", _sort_order);
+	}
+
 	@JsonProperty("template_suffix")
 	public String getTemplateSuffix() {
 		return (String)getAttribute("template_suffix");
@@ -53,24 +71,6 @@ public class MGCustomCollection extends ShopifyResource {
 	@JsonProperty("title")
 	public void setTitle(String _title) {
 		setAttribute("title", _title);
-	}
-
-	@JsonProperty("sort_order")
-	public String getSortOrder() {
-		return (String)getAttribute("sort_order");
-	}
-	@JsonProperty("sort_order")
-	public void setSortOrder(String _sort_order) {
-		setAttribute("sort_order", _sort_order);
-	}
-
-	@JsonProperty("published_at")
-	public String getPublishedAt() {
-		return (String)getAttribute("published_at");
-	}
-	@JsonProperty("published_at")
-	public void setPublishedAt(String _published_at) {
-		setAttribute("published_at", _published_at);
 	}
 
 }

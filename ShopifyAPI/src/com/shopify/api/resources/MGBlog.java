@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -18,6 +18,33 @@ import org.codehaus.jackson.annotate.JsonProperty;
  */
 
 public class MGBlog extends ShopifyResource {
+
+	@JsonProperty("commentable")
+	public String getCommentable() {
+		return (String)getAttribute("commentable");
+	}
+	@JsonProperty("commentable")
+	public void setCommentable(String _commentable) {
+		setAttribute("commentable", _commentable);
+	}
+
+	@JsonProperty("feedburner")
+	public String getFeedburner() {
+		return (String)getAttribute("feedburner");
+	}
+	@JsonProperty("feedburner")
+	public void setFeedburner(String _feedburner) {
+		setAttribute("feedburner", _feedburner);
+	}
+
+	@JsonProperty("feedburner_location")
+	public String getFeedburnerLocation() {
+		return (String)getAttribute("feedburner_location");
+	}
+	@JsonProperty("feedburner_location")
+	public void setFeedburnerLocation(String _feedburner_location) {
+		setAttribute("feedburner_location", _feedburner_location);
+	}
 
 	@JsonProperty("handle")
 	public String getHandle() {
@@ -44,33 +71,6 @@ public class MGBlog extends ShopifyResource {
 	@JsonProperty("title")
 	public void setTitle(String _title) {
 		setAttribute("title", _title);
-	}
-
-	@JsonProperty("feedburner_location")
-	public String getFeedburnerLocation() {
-		return (String)getAttribute("feedburner_location");
-	}
-	@JsonProperty("feedburner_location")
-	public void setFeedburnerLocation(String _feedburner_location) {
-		setAttribute("feedburner_location", _feedburner_location);
-	}
-
-	@JsonProperty("feedburner")
-	public String getFeedburner() {
-		return (String)getAttribute("feedburner");
-	}
-	@JsonProperty("feedburner")
-	public void setFeedburner(String _feedburner) {
-		setAttribute("feedburner", _feedburner);
-	}
-
-	@JsonProperty("commentable")
-	public String getCommentable() {
-		return (String)getAttribute("commentable");
-	}
-	@JsonProperty("commentable")
-	public void setCommentable(String _commentable) {
-		setAttribute("commentable", _commentable);
 	}
 
 }

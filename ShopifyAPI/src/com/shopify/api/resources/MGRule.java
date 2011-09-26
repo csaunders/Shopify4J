@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -28,15 +28,6 @@ public class MGRule extends ShopifyResource {
 		setAttribute("column", _column);
 	}
 
-	@JsonProperty("relation")
-	public String getRelation() {
-		return (String)getAttribute("relation");
-	}
-	@JsonProperty("relation")
-	public void setRelation(String _relation) {
-		setAttribute("relation", _relation);
-	}
-
 	@JsonProperty("condition")
 	public String getCondition() {
 		return (String)getAttribute("condition");
@@ -44,6 +35,15 @@ public class MGRule extends ShopifyResource {
 	@JsonProperty("condition")
 	public void setCondition(String _condition) {
 		setAttribute("condition", _condition);
+	}
+
+	@JsonProperty("relation")
+	public String getRelation() {
+		return (String)getAttribute("relation");
+	}
+	@JsonProperty("relation")
+	public void setRelation(String _relation) {
+		setAttribute("relation", _relation);
 	}
 
 }

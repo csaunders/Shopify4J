@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -18,6 +18,24 @@ import org.codehaus.jackson.annotate.JsonProperty;
  */
 
 public class MGTransaction extends ShopifyResource {
+
+	@JsonProperty("amount")
+	public String getAmount() {
+		return (String)getAttribute("amount");
+	}
+	@JsonProperty("amount")
+	public void setAmount(String _amount) {
+		setAttribute("amount", _amount);
+	}
+
+	@JsonProperty("authorization")
+	public String getAuthorization() {
+		return (String)getAttribute("authorization");
+	}
+	@JsonProperty("authorization")
+	public void setAuthorization(String _authorization) {
+		setAttribute("authorization", _authorization);
+	}
 
 	@JsonProperty("kind")
 	public String getKind() {
@@ -36,24 +54,6 @@ public class MGTransaction extends ShopifyResource {
 	@JsonProperty("order_id")
 	public void setOrderId(int _order_id) {
 		setAttribute("order_id", _order_id);
-	}
-
-	@JsonProperty("amount")
-	public String getAmount() {
-		return (String)getAttribute("amount");
-	}
-	@JsonProperty("amount")
-	public void setAmount(String _amount) {
-		setAttribute("amount", _amount);
-	}
-
-	@JsonProperty("authorization")
-	public String getAuthorization() {
-		return (String)getAttribute("authorization");
-	}
-	@JsonProperty("authorization")
-	public void setAuthorization(String _authorization) {
-		setAttribute("authorization", _authorization);
 	}
 
 	@JsonProperty("receipt")

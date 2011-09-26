@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -28,15 +28,6 @@ public class MGTaxLine extends ShopifyResource {
 		setAttribute("price", _price);
 	}
 
-	@JsonProperty("title")
-	public String getTitle() {
-		return (String)getAttribute("title");
-	}
-	@JsonProperty("title")
-	public void setTitle(String _title) {
-		setAttribute("title", _title);
-	}
-
 	@JsonProperty("rate")
 	public double getRate() {
 		Double value = (Double)getAttribute("rate");
@@ -45,6 +36,15 @@ public class MGTaxLine extends ShopifyResource {
 	@JsonProperty("rate")
 	public void setRate(double _rate) {
 		setAttribute("rate", _rate);
+	}
+
+	@JsonProperty("title")
+	public String getTitle() {
+		return (String)getAttribute("title");
+	}
+	@JsonProperty("title")
+	public void setTitle(String _title) {
+		setAttribute("title", _title);
 	}
 
 }

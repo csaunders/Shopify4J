@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -37,22 +37,13 @@ public class MGSmartCollection extends ShopifyResource {
 		setAttribute("handle", _handle);
 	}
 
-	@JsonProperty("template_suffix")
-	public String getTemplateSuffix() {
-		return (String)getAttribute("template_suffix");
+	@JsonProperty("published_at")
+	public String getPublishedAt() {
+		return (String)getAttribute("published_at");
 	}
-	@JsonProperty("template_suffix")
-	public void setTemplateSuffix(String _template_suffix) {
-		setAttribute("template_suffix", _template_suffix);
-	}
-
-	@JsonProperty("title")
-	public String getTitle() {
-		return (String)getAttribute("title");
-	}
-	@JsonProperty("title")
-	public void setTitle(String _title) {
-		setAttribute("title", _title);
+	@JsonProperty("published_at")
+	public void setPublishedAt(String _published_at) {
+		setAttribute("published_at", _published_at);
 	}
 
 	@JsonProperty("rules")
@@ -73,13 +64,22 @@ public class MGSmartCollection extends ShopifyResource {
 		setAttribute("sort_order", _sort_order);
 	}
 
-	@JsonProperty("published_at")
-	public String getPublishedAt() {
-		return (String)getAttribute("published_at");
+	@JsonProperty("template_suffix")
+	public String getTemplateSuffix() {
+		return (String)getAttribute("template_suffix");
 	}
-	@JsonProperty("published_at")
-	public void setPublishedAt(String _published_at) {
-		setAttribute("published_at", _published_at);
+	@JsonProperty("template_suffix")
+	public void setTemplateSuffix(String _template_suffix) {
+		setAttribute("template_suffix", _template_suffix);
+	}
+
+	@JsonProperty("title")
+	public String getTitle() {
+		return (String)getAttribute("title");
+	}
+	@JsonProperty("title")
+	public void setTitle(String _title) {
+		setAttribute("title", _title);
 	}
 
 }

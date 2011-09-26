@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -28,15 +28,6 @@ public class MGFulfillment extends ShopifyResource {
 		setAttribute("line_items", _line_items);
 	}
 
-	@JsonProperty("tracking_company")
-	public String getTrackingCompany() {
-		return (String)getAttribute("tracking_company");
-	}
-	@JsonProperty("tracking_company")
-	public void setTrackingCompany(String _tracking_company) {
-		setAttribute("tracking_company", _tracking_company);
-	}
-
 	@JsonProperty("order_id")
 	public int getOrderId() {
 		Integer value = (Integer)getAttribute("order_id");
@@ -45,15 +36,6 @@ public class MGFulfillment extends ShopifyResource {
 	@JsonProperty("order_id")
 	public void setOrderId(int _order_id) {
 		setAttribute("order_id", _order_id);
-	}
-
-	@JsonProperty("tracking_number")
-	public String getTrackingNumber() {
-		return (String)getAttribute("tracking_number");
-	}
-	@JsonProperty("tracking_number")
-	public void setTrackingNumber(String _tracking_number) {
-		setAttribute("tracking_number", _tracking_number);
 	}
 
 	@JsonProperty("receipt")
@@ -72,6 +54,24 @@ public class MGFulfillment extends ShopifyResource {
 	@JsonProperty("status")
 	public void setStatus(String _status) {
 		setAttribute("status", _status);
+	}
+
+	@JsonProperty("tracking_company")
+	public String getTrackingCompany() {
+		return (String)getAttribute("tracking_company");
+	}
+	@JsonProperty("tracking_company")
+	public void setTrackingCompany(String _tracking_company) {
+		setAttribute("tracking_company", _tracking_company);
+	}
+
+	@JsonProperty("tracking_number")
+	public String getTrackingNumber() {
+		return (String)getAttribute("tracking_number");
+	}
+	@JsonProperty("tracking_number")
+	public void setTrackingNumber(String _tracking_number) {
+		setAttribute("tracking_number", _tracking_number);
 	}
 
 }

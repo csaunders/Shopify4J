@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -19,13 +19,14 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 public class MGComment extends ShopifyResource {
 
-	@JsonProperty("body_html")
-	public String getBodyHtml() {
-		return (String)getAttribute("body_html");
+	@JsonProperty("article_id")
+	public int getArticleId() {
+		Integer value = (Integer)getAttribute("article_id");
+		return value != null ? value : 0;
 	}
-	@JsonProperty("body_html")
-	public void setBodyHtml(String _body_html) {
-		setAttribute("body_html", _body_html);
+	@JsonProperty("article_id")
+	public void setArticleId(int _article_id) {
+		setAttribute("article_id", _article_id);
 	}
 
 	@JsonProperty("author")
@@ -35,15 +36,6 @@ public class MGComment extends ShopifyResource {
 	@JsonProperty("author")
 	public void setAuthor(String _author) {
 		setAttribute("author", _author);
-	}
-
-	@JsonProperty("body")
-	public String getBody() {
-		return (String)getAttribute("body");
-	}
-	@JsonProperty("body")
-	public void setBody(String _body) {
-		setAttribute("body", _body);
 	}
 
 	@JsonProperty("blog_id")
@@ -56,14 +48,31 @@ public class MGComment extends ShopifyResource {
 		setAttribute("blog_id", _blog_id);
 	}
 
-	@JsonProperty("article_id")
-	public int getArticleId() {
-		Integer value = (Integer)getAttribute("article_id");
-		return value != null ? value : 0;
+	@JsonProperty("body")
+	public String getBody() {
+		return (String)getAttribute("body");
 	}
-	@JsonProperty("article_id")
-	public void setArticleId(int _article_id) {
-		setAttribute("article_id", _article_id);
+	@JsonProperty("body")
+	public void setBody(String _body) {
+		setAttribute("body", _body);
+	}
+
+	@JsonProperty("body_html")
+	public String getBodyHtml() {
+		return (String)getAttribute("body_html");
+	}
+	@JsonProperty("body_html")
+	public void setBodyHtml(String _body_html) {
+		setAttribute("body_html", _body_html);
+	}
+
+	@JsonProperty("email")
+	public String getEmail() {
+		return (String)getAttribute("email");
+	}
+	@JsonProperty("email")
+	public void setEmail(String _email) {
+		setAttribute("email", _email);
 	}
 
 	@JsonProperty("ip")
@@ -84,15 +93,6 @@ public class MGComment extends ShopifyResource {
 		setAttribute("published_at", _published_at);
 	}
 
-	@JsonProperty("user_agent")
-	public String getUserAgent() {
-		return (String)getAttribute("user_agent");
-	}
-	@JsonProperty("user_agent")
-	public void setUserAgent(String _user_agent) {
-		setAttribute("user_agent", _user_agent);
-	}
-
 	@JsonProperty("status")
 	public String getStatus() {
 		return (String)getAttribute("status");
@@ -102,13 +102,13 @@ public class MGComment extends ShopifyResource {
 		setAttribute("status", _status);
 	}
 
-	@JsonProperty("email")
-	public String getEmail() {
-		return (String)getAttribute("email");
+	@JsonProperty("user_agent")
+	public String getUserAgent() {
+		return (String)getAttribute("user_agent");
 	}
-	@JsonProperty("email")
-	public void setEmail(String _email) {
-		setAttribute("email", _email);
+	@JsonProperty("user_agent")
+	public void setUserAgent(String _user_agent) {
+		setAttribute("user_agent", _user_agent);
 	}
 
 }

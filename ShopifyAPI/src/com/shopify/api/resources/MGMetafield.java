@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -18,24 +18,6 @@ import org.codehaus.jackson.annotate.JsonProperty;
  */
 
 public class MGMetafield extends ShopifyResource {
-
-	@JsonProperty("namespace")
-	public String getNamespace() {
-		return (String)getAttribute("namespace");
-	}
-	@JsonProperty("namespace")
-	public void setNamespace(String _namespace) {
-		setAttribute("namespace", _namespace);
-	}
-
-	@JsonProperty("value")
-	public String getValue() {
-		return (String)getAttribute("value");
-	}
-	@JsonProperty("value")
-	public void setValue(String _value) {
-		setAttribute("value", _value);
-	}
 
 	@JsonProperty("description")
 	public String getDescription() {
@@ -53,6 +35,24 @@ public class MGMetafield extends ShopifyResource {
 	@JsonProperty("key")
 	public void setKey(String _key) {
 		setAttribute("key", _key);
+	}
+
+	@JsonProperty("namespace")
+	public String getNamespace() {
+		return (String)getAttribute("namespace");
+	}
+	@JsonProperty("namespace")
+	public void setNamespace(String _namespace) {
+		setAttribute("namespace", _namespace);
+	}
+
+	@JsonProperty("value")
+	public String getValue() {
+		return (String)getAttribute("value");
+	}
+	@JsonProperty("value")
+	public void setValue(String _value) {
+		setAttribute("value", _value);
 	}
 
 	@JsonProperty("value_type")

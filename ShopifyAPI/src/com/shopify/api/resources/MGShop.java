@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -37,40 +37,40 @@ public class MGShop extends ShopifyResource {
 		setAttribute("city", _city);
 	}
 
-	@JsonProperty("name")
-	public String getName() {
-		return (String)getAttribute("name");
+	@JsonProperty("country")
+	public String getCountry() {
+		return (String)getAttribute("country");
 	}
-	@JsonProperty("name")
-	public void setName(String _name) {
-		setAttribute("name", _name);
-	}
-
-	@JsonProperty("shop_owner")
-	public String getShopOwner() {
-		return (String)getAttribute("shop_owner");
-	}
-	@JsonProperty("shop_owner")
-	public void setShopOwner(String _shop_owner) {
-		setAttribute("shop_owner", _shop_owner);
+	@JsonProperty("country")
+	public void setCountry(String _country) {
+		setAttribute("country", _country);
 	}
 
-	@JsonProperty("zip")
-	public String getZip() {
-		return (String)getAttribute("zip");
+	@JsonProperty("currency")
+	public String getCurrency() {
+		return (String)getAttribute("currency");
 	}
-	@JsonProperty("zip")
-	public void setZip(String _zip) {
-		setAttribute("zip", _zip);
+	@JsonProperty("currency")
+	public void setCurrency(String _currency) {
+		setAttribute("currency", _currency);
 	}
 
-	@JsonProperty("plan_name")
-	public String getPlanName() {
-		return (String)getAttribute("plan_name");
+	@JsonProperty("domain")
+	public String getDomain() {
+		return (String)getAttribute("domain");
 	}
-	@JsonProperty("plan_name")
-	public void setPlanName(String _plan_name) {
-		setAttribute("plan_name", _plan_name);
+	@JsonProperty("domain")
+	public void setDomain(String _domain) {
+		setAttribute("domain", _domain);
+	}
+
+	@JsonProperty("email")
+	public String getEmail() {
+		return (String)getAttribute("email");
+	}
+	@JsonProperty("email")
+	public void setEmail(String _email) {
+		setAttribute("email", _email);
 	}
 
 	@JsonProperty("money_format")
@@ -91,13 +91,49 @@ public class MGShop extends ShopifyResource {
 		setAttribute("money_with_currency_format", _money_with_currency_format);
 	}
 
-	@JsonProperty("country")
-	public String getCountry() {
-		return (String)getAttribute("country");
+	@JsonProperty("myshopify_domain")
+	public String getMyshopifyDomain() {
+		return (String)getAttribute("myshopify_domain");
 	}
-	@JsonProperty("country")
-	public void setCountry(String _country) {
-		setAttribute("country", _country);
+	@JsonProperty("myshopify_domain")
+	public void setMyshopifyDomain(String _myshopify_domain) {
+		setAttribute("myshopify_domain", _myshopify_domain);
+	}
+
+	@JsonProperty("name")
+	public String getName() {
+		return (String)getAttribute("name");
+	}
+	@JsonProperty("name")
+	public void setName(String _name) {
+		setAttribute("name", _name);
+	}
+
+	@JsonProperty("phone")
+	public String getPhone() {
+		return (String)getAttribute("phone");
+	}
+	@JsonProperty("phone")
+	public void setPhone(String _phone) {
+		setAttribute("phone", _phone);
+	}
+
+	@JsonProperty("plan_name")
+	public String getPlanName() {
+		return (String)getAttribute("plan_name");
+	}
+	@JsonProperty("plan_name")
+	public void setPlanName(String _plan_name) {
+		setAttribute("plan_name", _plan_name);
+	}
+
+	@JsonProperty("province")
+	public String getProvince() {
+		return (String)getAttribute("province");
+	}
+	@JsonProperty("province")
+	public void setProvince(String _province) {
+		setAttribute("province", _province);
 	}
 
 	@JsonProperty("public")
@@ -110,67 +146,13 @@ public class MGShop extends ShopifyResource {
 		setAttribute("public", _public);
 	}
 
-	@JsonProperty("taxes_included")
-	public String getTaxesIncluded() {
-		return (String)getAttribute("taxes_included");
+	@JsonProperty("shop_owner")
+	public String getShopOwner() {
+		return (String)getAttribute("shop_owner");
 	}
-	@JsonProperty("taxes_included")
-	public void setTaxesIncluded(String _taxes_included) {
-		setAttribute("taxes_included", _taxes_included);
-	}
-
-	@JsonProperty("domain")
-	public String getDomain() {
-		return (String)getAttribute("domain");
-	}
-	@JsonProperty("domain")
-	public void setDomain(String _domain) {
-		setAttribute("domain", _domain);
-	}
-
-	@JsonProperty("timezone")
-	public String getTimezone() {
-		return (String)getAttribute("timezone");
-	}
-	@JsonProperty("timezone")
-	public void setTimezone(String _timezone) {
-		setAttribute("timezone", _timezone);
-	}
-
-	@JsonProperty("tax_shipping")
-	public String getTaxShipping() {
-		return (String)getAttribute("tax_shipping");
-	}
-	@JsonProperty("tax_shipping")
-	public void setTaxShipping(String _tax_shipping) {
-		setAttribute("tax_shipping", _tax_shipping);
-	}
-
-	@JsonProperty("phone")
-	public String getPhone() {
-		return (String)getAttribute("phone");
-	}
-	@JsonProperty("phone")
-	public void setPhone(String _phone) {
-		setAttribute("phone", _phone);
-	}
-
-	@JsonProperty("currency")
-	public String getCurrency() {
-		return (String)getAttribute("currency");
-	}
-	@JsonProperty("currency")
-	public void setCurrency(String _currency) {
-		setAttribute("currency", _currency);
-	}
-
-	@JsonProperty("province")
-	public String getProvince() {
-		return (String)getAttribute("province");
-	}
-	@JsonProperty("province")
-	public void setProvince(String _province) {
-		setAttribute("province", _province);
+	@JsonProperty("shop_owner")
+	public void setShopOwner(String _shop_owner) {
+		setAttribute("shop_owner", _shop_owner);
 	}
 
 	@JsonProperty("source")
@@ -182,22 +164,40 @@ public class MGShop extends ShopifyResource {
 		setAttribute("source", _source);
 	}
 
-	@JsonProperty("myshopify_domain")
-	public String getMyshopifyDomain() {
-		return (String)getAttribute("myshopify_domain");
+	@JsonProperty("tax_shipping")
+	public String getTaxShipping() {
+		return (String)getAttribute("tax_shipping");
 	}
-	@JsonProperty("myshopify_domain")
-	public void setMyshopifyDomain(String _myshopify_domain) {
-		setAttribute("myshopify_domain", _myshopify_domain);
+	@JsonProperty("tax_shipping")
+	public void setTaxShipping(String _tax_shipping) {
+		setAttribute("tax_shipping", _tax_shipping);
 	}
 
-	@JsonProperty("email")
-	public String getEmail() {
-		return (String)getAttribute("email");
+	@JsonProperty("taxes_included")
+	public String getTaxesIncluded() {
+		return (String)getAttribute("taxes_included");
 	}
-	@JsonProperty("email")
-	public void setEmail(String _email) {
-		setAttribute("email", _email);
+	@JsonProperty("taxes_included")
+	public void setTaxesIncluded(String _taxes_included) {
+		setAttribute("taxes_included", _taxes_included);
+	}
+
+	@JsonProperty("timezone")
+	public String getTimezone() {
+		return (String)getAttribute("timezone");
+	}
+	@JsonProperty("timezone")
+	public void setTimezone(String _timezone) {
+		setAttribute("timezone", _timezone);
+	}
+
+	@JsonProperty("zip")
+	public String getZip() {
+		return (String)getAttribute("zip");
+	}
+	@JsonProperty("zip")
+	public void setZip(String _zip) {
+		setAttribute("zip", _zip);
 	}
 
 }

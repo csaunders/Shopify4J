@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -19,61 +19,22 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 public class MGLineItem extends ShopifyResource {
 
-	@JsonProperty("price")
-	public String getPrice() {
-		return (String)getAttribute("price");
+	@JsonProperty("fulfillment_service")
+	public String getFulfillmentService() {
+		return (String)getAttribute("fulfillment_service");
 	}
-	@JsonProperty("price")
-	public void setPrice(String _price) {
-		setAttribute("price", _price);
-	}
-
-	@JsonProperty("name")
-	public String getName() {
-		return (String)getAttribute("name");
-	}
-	@JsonProperty("name")
-	public void setName(String _name) {
-		setAttribute("name", _name);
+	@JsonProperty("fulfillment_service")
+	public void setFulfillmentService(String _fulfillment_service) {
+		setAttribute("fulfillment_service", _fulfillment_service);
 	}
 
-	@JsonProperty("title")
-	public String getTitle() {
-		return (String)getAttribute("title");
+	@JsonProperty("fulfillment_status")
+	public String getFulfillmentStatus() {
+		return (String)getAttribute("fulfillment_status");
 	}
-	@JsonProperty("title")
-	public void setTitle(String _title) {
-		setAttribute("title", _title);
-	}
-
-	@JsonProperty("requires_shipping")
-	public boolean getRequiresShipping() {
-		Boolean value = (Boolean)getAttribute("requires_shipping");
-		return value != null ? value : false;
-	}
-	@JsonProperty("requires_shipping")
-	public void setRequiresShipping(boolean _requires_shipping) {
-		setAttribute("requires_shipping", _requires_shipping);
-	}
-
-	@JsonProperty("quantity")
-	public int getQuantity() {
-		Integer value = (Integer)getAttribute("quantity");
-		return value != null ? value : 0;
-	}
-	@JsonProperty("quantity")
-	public void setQuantity(int _quantity) {
-		setAttribute("quantity", _quantity);
-	}
-
-	@JsonProperty("product_id")
-	public int getProductId() {
-		Integer value = (Integer)getAttribute("product_id");
-		return value != null ? value : 0;
-	}
-	@JsonProperty("product_id")
-	public void setProductId(int _product_id) {
-		setAttribute("product_id", _product_id);
+	@JsonProperty("fulfillment_status")
+	public void setFulfillmentStatus(String _fulfillment_status) {
+		setAttribute("fulfillment_status", _fulfillment_status);
 	}
 
 	@JsonProperty("grams")
@@ -86,6 +47,54 @@ public class MGLineItem extends ShopifyResource {
 		setAttribute("grams", _grams);
 	}
 
+	@JsonProperty("name")
+	public String getName() {
+		return (String)getAttribute("name");
+	}
+	@JsonProperty("name")
+	public void setName(String _name) {
+		setAttribute("name", _name);
+	}
+
+	@JsonProperty("price")
+	public String getPrice() {
+		return (String)getAttribute("price");
+	}
+	@JsonProperty("price")
+	public void setPrice(String _price) {
+		setAttribute("price", _price);
+	}
+
+	@JsonProperty("product_id")
+	public int getProductId() {
+		Integer value = (Integer)getAttribute("product_id");
+		return value != null ? value : 0;
+	}
+	@JsonProperty("product_id")
+	public void setProductId(int _product_id) {
+		setAttribute("product_id", _product_id);
+	}
+
+	@JsonProperty("quantity")
+	public int getQuantity() {
+		Integer value = (Integer)getAttribute("quantity");
+		return value != null ? value : 0;
+	}
+	@JsonProperty("quantity")
+	public void setQuantity(int _quantity) {
+		setAttribute("quantity", _quantity);
+	}
+
+	@JsonProperty("requires_shipping")
+	public boolean getRequiresShipping() {
+		Boolean value = (Boolean)getAttribute("requires_shipping");
+		return value != null ? value : false;
+	}
+	@JsonProperty("requires_shipping")
+	public void setRequiresShipping(boolean _requires_shipping) {
+		setAttribute("requires_shipping", _requires_shipping);
+	}
+
 	@JsonProperty("sku")
 	public String getSku() {
 		return (String)getAttribute("sku");
@@ -95,13 +104,23 @@ public class MGLineItem extends ShopifyResource {
 		setAttribute("sku", _sku);
 	}
 
-	@JsonProperty("vendor")
-	public String getVendor() {
-		return (String)getAttribute("vendor");
+	@JsonProperty("title")
+	public String getTitle() {
+		return (String)getAttribute("title");
 	}
-	@JsonProperty("vendor")
-	public void setVendor(String _vendor) {
-		setAttribute("vendor", _vendor);
+	@JsonProperty("title")
+	public void setTitle(String _title) {
+		setAttribute("title", _title);
+	}
+
+	@JsonProperty("variant_id")
+	public int getVariantId() {
+		Integer value = (Integer)getAttribute("variant_id");
+		return value != null ? value : 0;
+	}
+	@JsonProperty("variant_id")
+	public void setVariantId(int _variant_id) {
+		setAttribute("variant_id", _variant_id);
 	}
 
 	@JsonProperty("variant_title")
@@ -113,32 +132,13 @@ public class MGLineItem extends ShopifyResource {
 		setAttribute("variant_title", _variant_title);
 	}
 
-	@JsonProperty("fulfillment_status")
-	public String getFulfillmentStatus() {
-		return (String)getAttribute("fulfillment_status");
+	@JsonProperty("vendor")
+	public String getVendor() {
+		return (String)getAttribute("vendor");
 	}
-	@JsonProperty("fulfillment_status")
-	public void setFulfillmentStatus(String _fulfillment_status) {
-		setAttribute("fulfillment_status", _fulfillment_status);
-	}
-
-	@JsonProperty("fulfillment_service")
-	public String getFulfillmentService() {
-		return (String)getAttribute("fulfillment_service");
-	}
-	@JsonProperty("fulfillment_service")
-	public void setFulfillmentService(String _fulfillment_service) {
-		setAttribute("fulfillment_service", _fulfillment_service);
-	}
-
-	@JsonProperty("variant_id")
-	public int getVariantId() {
-		Integer value = (Integer)getAttribute("variant_id");
-		return value != null ? value : 0;
-	}
-	@JsonProperty("variant_id")
-	public void setVariantId(int _variant_id) {
-		setAttribute("variant_id", _variant_id);
+	@JsonProperty("vendor")
+	public void setVendor(String _vendor) {
+		setAttribute("vendor", _vendor);
 	}
 
 }

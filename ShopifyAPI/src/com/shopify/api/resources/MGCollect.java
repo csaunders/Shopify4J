@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -18,6 +18,26 @@ import org.codehaus.jackson.annotate.JsonProperty;
  */
 
 public class MGCollect extends ShopifyResource {
+
+	@JsonProperty("collection_id")
+	public int getCollectionId() {
+		Integer value = (Integer)getAttribute("collection_id");
+		return value != null ? value : 0;
+	}
+	@JsonProperty("collection_id")
+	public void setCollectionId(int _collection_id) {
+		setAttribute("collection_id", _collection_id);
+	}
+
+	@JsonProperty("featured")
+	public boolean getFeatured() {
+		Boolean value = (Boolean)getAttribute("featured");
+		return value != null ? value : false;
+	}
+	@JsonProperty("featured")
+	public void setFeatured(boolean _featured) {
+		setAttribute("featured", _featured);
+	}
 
 	@JsonProperty("position")
 	public int getPosition() {
@@ -37,26 +57,6 @@ public class MGCollect extends ShopifyResource {
 	@JsonProperty("product_id")
 	public void setProductId(int _product_id) {
 		setAttribute("product_id", _product_id);
-	}
-
-	@JsonProperty("featured")
-	public boolean getFeatured() {
-		Boolean value = (Boolean)getAttribute("featured");
-		return value != null ? value : false;
-	}
-	@JsonProperty("featured")
-	public void setFeatured(boolean _featured) {
-		setAttribute("featured", _featured);
-	}
-
-	@JsonProperty("collection_id")
-	public int getCollectionId() {
-		Integer value = (Integer)getAttribute("collection_id");
-		return value != null ? value : 0;
-	}
-	@JsonProperty("collection_id")
-	public void setCollectionId(int _collection_id) {
-		setAttribute("collection_id", _collection_id);
 	}
 
 }

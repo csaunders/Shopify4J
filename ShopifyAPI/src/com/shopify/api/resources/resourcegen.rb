@@ -160,7 +160,7 @@ public class #{className} extends #{superClass} {
 END
   file.write(warning) if className[0,2] == "MG"
   file.write(header)
-  hash.each{|resource_name, value|
+  hash.sort.each{|resource_name, value|
     next if ["id", "created_at", "updated_at"].include? resource_name
     function_name = resource_name.camelize
     type = determine_type(resource_name, value)

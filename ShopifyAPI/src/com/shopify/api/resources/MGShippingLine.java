@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -18,6 +18,15 @@ import org.codehaus.jackson.annotate.JsonProperty;
  */
 
 public class MGShippingLine extends ShopifyResource {
+
+	@JsonProperty("code")
+	public String getCode() {
+		return (String)getAttribute("code");
+	}
+	@JsonProperty("code")
+	public void setCode(String _code) {
+		setAttribute("code", _code);
+	}
 
 	@JsonProperty("price")
 	public String getPrice() {
@@ -35,15 +44,6 @@ public class MGShippingLine extends ShopifyResource {
 	@JsonProperty("title")
 	public void setTitle(String _title) {
 		setAttribute("title", _title);
-	}
-
-	@JsonProperty("code")
-	public String getCode() {
-		return (String)getAttribute("code");
-	}
-	@JsonProperty("code")
-	public void setCode(String _code) {
-		setAttribute("code", _code);
 	}
 
 }

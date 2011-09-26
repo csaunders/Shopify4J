@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -19,50 +19,13 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 public class MGOrder extends ShopifyResource {
 
-	@JsonProperty("tax_lines")
-	public List<TaxLine> getTaxLines() {
-		return (List<TaxLine>)getAttribute("tax_lines");
+	@JsonProperty("billing_address")
+	public BillingAddress getBillingAddress() {
+		return (BillingAddress)getAttribute("billing_address");
 	}
-	@JsonProperty("tax_lines")
-	public void setTaxLines(List<TaxLine> _tax_lines) {
-		setAttribute("tax_lines", _tax_lines);
-	}
-
-	@JsonProperty("name")
-	public String getName() {
-		return (String)getAttribute("name");
-	}
-	@JsonProperty("name")
-	public void setName(String _name) {
-		setAttribute("name", _name);
-	}
-
-	@JsonProperty("number")
-	public int getNumber() {
-		Integer value = (Integer)getAttribute("number");
-		return value != null ? value : 0;
-	}
-	@JsonProperty("number")
-	public void setNumber(int _number) {
-		setAttribute("number", _number);
-	}
-
-	@JsonProperty("line_items")
-	public List<LineItem> getLineItems() {
-		return (List<LineItem>)getAttribute("line_items");
-	}
-	@JsonProperty("line_items")
-	public void setLineItems(List<LineItem> _line_items) {
-		setAttribute("line_items", _line_items);
-	}
-
-	@JsonProperty("total_discounts")
-	public String getTotalDiscounts() {
-		return (String)getAttribute("total_discounts");
-	}
-	@JsonProperty("total_discounts")
-	public void setTotalDiscounts(String _total_discounts) {
-		setAttribute("total_discounts", _total_discounts);
+	@JsonProperty("billing_address")
+	public void setBillingAddress(BillingAddress _billing_address) {
+		setAttribute("billing_address", _billing_address);
 	}
 
 	@JsonProperty("browser_ip")
@@ -74,13 +37,14 @@ public class MGOrder extends ShopifyResource {
 		setAttribute("browser_ip", _browser_ip);
 	}
 
-	@JsonProperty("payment_details")
-	public PaymentDetails getPaymentDetails() {
-		return (PaymentDetails)getAttribute("payment_details");
+	@JsonProperty("buyer_accepts_marketing")
+	public boolean getBuyerAcceptsMarketing() {
+		Boolean value = (Boolean)getAttribute("buyer_accepts_marketing");
+		return value != null ? value : false;
 	}
-	@JsonProperty("payment_details")
-	public void setPaymentDetails(PaymentDetails _payment_details) {
-		setAttribute("payment_details", _payment_details);
+	@JsonProperty("buyer_accepts_marketing")
+	public void setBuyerAcceptsMarketing(boolean _buyer_accepts_marketing) {
+		setAttribute("buyer_accepts_marketing", _buyer_accepts_marketing);
 	}
 
 	@JsonProperty("cancel_reason")
@@ -92,61 +56,6 @@ public class MGOrder extends ShopifyResource {
 		setAttribute("cancel_reason", _cancel_reason);
 	}
 
-	@JsonProperty("landing_site_ref")
-	public String getLandingSiteRef() {
-		return (String)getAttribute("landing_site_ref");
-	}
-	@JsonProperty("landing_site_ref")
-	public void setLandingSiteRef(String _landing_site_ref) {
-		setAttribute("landing_site_ref", _landing_site_ref);
-	}
-
-	@JsonProperty("token")
-	public String getToken() {
-		return (String)getAttribute("token");
-	}
-	@JsonProperty("token")
-	public void setToken(String _token) {
-		setAttribute("token", _token);
-	}
-
-	@JsonProperty("total_price")
-	public String getTotalPrice() {
-		return (String)getAttribute("total_price");
-	}
-	@JsonProperty("total_price")
-	public void setTotalPrice(String _total_price) {
-		setAttribute("total_price", _total_price);
-	}
-
-	@JsonProperty("landing_site")
-	public String getLandingSite() {
-		return (String)getAttribute("landing_site");
-	}
-	@JsonProperty("landing_site")
-	public void setLandingSite(String _landing_site) {
-		setAttribute("landing_site", _landing_site);
-	}
-
-	@JsonProperty("taxes_included")
-	public boolean getTaxesIncluded() {
-		Boolean value = (Boolean)getAttribute("taxes_included");
-		return value != null ? value : false;
-	}
-	@JsonProperty("taxes_included")
-	public void setTaxesIncluded(boolean _taxes_included) {
-		setAttribute("taxes_included", _taxes_included);
-	}
-
-	@JsonProperty("shipping_lines")
-	public List<ShippingLine> getShippingLines() {
-		return (List<ShippingLine>)getAttribute("shipping_lines");
-	}
-	@JsonProperty("shipping_lines")
-	public void setShippingLines(List<ShippingLine> _shipping_lines) {
-		setAttribute("shipping_lines", _shipping_lines);
-	}
-
 	@JsonProperty("cancelled_at")
 	public String getCancelledAt() {
 		return (String)getAttribute("cancelled_at");
@@ -154,89 +63,6 @@ public class MGOrder extends ShopifyResource {
 	@JsonProperty("cancelled_at")
 	public void setCancelledAt(String _cancelled_at) {
 		setAttribute("cancelled_at", _cancelled_at);
-	}
-
-	@JsonProperty("shipping_address")
-	public ShippingAddress getShippingAddress() {
-		return (ShippingAddress)getAttribute("shipping_address");
-	}
-	@JsonProperty("shipping_address")
-	public void setShippingAddress(ShippingAddress _shipping_address) {
-		setAttribute("shipping_address", _shipping_address);
-	}
-
-	@JsonProperty("referring_site")
-	public String getReferringSite() {
-		return (String)getAttribute("referring_site");
-	}
-	@JsonProperty("referring_site")
-	public void setReferringSite(String _referring_site) {
-		setAttribute("referring_site", _referring_site);
-	}
-
-	@JsonProperty("total_line_items_price")
-	public String getTotalLineItemsPrice() {
-		return (String)getAttribute("total_line_items_price");
-	}
-	@JsonProperty("total_line_items_price")
-	public void setTotalLineItemsPrice(String _total_line_items_price) {
-		setAttribute("total_line_items_price", _total_line_items_price);
-	}
-
-	@JsonProperty("order_number")
-	public int getOrderNumber() {
-		Integer value = (Integer)getAttribute("order_number");
-		return value != null ? value : 0;
-	}
-	@JsonProperty("order_number")
-	public void setOrderNumber(int _order_number) {
-		setAttribute("order_number", _order_number);
-	}
-
-	@JsonProperty("note")
-	public String getNote() {
-		return (String)getAttribute("note");
-	}
-	@JsonProperty("note")
-	public void setNote(String _note) {
-		setAttribute("note", _note);
-	}
-
-	@JsonProperty("subtotal_price")
-	public String getSubtotalPrice() {
-		return (String)getAttribute("subtotal_price");
-	}
-	@JsonProperty("subtotal_price")
-	public void setSubtotalPrice(String _subtotal_price) {
-		setAttribute("subtotal_price", _subtotal_price);
-	}
-
-	@JsonProperty("billing_address")
-	public BillingAddress getBillingAddress() {
-		return (BillingAddress)getAttribute("billing_address");
-	}
-	@JsonProperty("billing_address")
-	public void setBillingAddress(BillingAddress _billing_address) {
-		setAttribute("billing_address", _billing_address);
-	}
-
-	@JsonProperty("note_attributes")
-	public List<NoteAttribute> getNoteAttributes() {
-		return (List<NoteAttribute>)getAttribute("note_attributes");
-	}
-	@JsonProperty("note_attributes")
-	public void setNoteAttributes(List<NoteAttribute> _note_attributes) {
-		setAttribute("note_attributes", _note_attributes);
-	}
-
-	@JsonProperty("buyer_accepts_marketing")
-	public boolean getBuyerAcceptsMarketing() {
-		Boolean value = (Boolean)getAttribute("buyer_accepts_marketing");
-		return value != null ? value : false;
-	}
-	@JsonProperty("buyer_accepts_marketing")
-	public void setBuyerAcceptsMarketing(boolean _buyer_accepts_marketing) {
-		setAttribute("buyer_accepts_marketing", _buyer_accepts_marketing);
 	}
 
 	@JsonProperty("closed_at")
@@ -255,6 +81,24 @@ public class MGOrder extends ShopifyResource {
 	@JsonProperty("currency")
 	public void setCurrency(String _currency) {
 		setAttribute("currency", _currency);
+	}
+
+	@JsonProperty("customer")
+	public Customer getCustomer() {
+		return (Customer)getAttribute("customer");
+	}
+	@JsonProperty("customer")
+	public void setCustomer(Customer _customer) {
+		setAttribute("customer", _customer);
+	}
+
+	@JsonProperty("email")
+	public String getEmail() {
+		return (String)getAttribute("email");
+	}
+	@JsonProperty("email")
+	public void setEmail(String _email) {
+		setAttribute("email", _email);
 	}
 
 	@JsonProperty("financial_status")
@@ -284,13 +128,178 @@ public class MGOrder extends ShopifyResource {
 		setAttribute("gateway", _gateway);
 	}
 
-	@JsonProperty("customer")
-	public Customer getCustomer() {
-		return (Customer)getAttribute("customer");
+	@JsonProperty("landing_site")
+	public String getLandingSite() {
+		return (String)getAttribute("landing_site");
 	}
-	@JsonProperty("customer")
-	public void setCustomer(Customer _customer) {
-		setAttribute("customer", _customer);
+	@JsonProperty("landing_site")
+	public void setLandingSite(String _landing_site) {
+		setAttribute("landing_site", _landing_site);
+	}
+
+	@JsonProperty("landing_site_ref")
+	public String getLandingSiteRef() {
+		return (String)getAttribute("landing_site_ref");
+	}
+	@JsonProperty("landing_site_ref")
+	public void setLandingSiteRef(String _landing_site_ref) {
+		setAttribute("landing_site_ref", _landing_site_ref);
+	}
+
+	@JsonProperty("line_items")
+	public List<LineItem> getLineItems() {
+		return (List<LineItem>)getAttribute("line_items");
+	}
+	@JsonProperty("line_items")
+	public void setLineItems(List<LineItem> _line_items) {
+		setAttribute("line_items", _line_items);
+	}
+
+	@JsonProperty("name")
+	public String getName() {
+		return (String)getAttribute("name");
+	}
+	@JsonProperty("name")
+	public void setName(String _name) {
+		setAttribute("name", _name);
+	}
+
+	@JsonProperty("note")
+	public String getNote() {
+		return (String)getAttribute("note");
+	}
+	@JsonProperty("note")
+	public void setNote(String _note) {
+		setAttribute("note", _note);
+	}
+
+	@JsonProperty("note_attributes")
+	public List<NoteAttribute> getNoteAttributes() {
+		return (List<NoteAttribute>)getAttribute("note_attributes");
+	}
+	@JsonProperty("note_attributes")
+	public void setNoteAttributes(List<NoteAttribute> _note_attributes) {
+		setAttribute("note_attributes", _note_attributes);
+	}
+
+	@JsonProperty("number")
+	public int getNumber() {
+		Integer value = (Integer)getAttribute("number");
+		return value != null ? value : 0;
+	}
+	@JsonProperty("number")
+	public void setNumber(int _number) {
+		setAttribute("number", _number);
+	}
+
+	@JsonProperty("order_number")
+	public int getOrderNumber() {
+		Integer value = (Integer)getAttribute("order_number");
+		return value != null ? value : 0;
+	}
+	@JsonProperty("order_number")
+	public void setOrderNumber(int _order_number) {
+		setAttribute("order_number", _order_number);
+	}
+
+	@JsonProperty("payment_details")
+	public PaymentDetails getPaymentDetails() {
+		return (PaymentDetails)getAttribute("payment_details");
+	}
+	@JsonProperty("payment_details")
+	public void setPaymentDetails(PaymentDetails _payment_details) {
+		setAttribute("payment_details", _payment_details);
+	}
+
+	@JsonProperty("referring_site")
+	public String getReferringSite() {
+		return (String)getAttribute("referring_site");
+	}
+	@JsonProperty("referring_site")
+	public void setReferringSite(String _referring_site) {
+		setAttribute("referring_site", _referring_site);
+	}
+
+	@JsonProperty("shipping_address")
+	public ShippingAddress getShippingAddress() {
+		return (ShippingAddress)getAttribute("shipping_address");
+	}
+	@JsonProperty("shipping_address")
+	public void setShippingAddress(ShippingAddress _shipping_address) {
+		setAttribute("shipping_address", _shipping_address);
+	}
+
+	@JsonProperty("shipping_lines")
+	public List<ShippingLine> getShippingLines() {
+		return (List<ShippingLine>)getAttribute("shipping_lines");
+	}
+	@JsonProperty("shipping_lines")
+	public void setShippingLines(List<ShippingLine> _shipping_lines) {
+		setAttribute("shipping_lines", _shipping_lines);
+	}
+
+	@JsonProperty("subtotal_price")
+	public String getSubtotalPrice() {
+		return (String)getAttribute("subtotal_price");
+	}
+	@JsonProperty("subtotal_price")
+	public void setSubtotalPrice(String _subtotal_price) {
+		setAttribute("subtotal_price", _subtotal_price);
+	}
+
+	@JsonProperty("tax_lines")
+	public List<TaxLine> getTaxLines() {
+		return (List<TaxLine>)getAttribute("tax_lines");
+	}
+	@JsonProperty("tax_lines")
+	public void setTaxLines(List<TaxLine> _tax_lines) {
+		setAttribute("tax_lines", _tax_lines);
+	}
+
+	@JsonProperty("taxes_included")
+	public boolean getTaxesIncluded() {
+		Boolean value = (Boolean)getAttribute("taxes_included");
+		return value != null ? value : false;
+	}
+	@JsonProperty("taxes_included")
+	public void setTaxesIncluded(boolean _taxes_included) {
+		setAttribute("taxes_included", _taxes_included);
+	}
+
+	@JsonProperty("token")
+	public String getToken() {
+		return (String)getAttribute("token");
+	}
+	@JsonProperty("token")
+	public void setToken(String _token) {
+		setAttribute("token", _token);
+	}
+
+	@JsonProperty("total_discounts")
+	public String getTotalDiscounts() {
+		return (String)getAttribute("total_discounts");
+	}
+	@JsonProperty("total_discounts")
+	public void setTotalDiscounts(String _total_discounts) {
+		setAttribute("total_discounts", _total_discounts);
+	}
+
+	@JsonProperty("total_line_items_price")
+	public String getTotalLineItemsPrice() {
+		return (String)getAttribute("total_line_items_price");
+	}
+	@JsonProperty("total_line_items_price")
+	public void setTotalLineItemsPrice(String _total_line_items_price) {
+		setAttribute("total_line_items_price", _total_line_items_price);
+	}
+
+	@JsonProperty("total_price")
+	public String getTotalPrice() {
+		return (String)getAttribute("total_price");
+	}
+	@JsonProperty("total_price")
+	public void setTotalPrice(String _total_price) {
+		setAttribute("total_price", _total_price);
 	}
 
 	@JsonProperty("total_tax")
@@ -300,15 +309,6 @@ public class MGOrder extends ShopifyResource {
 	@JsonProperty("total_tax")
 	public void setTotalTax(String _total_tax) {
 		setAttribute("total_tax", _total_tax);
-	}
-
-	@JsonProperty("email")
-	public String getEmail() {
-		return (String)getAttribute("email");
-	}
-	@JsonProperty("email")
-	public void setEmail(String _email) {
-		setAttribute("email", _email);
 	}
 
 	@JsonProperty("total_weight")

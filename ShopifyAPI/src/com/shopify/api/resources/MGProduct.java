@@ -6,7 +6,7 @@
  * It has been machine generated from fixtures and your changes will be
  * lost if anything new needs to be added to the API.
  **/
-// Last Generated: 2011-09-20T09:56:16-04:00
+// Last Generated: 2011-09-26T15:53:49-04:00
 package com.shopify.api.resources;
 
 import java.util.List;
@@ -37,6 +37,24 @@ public class MGProduct extends ShopifyResource {
 		setAttribute("handle", _handle);
 	}
 
+	@JsonProperty("images")
+	public List<Image> getImages() {
+		return (List<Image>)getAttribute("images");
+	}
+	@JsonProperty("images")
+	public void setImages(List<Image> _images) {
+		setAttribute("images", _images);
+	}
+
+	@JsonProperty("options")
+	public List<Option> getOptions() {
+		return (List<Option>)getAttribute("options");
+	}
+	@JsonProperty("options")
+	public void setOptions(List<Option> _options) {
+		setAttribute("options", _options);
+	}
+
 	@JsonProperty("product_type")
 	public String getProductType() {
 		return (String)getAttribute("product_type");
@@ -44,6 +62,24 @@ public class MGProduct extends ShopifyResource {
 	@JsonProperty("product_type")
 	public void setProductType(String _product_type) {
 		setAttribute("product_type", _product_type);
+	}
+
+	@JsonProperty("published_at")
+	public String getPublishedAt() {
+		return (String)getAttribute("published_at");
+	}
+	@JsonProperty("published_at")
+	public void setPublishedAt(String _published_at) {
+		setAttribute("published_at", _published_at);
+	}
+
+	@JsonProperty("tags")
+	public String getTags() {
+		return (String)getAttribute("tags");
+	}
+	@JsonProperty("tags")
+	public void setTags(String _tags) {
+		setAttribute("tags", _tags);
 	}
 
 	@JsonProperty("template_suffix")
@@ -64,24 +100,6 @@ public class MGProduct extends ShopifyResource {
 		setAttribute("title", _title);
 	}
 
-	@JsonProperty("tags")
-	public String getTags() {
-		return (String)getAttribute("tags");
-	}
-	@JsonProperty("tags")
-	public void setTags(String _tags) {
-		setAttribute("tags", _tags);
-	}
-
-	@JsonProperty("images")
-	public List<Image> getImages() {
-		return (List<Image>)getAttribute("images");
-	}
-	@JsonProperty("images")
-	public void setImages(List<Image> _images) {
-		setAttribute("images", _images);
-	}
-
 	@JsonProperty("variants")
 	public List<Variant> getVariants() {
 		return (List<Variant>)getAttribute("variants");
@@ -91,15 +109,6 @@ public class MGProduct extends ShopifyResource {
 		setAttribute("variants", _variants);
 	}
 
-	@JsonProperty("published_at")
-	public String getPublishedAt() {
-		return (String)getAttribute("published_at");
-	}
-	@JsonProperty("published_at")
-	public void setPublishedAt(String _published_at) {
-		setAttribute("published_at", _published_at);
-	}
-
 	@JsonProperty("vendor")
 	public String getVendor() {
 		return (String)getAttribute("vendor");
@@ -107,15 +116,6 @@ public class MGProduct extends ShopifyResource {
 	@JsonProperty("vendor")
 	public void setVendor(String _vendor) {
 		setAttribute("vendor", _vendor);
-	}
-
-	@JsonProperty("options")
-	public List<Option> getOptions() {
-		return (List<Option>)getAttribute("options");
-	}
-	@JsonProperty("options")
-	public void setOptions(List<Option> _options) {
-		setAttribute("options", _options);
 	}
 
 }
