@@ -24,41 +24,44 @@ import com.shopify.api.handlers.ShopifyResponseHandler;
 import com.shopify.api.resources.Asset;
 
 @EndPoint("")
-@ContextPath("/admin/assets")
+@ContextPath("/admin/themes/")
 @ResponseHandler(ShopifyResponseHandler.class)
 public interface AssetsService extends BaseShopifyService {
 
     // GET
-    @Path(".json")
-    List<Asset> getAssets();
+    @Path("{0}/assets.json")
+    List<Asset> getAssets(int themeId);
 
-    @Path(".json?{0}")
-    List<Asset> getAssets(String queryParams);
+    @Path("{{0}/assets.json?asset[key]={1}")
+    Asset getAsset(int themeId, String assetKey);
 
-    @Path("/{0}.json")
-    Asset getAsset(int id);
+    /**
+     * @deprecated Not supported by the Shopify API
+     */
+    @Path("{0}/assets/count.json")
+    int getCount(int themeId);
 
-    @Path("/{0}.json?{1}")
-    Asset getAsset(int id, String queryParams);
+    /**
+     * @deprecated Not supported by the Shopify API
+     */
+    @Path("{0}/assets/count.json?{1}")
+    int getCount(int themeId, String queryParams);
 
-    @Path("/count.json")
-    int getCount();
-
-    @Path("/count.json?{0}")
-    int getCount(String queryParams);
-
+    /**
+     * @deprecated Not supported by the Shopify API
+     */
     // POST
-    @Path(".json")
+    @Path("{0}/assets.json")
     @HttpMethod(POST)
-    Asset createAsset(@Destination(BODY) @Name("asset") Asset asset);
+    Asset createAsset(int themeId, @Destination(BODY) @Name("asset") Asset asset);
 
     // PUT
-    @Path("/{0}.json")
+    @Path("{0}/assets.json")
     @HttpMethod(PUT)
-    Asset updateAsset(int id, @Destination(BODY) @Name("asset") Asset asset);
+    Asset updateAsset(int themeId, @Destination(BODY) @Name("asset") Asset asset);
 
     // DELETE
-    @Path("/{0}.json")
+    @Path("{0}/assets.json?asset[key]={1}")
     @HttpMethod(DELETE)
-    void deleteAsset(int id);
+    void deleteAsset(int themeId, String assetKey);
 }
