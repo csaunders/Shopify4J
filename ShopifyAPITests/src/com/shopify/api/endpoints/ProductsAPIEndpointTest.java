@@ -43,7 +43,11 @@ public class ProductsAPIEndpointTest extends InstrumentationTestCase {
 
 		assertEquals(count + 1, productAPI.getCount());
 
-		List<Product> response = productAPI.getProducts();
+		List<Product> response = new ArrayList<Product>() {{
+			for(Product p : productAPI.getProducts()) {
+				add(p);
+			}
+		}};
 		assertEquals(count + 1, response.size());
 
 		Product productUpdate1 = new Product();

@@ -30,10 +30,10 @@ public interface ProductsService extends BaseShopifyService {
 
     // GET
     @Path(".json")
-    List<Product> getProducts();
+    Product[] getProducts();
 
     @Path(".json?{0}")
-    List<Product> getProducts(String queryParams);
+    Product[] getProducts(String queryParams);
 
     @Path("/{0}.json")
     Product getProduct(int id);
