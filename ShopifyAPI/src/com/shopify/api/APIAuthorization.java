@@ -30,6 +30,7 @@ public class APIAuthorization {
 	
 	private Credential credential;
 	private ShopifyCredentialsStore credentialsStore = null;
+	private HttpClient client;
 	
 	public APIAuthorization(Credential credential) {
 		this.credential = credential;
@@ -102,12 +103,15 @@ public class APIAuthorization {
 	}
 	
 	public HttpClient getAuthorizedClient(String hostName, int port) {
-		DefaultHttpClient client = new DefaultHttpClient();
-		client.addRequestInterceptor(new ShopifyRequestInterceptor());
-		client.addResponseInterceptor(new ShopifyResponseInterceptor());
-		AuthScope scope = new AuthScope(hostName, port);
-		UsernamePasswordCredentials creds = new UsernamePasswordCredentials(credential.getApiKey(), credential.getPassword());
-		client.getCredentialsProvider().setCredentials(scope, creds);
+		if(client == null) {
+			DefaultHttpClient client = new DefaultHttpClient();
+			client.addRequestInterceptor(new ShopifyRequestInterceptor());
+			client.addResponseInterceptor(new ShopifyResponseInterceptor());
+			AuthScope scope = new AuthScope(hostName, port);
+			UsernamePasswordCredentials creds = new UsernamePasswordCredentials(credential.getApiKey(), credential.getPassword());
+			client.getCredentialsProvider().setCredentials(scope, creds);
+			this.client = client;
+		}
 		
 		return client;
 	}

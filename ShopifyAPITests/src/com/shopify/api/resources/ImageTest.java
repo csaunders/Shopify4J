@@ -1,5 +1,7 @@
 package com.shopify.api.resources;
 
+import java.io.File;
+
 import android.content.Context;
 import android.util.Log;
 
@@ -20,7 +22,7 @@ public class ImageTest extends FixturesTestCase {
 	public void testCreateAnImageFromFile() throws Exception{
 		Image image = new Image();
 		image.setPosition(1);
-		image.setImage(ctx.getAssets().open("images/shopify.jpg"));
+		image.setImage(new File("/dev/null"));
 		image.setFilename("shopify.png");
 		String result = image.toString();
 

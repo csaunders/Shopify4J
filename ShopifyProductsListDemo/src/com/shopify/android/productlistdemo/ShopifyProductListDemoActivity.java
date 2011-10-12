@@ -47,7 +47,7 @@ public class ShopifyProductListDemoActivity extends Activity {
 	}
     }
 
-    class ProductsCallerTask extends AsyncTask<Void, Integer, List<Product>>{
+    class ProductsCallerTask extends AsyncTask<Void, Integer, Product[]>{
 	private ShopifyClient client;
 
 	public ProductsCallerTask(Credential creds) {
@@ -55,17 +55,17 @@ public class ShopifyProductListDemoActivity extends Activity {
 	}
 
 		@Override
-		protected List<Product> doInBackground(Void... params) {
+		protected Product[] doInBackground(Void... params) {
 			Log.e("********************** service", "Initializing products service");
 			ProductsService service = client.constructService(ProductsService.class);
 			Log.e("********************** before call", "Making the call to the Shopify API");
-			List<Product> products = service.getProducts();
+			Product[] products = service.getProducts();
 			Log.e("********************** after call", "API response has been received and data has been parsed");
 			return products;
 		}
 
-		protected void onPostExecute(List<Product> result) {
-			text.setText(String.format("You have %d products in your store", result.size()));
+		protected void onPostExecute(Product[] result) {
+			text.setText(String.format("You have %d products in your store", result.length));
 		}
     }
 }

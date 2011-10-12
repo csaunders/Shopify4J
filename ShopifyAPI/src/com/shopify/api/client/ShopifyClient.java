@@ -7,6 +7,7 @@ import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.http.client.HttpClient;
 import org.codegist.crest.CRest;
 import org.codegist.crest.CRestBuilder;
 import org.codegist.crest.HttpClientRestService;
@@ -14,6 +15,7 @@ import org.codegist.crest.HttpClientRestService;
 import com.shopify.api.APIAuthorization;
 import com.shopify.api.credentials.Credential;
 import com.shopify.api.endpoints.BaseShopifyService;
+import com.shopify.api.endpoints.EndpointImpl;
 import com.shopify.api.resources.ShopifyResource;
 import com.shopify.api.resources.json.ShopifyRequestWriter;
 import com.shopify.api.resources.json.ShopifyResponseReader;
@@ -38,8 +40,12 @@ public class ShopifyClient {
 
 	private HashMap<String, String> constructConfiguration(){
 		return new HashMap<String, String>(){{
-			put("service.end-point", "https://"+creds.getShopName()+".myshopify.com");
+			put("service.end-point", getEndpoint());
 		}};
+	}
+	
+	private String getEndpoint() {
+		return "https://"+creds.getShopName()+".myshopify.com";
 	}
 	
 	private HttpClientRestService constructClientRestService() {
@@ -47,7 +53,33 @@ public class ShopifyClient {
 	}
 	
 	public <T extends BaseShopifyService> T constructService(Class<T> interfaze){
+		if(interfaze.isInterface()) {
+			return constructInterface(interfaze);
+		} else {
+			return constructEndpointImpl(interfaze);
+		}
+	}
+	
+	public <T extends BaseShopifyService> T constructInterface(Class<T> interfaze){
 		return crestClient.build(interfaze);
+	}
+	
+	public <T extends BaseShopifyService> T constructEndpointImpl(Class<T> clazz) {
+		try {
+			EndpointImpl instance = (EndpointImpl)clazz.newInstance();
+			instance.setEndpoint(getEndpoint());
+			instance.setHttpClient(auth.getAuthorizedClient());
+			
+			T service = constructService((Class<T>)instance.getServiceClass());
+			instance.setServiceInterface(service);
+			
+			return (T) instance;
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	public <T extends ShopifyResource> List<T> handleResponse(InputStream in, Class<T> resource){
@@ -59,4 +91,5 @@ public class ShopifyClient {
 		writer.write(w, object);
 		return w.toString();
 	}
+
 }

@@ -2,11 +2,11 @@ package com.shopify.api.resources;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.node.ObjectNode;
@@ -76,14 +76,17 @@ public abstract class ShopifyResource {
 		return attributes.get(attributeName);
 	}
 
+	@JsonIgnore
 	public boolean isDirty() {
 		return !dirtyKeys.isEmpty();
 	}
 
+	@JsonIgnore
 	public void makeDirty() {
 		dirtyKeys.addAll(attributes.keySet());
 	}
 
+	@JsonIgnore
 	public void makeDirty(String attribute) {
 		if(attributes.keySet().contains(attribute)) {
 			dirtyKeys.add(attribute);
