@@ -1,5 +1,7 @@
 # Shopify4J - Caffeinated Shopify Bindings #
 
+**This project is no longer actively maintained. Feel free to use it, but any issues that may arise will most likely not be fixed**
+
 Shopify4J is an Android-compatible library allows developers to programatically access the Admin section of Shopify stores.
 
 The API is implemented as JSON over HTTP using the CRest library.
