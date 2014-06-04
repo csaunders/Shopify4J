@@ -1,6 +1,8 @@
 # Shopify4J - Caffeinated Shopify Bindings #
 
-**This project is no longer actively maintained. Feel free to use it, but any issues that may arise will most likely not be fixed**
+**This project is no longer actively maintained. Feel free to use it, but any issues that may arise will most likely not be fixed.**
+
+**The original developer hasn't worked on or used this project for years. As such you'll need to figure out what the problems are on your own**
 
 Shopify4J is an Android-compatible library allows developers to programatically access the Admin section of Shopify stores.
 
