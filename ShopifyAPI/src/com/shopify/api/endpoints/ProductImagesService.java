@@ -84,11 +84,11 @@ public class ProductImagesService implements EndpointImpl {
 	private ServiceInterface service;
 	private String endpoint;
 	
-    Image[] getProductImages(int productId){
+    Image[] getProductImages(int productId) {
     	return service.getProductImages(productId);
     }
 
-    Image[] getProductImages(int productId, String queryParams){
+    Image[] getProductImages(int productId, String queryParams) {
     	return service.getProductImages(productId, queryParams);
     }
 
@@ -163,7 +163,7 @@ public class ProductImagesService implements EndpointImpl {
 		this.service = (ServiceInterface) service;
 	}
 	
-	public Class<ServiceInterface> getServiceClass(){
+	public Class<ServiceInterface> getServiceClass() {
 		return ServiceInterface.class;
 	}
 }

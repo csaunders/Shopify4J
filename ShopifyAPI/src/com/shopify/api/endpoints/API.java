@@ -29,7 +29,7 @@ public abstract class API {
 		return this.auth;
 	}
 	
-	public HashMap<String, String> apiQueryParams(){
+	public HashMap<String, String> apiQueryParams() {
 		// TODO: Implement this
 		return null;
 	}
@@ -48,13 +48,13 @@ public abstract class API {
 		builder.append(auth.getCredential().getShopName());
 		builder.append(MY_SHOPIFY_COM_ADMIN);
 		builder.append(getAPIEndpoint());
-		if(id > 0) {
+		if (id > 0) {
 			builder.append("/");
 			builder.append(id);
 		}
 		builder.append(getContentTypeExtension());
 		
-		if(queryParameters != null && queryParameters.size() > 0) {
+		if (queryParameters != null && queryParameters.size() > 0) {
 			builder.append("?");
 			int keyLength = queryParameters.keySet().size();
 			ArrayList<String> sortedKeys = new ArrayList<String>(queryParameters.keySet());
@@ -62,11 +62,11 @@ public abstract class API {
 			for(String key : sortedKeys) {
 				--keyLength;
 				String value = queryParameters.get(key);
-				if(value != null) {
+				if (value != null) {
 					builder.append(URLEncoder.encode(key));
 					builder.append("=");
 					builder.append(URLEncoder.encode(value));
-					if(keyLength > 0) {
+					if (keyLength > 0) {
 						builder.append("&");
 					}
 				}

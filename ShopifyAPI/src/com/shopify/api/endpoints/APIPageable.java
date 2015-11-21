@@ -20,11 +20,11 @@ public abstract class APIPageable extends API {
 		return -1;
 	}
 	
-	public ArrayList<ShopifyResource> resourcesForPage(int page){
+	public ArrayList<ShopifyResource> resourcesForPage(int page) {
 		return resourcesForPage(page, new HashMap<String, String>());
 	}
 	
-	public ArrayList<ShopifyResource> resourcesForPage(int page, HashMap<String, String> additionalParams){
+	public ArrayList<ShopifyResource> resourcesForPage(int page, HashMap<String, String> additionalParams) {
 		//additionalParams.put(key, value)
 		return null;
 	}

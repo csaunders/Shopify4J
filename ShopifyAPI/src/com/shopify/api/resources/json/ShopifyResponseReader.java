@@ -28,11 +28,11 @@ public class ShopifyResponseReader {
 		this.factory = mapper.getJsonFactory();
 	}
 	
-	public <T extends ShopifyResource> List<T> read(String response, Class<T> type){
+	public <T extends ShopifyResource> List<T> read(String response, Class<T> type) {
 		return read(new StringReader(response), type);
 	}
 	
-	public <T extends ShopifyResource> List<T> read(Reader response, Class<T> type){
+	public <T extends ShopifyResource> List<T> read(Reader response, Class<T> type) {
 		ArrayList<T> resources = new ArrayList<T>();
 		
 		try {
@@ -40,14 +40,14 @@ public class ShopifyResponseReader {
 			JsonToken token = parser.nextToken();
 			assert(token == JsonToken.START_OBJECT);
 			while((token = parser.nextToken()) != null) {
-				if(token == JsonToken.END_OBJECT) break;
+				if (token == JsonToken.END_OBJECT) break;
 				token = parser.nextToken();
-				if(token == JsonToken.START_ARRAY) {
+				if (token == JsonToken.START_ARRAY) {
 					while((token = parser.nextToken()) != JsonToken.END_ARRAY) {
 						resources.add(mapper.readValue(parser, type));
 					}
 					break;
-				} else if(token == JsonToken.START_OBJECT) {
+				} else if (token == JsonToken.START_OBJECT) {
 					resources.add(mapper.readValue(parser, type));
 				}
 			}

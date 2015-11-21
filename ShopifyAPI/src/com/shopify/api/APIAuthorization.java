@@ -62,7 +62,7 @@ public class APIAuthorization {
 	}
 	
 	public boolean computeAPIPassword(HashMap<String, String> responseParameters) throws Exception {
-		if(isValidShopifyResponse(responseParameters)) {
+		if (isValidShopifyResponse(responseParameters)) {
 			StringBuilder builder = new StringBuilder();
 			builder.append(credential.getSharedSecret());
 			builder.append(responseParameters.get(TOKEN));
@@ -76,7 +76,7 @@ public class APIAuthorization {
 	}
 	
 	public String toMD5Hexdigest(String message) {
-		if(message != null) {
+		if (message != null) {
 			try {
 				MessageDigest digest = MessageDigest.getInstance("MD5");
 				byte[] digestBytes = digest.digest(message.getBytes());
@@ -103,7 +103,7 @@ public class APIAuthorization {
 	}
 	
 	public HttpClient getAuthorizedClient(String hostName, int port) {
-		if(client == null) {
+		if (client == null) {
 			DefaultHttpClient client = new DefaultHttpClient();
 			client.addRequestInterceptor(new ShopifyRequestInterceptor());
 			client.addResponseInterceptor(new ShopifyResponseInterceptor());

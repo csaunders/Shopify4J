@@ -60,13 +60,13 @@ public abstract class ShopifyResource {
 		return root.toString();
 	}
 
-	protected Set<String> determineKeys(){
+	protected Set<String> determineKeys() {
 		return isDirty() ? dirtyKeys : attributes.keySet();
 	}
 
 	protected void setAttribute(String attributeName, Object attributeValue) {
 		Object currentValue = attributes.get(attributeName);
-		if(currentValue == null || !currentValue.equals(attributeValue)) {
+		if (currentValue == null || !currentValue.equals(attributeValue)) {
 			dirtyKeys.add(attributeName);
 		}
 		attributes.put(attributeName, attributeValue);
@@ -88,7 +88,7 @@ public abstract class ShopifyResource {
 
 	@JsonIgnore
 	public void makeDirty(String attribute) {
-		if(attributes.keySet().contains(attribute)) {
+		if (attributes.keySet().contains(attribute)) {
 			dirtyKeys.add(attribute);
 		}
 	}
