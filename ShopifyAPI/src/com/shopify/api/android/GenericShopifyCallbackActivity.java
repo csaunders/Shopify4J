@@ -39,7 +39,7 @@ public abstract class GenericShopifyCallbackActivity extends Activity {
 		
 	}
 	
-	private HashMap<String, String> extractCallbackParams(final Uri callbackResponse){
+	private HashMap<String, String> extractCallbackParams(final Uri callbackResponse) {
 		return new HashMap<String, String>(){{
 			put(SHOP, callbackResponse.getQueryParameter(SHOP));
 			put(TOKEN, callbackResponse.getQueryParameter(TOKEN));

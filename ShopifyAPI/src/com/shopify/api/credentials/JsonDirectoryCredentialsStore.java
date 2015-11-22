@@ -44,7 +44,7 @@ public class JsonDirectoryCredentialsStore implements ShopifyCredentialsStore {
 				return pathname.getName().endsWith(".json");
 			}
 		});
-		for(File f : files){
+		for(File f : files) {
 			String filename = f.getName();
 			credFiles.add(filename.substring(0, filename.indexOf(".json")));
 		}

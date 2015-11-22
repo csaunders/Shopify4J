@@ -12,7 +12,6 @@ import static org.codegist.crest.config.Destination.BODY;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -84,11 +83,11 @@ public class ProductImagesService implements EndpointImpl {
 	private ServiceInterface service;
 	private String endpoint;
 	
-    Image[] getProductImages(int productId){
+    Image[] getProductImages(int productId) {
     	return service.getProductImages(productId);
     }
 
-    Image[] getProductImages(int productId, String queryParams){
+    Image[] getProductImages(int productId, String queryParams) {
     	return service.getProductImages(productId, queryParams);
     }
 
@@ -163,7 +162,7 @@ public class ProductImagesService implements EndpointImpl {
 		this.service = (ServiceInterface) service;
 	}
 	
-	public Class<ServiceInterface> getServiceClass(){
+	public Class<ServiceInterface> getServiceClass() {
 		return ServiceInterface.class;
 	}
 }

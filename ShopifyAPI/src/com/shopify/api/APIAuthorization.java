@@ -1,6 +1,5 @@
 package com.shopify.api;
 
-import java.io.IOException;
 import java.net.URI;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -8,14 +7,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-import org.apache.http.HttpException;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.HttpContext;
 
 import com.apache.commons.codec.binary.Hex;
 import com.shopify.api.endpoints.AuthAPI;
@@ -62,7 +57,7 @@ public class APIAuthorization {
 	}
 	
 	public boolean computeAPIPassword(HashMap<String, String> responseParameters) throws Exception {
-		if(isValidShopifyResponse(responseParameters)) {
+		if (isValidShopifyResponse(responseParameters)) {
 			StringBuilder builder = new StringBuilder();
 			builder.append(credential.getSharedSecret());
 			builder.append(responseParameters.get(TOKEN));
@@ -76,7 +71,7 @@ public class APIAuthorization {
 	}
 	
 	public String toMD5Hexdigest(String message) {
-		if(message != null) {
+		if (message != null) {
 			try {
 				MessageDigest digest = MessageDigest.getInstance("MD5");
 				byte[] digestBytes = digest.digest(message.getBytes());
@@ -103,7 +98,7 @@ public class APIAuthorization {
 	}
 	
 	public HttpClient getAuthorizedClient(String hostName, int port) {
-		if(client == null) {
+		if (client == null) {
 			DefaultHttpClient client = new DefaultHttpClient();
 			client.addRequestInterceptor(new ShopifyRequestInterceptor());
 			client.addResponseInterceptor(new ShopifyResponseInterceptor());

@@ -7,7 +7,6 @@ import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.http.client.HttpClient;
 import org.codegist.crest.CRest;
 import org.codegist.crest.CRestBuilder;
 import org.codegist.crest.HttpClientRestService;
@@ -38,7 +37,7 @@ public class ShopifyClient {
 						.build();
 	}
 
-	private HashMap<String, String> constructConfiguration(){
+	private HashMap<String, String> constructConfiguration() {
 		return new HashMap<String, String>(){{
 			put("service.end-point", getEndpoint());
 		}};
@@ -52,15 +51,15 @@ public class ShopifyClient {
 		return new HttpClientRestService(auth.getAuthorizedClient());
 	}
 	
-	public <T extends BaseShopifyService> T constructService(Class<T> interfaze){
-		if(interfaze.isInterface()) {
+	public <T extends BaseShopifyService> T constructService(Class<T> interfaze) {
+		if (interfaze.isInterface()) {
 			return constructInterface(interfaze);
 		} else {
 			return constructEndpointImpl(interfaze);
 		}
 	}
 	
-	public <T extends BaseShopifyService> T constructInterface(Class<T> interfaze){
+	public <T extends BaseShopifyService> T constructInterface(Class<T> interfaze) {
 		return crestClient.build(interfaze);
 	}
 	
@@ -82,7 +81,7 @@ public class ShopifyClient {
 		return null;
 	}
 	
-	public <T extends ShopifyResource> List<T> handleResponse(InputStream in, Class<T> resource){
+	public <T extends ShopifyResource> List<T> handleResponse(InputStream in, Class<T> resource) {
 		return reader.read(new InputStreamReader(in), resource);
 	}
 	

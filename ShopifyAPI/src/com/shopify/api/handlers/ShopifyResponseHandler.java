@@ -27,7 +27,7 @@ public class ShopifyResponseHandler implements ResponseHandler {
 			InputStream stream = context.getResponse().asStream();
 			JsonNode node = mapper.readValue(stream, JsonNode.class);
 			Object deserialized = mapper.readValue(node.iterator().next(), context.getExpectedType());
-			if(deserialized instanceof ShopifyResource) {
+			if (deserialized instanceof ShopifyResource) {
 				((ShopifyResource) deserialized).clean();
 			}
 			return deserialized;
