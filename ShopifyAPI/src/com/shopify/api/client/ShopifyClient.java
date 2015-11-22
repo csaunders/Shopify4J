@@ -7,7 +7,6 @@ import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.http.client.HttpClient;
 import org.codegist.crest.CRest;
 import org.codegist.crest.CRestBuilder;
 import org.codegist.crest.HttpClientRestService;

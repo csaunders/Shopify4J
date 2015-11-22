@@ -12,7 +12,6 @@ import static org.codegist.crest.config.Destination.BODY;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
